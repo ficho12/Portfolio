@@ -11569,6 +11569,11 @@ html {
   border-radius: 1rem !important;
 }
 
+.no-underline {
+  text-decoration: none;
+  color: black;
+}
+
 .feature {
   display: inline-flex;
   align-items: center;
