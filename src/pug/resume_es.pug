@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='es')
 
     head
 
@@ -8,7 +8,7 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='Fiz Rey Armesto')
 
-        title Resume - Fiz Rey Armesto
+        title Currículum Vitae - Fiz Rey Armesto
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/Ficon.ico')
@@ -20,13 +20,13 @@ html(lang='en')
         main.flex-shrink-0
 
             // Navigation
-            include includes/navbar.pug
+            include includes/navbar_es.pug
 
             // Page Content
             .container.px-5.my-5
                 .text-center.mb-5
                     h1.display-5.fw-bolder.mb-0
-                        span.text-gradient.d-inline Resume
+                        span.text-gradient.d-inline Currículum Vitae
                 .row.gx-5.justify-content-center
 
                     .col-lg-11.col-xl-9.col-xxl-8
@@ -34,12 +34,12 @@ html(lang='en')
                         // Experience Section
                         section
                             .d-flex.align-items-center.justify-content-between.mb-4
-                                h2.text-primary.fw-bolder.mb-0 Experience
+                                h2.text-primary.fw-bolder.mb-0 Experiencia
                                 // Download resume button
                                 // Note: Set the link href target to a PDF file within your project
-                                a.btn.btn-primary.px-4.py-3(href='assets/CV_FIZREYARMESTO_ENG.pdf')
+                                a.btn.btn-primary.px-4.py-3(href='assets/CV_FIZREYARMESTO_ES.pdf')
                                     .d-inline-block.bi.bi-download.me-2
-                                    | Download Resume
+                                    | Descargar CV
 
                             // Experience Card 1
                             .card.shadow.border-0.rounded-4.mb-5
@@ -48,15 +48,15 @@ html(lang='en')
                                         .col.text-center.text-lg-start.mb-4.mb-lg-0
                                             .bg-light.p-4.rounded-4
                                                 .text-primary.fw-bolder.mb-2 Feb  - Apr 2023
-                                                .small.fw-bolder Unity Developer
+                                                .small.fw-bolder Desarrollador Unity
                                                 .small.text-muted ARSOFT
                                                 .small.text-muted Salamanca, Spain
                                         .col-lg-8
-                                            div Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.
+                                            div Desarollé simulaciones de operación nativas para Meta Quest 2 desde cero con el framework UltimateXR para Unity.
 
                         // Education Section
                         section
-                            h2.text-secondary.fw-bolder.mb-4 Education
+                            h2.text-secondary.fw-bolder.mb-4 Educación
                             
                             // Education Card 1
                             .card.shadow.border-0.rounded-4.mb-5
@@ -66,10 +66,10 @@ html(lang='en')
                                             .bg-light.p-4.rounded-4
                                                 .text-secondary.fw-bolder.mb-2 2017 - 2023
                                                 .mb-2
-                                                    .small.fw-bolder Computer Engineering
+                                                    .small.fw-bolder Ingeniería Informática
                                                     .small.text-muted Universidad de Salamanca
                                         .col-lg-8
-                                            div Thesis: Development of a multiplayer VR video game using Unreal Engine 5.
+                                            div TFG: Desarrollo de un videojuego multijugador de RV usando Unreal Engine 5.
 
                         // Divider
                         .pb-5
@@ -85,7 +85,7 @@ html(lang='en')
                                             .feature.bg-primary.bg-gradient-primary-to-secondary.text-white.rounded-3.me-3
                                                 i.bi.bi-tools
                                             h3.fw-bolder.mb-0
-                                                span.text-gradient.d-inline Professional Skills
+                                                span.text-gradient.d-inline Habilidades Profesionales
                                         .row.row-cols-1.row-cols-md-3.mb-4
                                             .col.mb-4.mb-md-0
                                                 .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Unreal Engine
@@ -114,7 +114,7 @@ html(lang='en')
                                             .feature.bg-primary.bg-gradient-primary-to-secondary.text-white.rounded-3.me-3
                                                 i.bi.bi-code-slash
                                             h3.fw-bolder.mb-0
-                                                span.text-gradient.d-inline Languages
+                                                span.text-gradient.d-inline Lenguajes
                                         .row.row-cols-1.row-cols-md-3.mb-4
                                             .col.mb-4.mb-md-0
                                                 .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 C#
@@ -131,6 +131,6 @@ html(lang='en')
                                                 .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 JavaScript
 
         // Footer
-        include includes/footer.pug
+        include includes/footer_es.pug
 
         include includes/scripts.pug

@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='es')
 <script src="https://kit.fontawesome.com/481f34b392.js" crossorigin="anonymous"></script>
   head
     meta(charset='utf-8')
@@ -14,7 +14,7 @@ html(lang='en')
   body.d-flex.flex-column.h-100
     main.flex-shrink-0
       // Navigation
-      include includes/navbar.pug
+      include includes/navbar_es.pug
 
       // Header
       header.py-5
@@ -24,12 +24,12 @@ html(lang='en')
               // Header text content
               .text-center.text-xxl-start
                 .badge.bg-gradient-primary-to-secondary.text-white.mb-4
-                  | Computer Engineer &middot; Unity & Unreal Engine Developer
+                  | Ingeniero Informático &middot; Desarrollador Unity & Unreal Engine
                 h1.display-3.fw-bolder.mb-5
                   span.text-gradient.d-inline Fiz Rey Armesto
                 .d-grid.gap-3.d-sm-flex.justify-content-sm-center.justify-content-xxl-start.mb-3
-                  a.btn.btn-primary.btn-lg.px-5.py-3.me-sm-3.fs-6.fw-bolder(href='resume.html') Resume
-                  a.btn.btn-outline-dark.btn-lg.px-5.py-3.fs-6.fw-bolder(href='projects.html') Projects
+                  a.btn.btn-primary.btn-lg.px-5.py-3.me-sm-3.fs-6.fw-bolder(href='resume_es.html') Currículum
+                  a.btn.btn-outline-dark.btn-lg.px-5.py-3.fs-6.fw-bolder(href='projects_es.html') Proyectos
             .col-xxl-7
               // Header profile picture
               .d-flex.justify-content-center.mt-5.mt-xxl-0
@@ -52,14 +52,14 @@ html(lang='en')
             .col-xxl-8
               .text-center.my-5
                 h2.display-5.fw-bolder
-                  span.text-gradient.d-inline About Me
-                p.lead.fw-light.mb-4 My name is Fiz and I'm a Computer Engineer graduate interested in VR and game development with Unreal Engine and Unity.
-                p.text-muted Know more about me in Linkedin and discover some of my projects on Github
+                  span.text-gradient.d-inline Sobre Mí
+                p.lead.fw-light.mb-4 Mi nombre es Fiz y soy un Ingeniero Informático interesado en la RV y el desarrollo de videojuegos con Unreal Engine y Unity.
+                p.text-muted Conoce más sobre mí en Linkedin y descubre algunos de mis proyectos en Github
                 .d-flex.justify-content-center.fs-2.gap-4
                   a.text-gradient(href="https://www.linkedin.com/in/fizrey/") 
                     i.bi.bi-linkedin
                   a.text-gradient(href="https://github.com/ficho12") 
                     i.bi.bi-github
       // Footer
-      include includes/footer.pug
+      include includes/footer_es.pug
       include includes/scripts.pug
