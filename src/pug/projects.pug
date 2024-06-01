@@ -74,7 +74,7 @@ html(lang='en')
                                             button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
                                         .modal-body
                                             .embed-responsive.embed-responsive-16by9.custom-embed
-                                                iframe.embed-responsive-item(src='assets/yabs/index.html', id='iframe-yabs', frameborder="0" 
+                                                iframe.embed-responsive-item(src='', id='iframe-yabs', frameborder="0" 
                                                 allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no"
                                                 style='width: 100%; height: 100%; border: none;')
                                         script.
@@ -156,8 +156,17 @@ html(lang='en')
                                                 }
                                             });
 
+                                            // Event listener to stop iframe on modal close
+                                            document.querySelector('.btn-close').addEventListener('click', function() {
+                                                var iframe = document.getElementById('iframe-yabs');
+                                                iframe.src = '';
+                                            });
 
-
+                                            // Event listener to reset iframe src when modal is opened
+                                            document.getElementById('playModal').addEventListener('show.bs.modal', function() {
+                                                var iframe = document.getElementById('iframe-yabs');
+                                                iframe.src = 'assets/yabs/index.html';
+                                            });
 
                             // Project Card 4
                             a(href='https://github.com/ficho12/UE5-Custom-Editor-Tools',  style='text-decoration: none; color: black;')
