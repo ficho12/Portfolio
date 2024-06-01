@@ -89,46 +89,47 @@
                                                 </div>
                                             </div>
                                             <img class="img-fluid" src="assets/yabs.jpg" alt="..." />
-                                            <!-- Modal-->
-                                            <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalLabel" aria-hidden="true" role="dialog">
-                                                <div class="modal-dialog modal-dialog-centered modal-xl">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header d-flex align-items-center justify-content-between">
-                                                            <button class="btn btn-outline-dark btn-lg" data-bs-dismiss="modal">Close</button>
-                                                            <button class="btn btn-outline-dark btn-lg" id="fullscreenButton">| Fullscreen</button>
-                                                            <h5 class="modal-title" id="playModalLabel">YABS</h5>
-                                                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="embed-responsive embed-responsive-16by9 custom-embed"><iframe class="embed-responsive-item" src="assets/yabs/index.html" id="iframe-yabs" frameborder="0" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no" style="width: 100%; height: 100%; border: none"></iframe></div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <script>
-                                                                // Define the injectScript function in the global scope
-                                                                function injectScript(iframe, scriptContent) {
-                                                                    var script = iframe.contentWindow.document.createElement('script');
-                                                                    script.type = 'text/javascript';
-                                                                    script.text = scriptContent;
-                                                                    iframe.contentWindow.document.body.appendChild(script);
-                                                                }
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Modal-->
+                            <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalLabel" aria-hidden="true" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex align-items-center justify-content-between">
+                                            <h2 class="text-center">YABS</h2>
+                                            <button class="btn btn-outline-dark btn-lg" id="fullscreenButton"><i class="bi bi-arrows-fullscreen"></i></button>
+                                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="embed-responsive embed-responsive-16by9 custom-embed"><iframe class="embed-responsive-item" src="assets/yabs/index.html" id="iframe-yabs" frameborder="0" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no" style="width: 100%; height: 100%; border: none"></iframe></div>
+                                        </div>
+                                        <script>
+                                            // Define the injectScript function in the global scope
+                                            function injectScript(iframe, scriptContent) {
+                                                var script = iframe.contentWindow.document.createElement('script');
+                                                script.type = 'text/javascript';
+                                                script.text = scriptContent;
+                                                iframe.contentWindow.document.body.appendChild(script);
+                                            }
 
-                                                                document.getElementById('fullscreenButton').addEventListener('click', function () {
-                                                                    var iframe = document.getElementById('iframe-yabs');
-                                                                    iframe.contentWindow.postMessage({ command: 'requestFullscreen' }, '*');
-                                                                });
+                                            document.getElementById('fullscreenButton').addEventListener('click', function () {
+                                                var iframe = document.getElementById('iframe-yabs');
+                                                iframe.contentWindow.postMessage({ command: 'requestFullscreen' }, '*');
+                                            });
 
-                                                                window.addEventListener('message', function (event) {
-                                                                    if (event.data.command === 'fullscreenSuccess') {
-                                                                        console.log('WebGL canvas is now fullscreen');
-                                                                    } else if (event.data.command === 'fullscreenError') {
-                                                                        console.error('Failed to go fullscreen:', event.data.error);
-                                                                    }
-                                                                });
+                                            window.addEventListener('message', function (event) {
+                                                if (event.data.command === 'fullscreenSuccess') {
+                                                    console.log('WebGL canvas is now fullscreen');
+                                                } else if (event.data.command === 'fullscreenError') {
+                                                    console.error('Failed to go fullscreen:', event.data.error);
+                                                }
+                                            });
 
-                                                                document.getElementById('iframe-yabs').addEventListener('load', function () {
-                                                                    var iframe = document.getElementById('iframe-yabs');
-                                                                    var scriptContent = `
+                                            document.getElementById('iframe-yabs').addEventListener('load', function () {
+                                                var iframe = document.getElementById('iframe-yabs');
+                                                var scriptContent = `
         (function() {
             function requestFullscreen(canvas) {
                 if (canvas.requestFullscreen) {
@@ -172,25 +173,20 @@
             document.addEventListener('MSFullscreenChange', onFullscreenChange);
         })();
     `;
-                                                                    injectScript(iframe, scriptContent);
-                                                                });
+                                                injectScript(iframe, scriptContent);
+                                            });
 
-                                                                // Event listener for exiting fullscreen
-                                                                window.addEventListener('message', function (event) {
-                                                                    if (event.data.command === 'fullscreenExited') {
-                                                                        var iframe = document.getElementById('iframe-yabs');
-                                                                        iframe.contentWindow.location.reload();
-                                                                    }
-                                                                });
-                                                            </script>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            // Event listener for exiting fullscreen
+                                            window.addEventListener('message', function (event) {
+                                                if (event.data.command === 'fullscreenExited') {
+                                                    console.log('Fullscreen exited');
+                                                    // Do nothing to prevent reload
+                                                }
+                                            });
+                                        </script>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                             <!-- Project Card 4-->
                             <a href="https://github.com/ficho12/UE5-Custom-Editor-Tools" style="text-decoration: none; color: black">
                                 <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
