@@ -3,41 +3,28 @@
 * Copyright 2013-2024 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
 */
-// const express = require('express');
-// const path = require('path');
-// const fs = require('fs');
-// const https = require('https');
-// const expressStaticGzip = require('express-static-gzip');
+// Require necessary modules using CommonJS syntax
+const http = require('http');
+const compression = require('compression');
+const serveStatic = require('serve-static');
 
-// const app = express();
-// const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-// // SSL Certificate
-// const privateKey = fs.readFileSync('assets/server.key', 'utf8');
-// const certificate = fs.readFileSync('assets/server.cert', 'utf8');
-// const credentials = { key: privateKey, cert: certificate };
+// Enable Brotli compression
+const compressionMiddleware = compression({
+  brotli: true
+});
 
-// // Serve Brotli and Gzip compressed files
-// app.use('/', expressStaticGzip(path.join(__dirname, 'Build'), {
-//     enableBrotli: true,
-//     orderPreference: ['br', 'gz'],
-//     setHeaders: (res, path) => {
-//         if (path.endsWith('.br')) {
-//             res.setHeader('Content-Encoding', 'br');
-//         } else if (path.endsWith('.gz')) {
-//             res.setHeader('Content-Encoding', 'gzip');
-//         }
-//     }
-// }));
+const serve = serveStatic('Build', {
+  index: ['index.html']
+});
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'Build', 'assets/yabs/index.html'));
-// });
+const server = http.createServer((req, res) => {
+  compressionMiddleware(req, res, () => {
+    serve(req, res, () => {});
+  });
+});
 
-// // Create HTTPS server
-// const httpsServer = https.createServer(credentials, app);
-
-// // Start the server
-// httpsServer.listen(port, () => {
-//     console.log(`HTTPS Server is running on https://localhost:${port}`);
-// });
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
