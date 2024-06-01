@@ -86,6 +86,15 @@
                                                 <p>Xogo feito nunha fin de semana con Unity para a Jam da Ludum Dare.</p>
                                             </div>
                                             <img class="image-fluid" src="assets/yabs.jpg" alt="..." />
+                                            <iframe src="https://html-classic.itch.zone/html/10196529/index.html" style="display: none" id="iframe-yabs" width="100%" height="100%"></iframe>
+                                            <script>
+                                                document.querySelector('.card-body').addEventListener('mouseover', function () {
+                                                    document.getElementById('iframe-yabs').style.display = 'block';
+                                                });
+                                                document.querySelector('.card-body').addEventListener('mouseout', function () {
+                                                    document.getElementById('iframe-yabs').style.display = 'none';
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div>

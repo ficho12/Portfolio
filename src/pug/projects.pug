@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
 
-    head
+    head 
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -51,14 +51,111 @@ html(lang='en')
                                                 p Lead Programmer, Unreal Engine 5
                                             img.img-fluid(src='assets/noche.jpg', alt='...')
                             // Project Card 3
-                            a(href='https://ldjam.com/events/ludum-dare/55/yabs',  style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5 
-                                    .card-body.p-0s
+                            a(href='https://ldjam.com/events/ludum-dare/55/yabs', style='text-decoration: none; color: black;')
+                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
+                                    .card-body.p-0
                                         .d-flex.align-items-center
-                                            .p-5
-                                                h2.fw-bolder YABS - Ludum Dare 55
-                                                p Game made in a weekend with Unity for the Ludum Dare Jam.
-                                            img.image-fluid(src='assets/yabs.jpg', alt='...')
+                                            .p-5.flex-grow-1
+                                                .d-flex.flex-column
+                                                    h2.fw-bolder YABS - Ludum Dare 55
+                                                    p.mb-4 Game made in a weekend with Unity for the Ludum Dare Jam.
+                                                    .d-flex.justify-content-center.mt-4
+                                                        a#playButton.btn.btn-outline-dark.btn-lg.px-5.py-3.fs-6.fw-bolder(data-bs-toggle='modal', data-bs-target='#playModal', style='text-decoration: none;') Play
+                                            img.img-fluid(src='assets/yabs.jpg', alt='...')
+                                #playModal.modal.fade(tabindex='-1', aria-labelledby='playModalLabel', aria-hidden='true', role='dialog')
+                                    .modal-dialog.modal-dialog-centered
+                                        .modal-content
+                                            .modal-header
+                                                h5.modal-title#playModalLabel YABS - Play
+                                                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                            .modal-body.p-0
+                                                .embed-responsive.embed-responsive-16by9.custom-embed
+                                                    iframe.gameContainer(src='assets/yabs/index.html', id='iframe-yabs', frameborder="0",
+                                                    allow="autoplay; fullscreen *; midi; gamepad; cross-origin-isolated" scrolling="no" style='width: 100%; height: 100%; position:absolute')
+                                            .modal-footer
+                                                button.btn.btn-secondary(data-bs-dismiss='modal') Close
+                                                script.
+                                                    // Function to inject script into the iframe
+                                                    function injectScript(iframe, scriptContent) {
+                                                        var script = iframe.contentWindow.document.createElement('script');
+                                                        script.type = 'text/javascript';
+                                                        script.text = scriptContent;
+                                                        iframe.contentWindow.document.body.appendChild(script);
+                                                    }
+
+                                                    document.getElementById('playButton').addEventListener('click', function () {
+                                                        var iframe = document.getElementById('iframe-yabs');
+                                                        iframe.contentWindow.postMessage({ command: 'requestFullscreen' }, '*');
+                                                    });
+
+                                                    window.addEventListener('message', function (event) {
+                                                        if (event.data.command === 'fullscreenSuccess') {
+                                                            console.log('WebGL canvas is now fullscreen');
+                                                        } else if (event.data.command === 'fullscreenError') {
+                                                            console.error('Failed to go fullscreen:', event.data.error);
+                                                        }
+                                                    });
+
+                                                    document.getElementById('iframe-yabs').addEventListener('load', function() {
+                                                        var iframe = document.getElementById('iframe-yabs');
+                                                        var scriptContent = `
+                                                            (function() {
+                                                                function requestFullscreen(canvas) {
+                                                                    if (canvas.requestFullscreen) {
+                                                                        canvas.requestFullscreen();
+                                                                    } else if (canvas.mozRequestFullScreen) {
+                                                                        canvas.mozRequestFullScreen();
+                                                                    } else if (canvas.webkitRequestFullscreen) {
+                                                                        canvas.webkitRequestFullscreen();
+                                                                    } else if (canvas.msRequestFullscreen) {
+                                                                        canvas.msRequestFullscreen();
+                                                                    }
+                                                                }
+
+                                                                // Listen for fullscreen change events
+                                                                function onFullscreenChange() {
+                                                                    if (!document.fullscreenElement &&
+                                                                        !document.mozFullScreenElement &&
+                                                                        !document.webkitFullscreenElement &&
+                                                                        !document.msFullscreenElement) {
+                                                                        // Fullscreen exited
+                                                                        window.parent.postMessage({ command: 'fullscreenExited' }, '*');
+                                                                    }
+                                                                }
+
+                                                                window.addEventListener('message', function(event) {
+                                                                    if (event.data.command === 'requestFullscreen') {
+                                                                        var canvas = document.querySelector('canvas');
+                                                                        try {
+                                                                            requestFullscreen(canvas);
+                                                                            event.source.postMessage({ command: 'fullscreenSuccess' }, event.origin);
+                                                                        } catch (error) {
+                                                                            event.source.postMessage({ command: 'fullscreenError', error: error.message }, event.origin);
+                                                                        }
+                                                                    }
+                                                                });
+
+                                                                // Add fullscreen change event listeners
+                                                                document.addEventListener('fullscreenchange', onFullscreenChange);
+                                                                document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+                                                                document.addEventListener('mozfullscreenchange', onFullscreenChange);
+                                                                document.addEventListener('MSFullscreenChange', onFullscreenChange);
+                                                            })();
+                                                        `;
+                                                        injectScript(iframe, scriptContent);
+                                                    });
+
+                                                    // Event listener for exiting fullscreen
+                                                    window.addEventListener('message', function (event) {
+                                                        if (event.data.command === 'fullscreenExited') {
+                                                            var iframe = document.getElementById('iframe-yabs');
+                                                            iframe.contentWindow.location.reload();
+                                                        }
+                                                    });
+
+
+
+
                             // Project Card 4
                             a(href='https://github.com/ficho12/UE5-Custom-Editor-Tools',  style='text-decoration: none; color: black;')
                                 .card.overflow-hidden.shadow.rounded-4.border-0.mb-5

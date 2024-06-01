@@ -24,3 +24,49 @@
     text-decoration: none;
     color: black;
 }
+
+.iframe-hidden {
+    display: none;
+}
+
+.modal-xxl {
+    max-width: 90%;
+}
+.custom-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+.custom-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+}
+
+.btn-sm-custom {
+    padding: 0.5rem 1rem; /* Adjust padding as necessary */
+    font-size: 1rem; /* Adjust font size as necessary */
+    display: block;
+    margin: 0 auto;
+}
+
+.img-fluid-custom {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem; /* Adjust margin as necessary */
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}

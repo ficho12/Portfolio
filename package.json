@@ -37,6 +37,10 @@
     },
     "dependencies": {
         "bootstrap": "5.2.3",
+        "express": "^4.19.2",
+        "express-static-gzip": "^2.1.7",
+        "http-proxy-middleware": "^3.0.0",
+        "node-fetch": "^3.3.2",
         "npm": "^10.1.0"
     },
     "devDependencies": {
