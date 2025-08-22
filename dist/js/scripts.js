@@ -3,43 +3,51 @@
 * Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
 */
-// Check if running in a Node.js environment
-if (typeof window === 'undefined') {
-    const createServer = require('./server');
-    const compressionMiddleware = require('compression')({ brotli: true });
-    const serve = require('serve-static')('Build', { index: ['index.html'] });
+// Import i18n functionality
+import { changeLanguage, getCurrentLanguage } from './i18n.js';
 
-    createServer(compressionMiddleware, serve, 3000);
-} else {
-    // Browser environment - initialize i18n and UI functionality
-    import('./i18n.js').then(({ changeLanguage, getCurrentLanguage }) => {
-        // Language switcher functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add language change event listeners
-            const languageLinks = document.querySelectorAll('[data-lang]');
-            languageLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const lang = e.target.closest('[data-lang]').getAttribute('data-lang');
-                    changeLanguage(lang);
-                    
-                    // Update active language in dropdown
-                    updateActiveLanguage(lang);
-                });
+console.log('Scripts.js loaded');
+
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing language switcher');
+    
+    // Find all language links
+    const languageLinks = document.querySelectorAll('[data-lang]');
+    console.log('Found language links:', languageLinks.length);
+    
+    // Add click event listeners to language links
+    languageLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Language link clicked');
+            
+            const selectedLang = this.getAttribute('data-lang');
+            console.log('Selected language:', selectedLang);
+            
+            // Change language
+            changeLanguage(selectedLang).then(() => {
+                console.log('Language changed successfully to:', selectedLang);
+                updateActiveLanguage(selectedLang);
+            }).catch(error => {
+                console.error('Error changing language:', error);
             });
-
-            // Set initial active language
-            updateActiveLanguage(getCurrentLanguage());
         });
+    });
+    
+    // Set initial active language
+    const currentLang = getCurrentLanguage();
+    console.log('Current language:', currentLang);
+    updateActiveLanguage(currentLang);
+});
 
-        function updateActiveLanguage(lang) {
-            const languageLinks = document.querySelectorAll('[data-lang]');
-            languageLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-lang') === lang) {
-                    link.classList.add('active');
-                }
-            });
+function updateActiveLanguage(lang) {
+    console.log('Updating active language to:', lang);
+    const languageLinks = document.querySelectorAll('[data-lang]');
+    languageLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('data-lang') === lang) {
+            link.classList.add('active');
         }
     });
 }

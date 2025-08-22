@@ -1,6 +1,5 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-http-backend';
 
 // Translation files
 import enTranslation from '../locales/en/translation.json';
@@ -20,13 +19,12 @@ const resources = {
 };
 
 i18next
-  .use(Backend)
   .use(LanguageDetector)
   .init({
     resources,
     fallbackLng: 'en',
     lng: localStorage.getItem('selectedLanguage') || 'en',
-    debug: false,
+    debug: true,
     
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
@@ -41,17 +39,25 @@ i18next
 
 // Function to translate text
 export function t(key, options = {}) {
+  if (!i18next.isInitialized) {
+    return key;
+  }
   return i18next.t(key, options);
 }
 
 // Function to change language
 export function changeLanguage(lng) {
+  console.log('changeLanguage called with:', lng);
   return new Promise((resolve) => {
     i18next.changeLanguage(lng, (err, t) => {
+      console.log('i18next.changeLanguage callback - err:', err, 'language:', lng);
       if (!err) {
         localStorage.setItem('selectedLanguage', lng);
         updatePageContent();
         updateHtmlLang(lng);
+        console.log('Language change completed successfully');
+      } else {
+        console.error('Error changing language:', err);
       }
       resolve(t);
     });
@@ -70,6 +76,7 @@ function updateHtmlLang(lng) {
 
 // Function to update all translatable content on the page
 function updatePageContent() {
+  console.log('updatePageContent called');
   // Update meta tags
   document.title = t('meta.title');
   const metaDescription = document.querySelector('meta[name="description"]');
@@ -79,9 +86,11 @@ function updatePageContent() {
 
   // Update all elements with data-i18n attribute
   const elements = document.querySelectorAll('[data-i18n]');
+  console.log('Found elements to translate:', elements.length);
   elements.forEach(element => {
     const key = element.getAttribute('data-i18n');
     const translation = t(key);
+    console.log('Translating', key, 'to:', translation);
     
     if (element.tagName === 'INPUT' && (element.type === 'submit' || element.type === 'button')) {
       element.value = translation;
@@ -112,9 +121,23 @@ function updatePageContent() {
 
 // Initialize content on page load
 document.addEventListener('DOMContentLoaded', () => {
-  updatePageContent();
-  updateHtmlLang(getCurrentLanguage());
+  console.log('i18n DOMContentLoaded event fired');
+  // Wait for i18next to be ready
+  i18next.on('initialized', () => {
+    console.log('i18next initialized event fired');
+    updatePageContent();
+    updateHtmlLang(getCurrentLanguage());
+  });
+  
+  // If already initialized, update immediately
+  if (i18next.isInitialized) {
+    console.log('i18next already initialized');
+    updatePageContent();
+    updateHtmlLang(getCurrentLanguage());
+  }
 });
+
+console.log('i18n.js module loaded');
 
 // Listen for language changes
 i18next.on('languageChanged', (lng) => {
