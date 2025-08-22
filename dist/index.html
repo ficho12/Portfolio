@@ -62,7 +62,51 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <div class="hero-image text-center"><img class="img-fluid rounded-circle shadow-lg" src="assets/profile.png" alt="Fiz Rey Armesto" style="max-width: 350px" /></div>
+                        <div class="hero-image text-center position-relative" id="profileContainer">
+                            <div class="profile-photo position-relative">
+                                <img class="img-fluid rounded-circle shadow-lg" id="profileImage" src="assets/profile.png" alt="Fiz Rey Armesto" style="max-width: 350px" />
+                                <div class="pong-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center rounded-circle">
+                                    <div class="play-text text-white fw-bold fs-4">
+                                        <i class="bi bi-controller me-2"></i>
+                                        <span>Play Pong!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pong-game position-absolute top-50 start-50 translate-middle" style="display: none">
+                                <canvas id="pongCanvas" width="400" height="300"></canvas>
+                                <div class="pong-ui position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between pointer-events-none">
+                                    <div class="score-board d-flex justify-content-between p-3">
+                                        <div class="player-score text-white fw-bold fs-3">
+                                            <span>You:</span>
+                                            <span id="playerScore">0</span>
+                                        </div>
+                                        <div class="cpu-score text-white fw-bold fs-3">
+                                            <span>CPU:</span>
+                                            <span id="cpuScore">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="game-status text-center p-3">
+                                        <div class="game-message text-white fw-bold fs-5" id="gameMessage">Click to Start!</div>
+                                        <div class="controls-hint text-white-50 small">Use W/S or Arrow Keys to move</div>
+                                    </div>
+                                </div>
+                                <div class="game-over-screen position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="display: none">
+                                    <div class="game-result text-center p-4 bg-dark bg-opacity-75 rounded text-white">
+                                        <h3 class="mb-3" id="gameResult"></h3>
+                                        <p class="mb-3">
+                                            Final Score:
+                                            <span id="finalPlayerScore"></span>
+                                            -
+                                            <span id="finalCpuScore"></span>
+                                        </p>
+                                        <div class="d-flex gap-3 justify-content-center">
+                                            <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+                                            <button class="btn btn-secondary" id="backToPhotoBtn">Back to Photo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="hero-content">
@@ -383,14 +427,18 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="project-card" data-project="noche">
+                                <div class="project-card video-project" data-project="noche" data-video="LFEfY4HfkQ0">
                                     <div class="card border-0 shadow-sm h-100">
                                         <div class="project-media position-relative overflow-hidden">
                                             <div class="project-image"><img class="img-fluid" src="assets/noche.jpg" alt="Noche Horror Game" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
                                             <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                                 <div class="overlay-content text-center text-white">
-                                                    <i class="bi bi-moon-stars-fill fs-1 mb-2"></i>
-                                                    <p>Horror Game Jam</p>
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Watch Trailer</p>
                                                 </div>
                                             </div>
                                         </div>

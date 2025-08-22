@@ -11644,13 +11644,76 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .hero {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
-.hero .hero-image img {
+.hero .hero-image #profileContainer {
+  max-width: 350px;
+  margin: 0 auto;
+}
+.hero .hero-image #profileContainer .profile-photo {
+  transition: all 0.3s ease;
+}
+.hero .hero-image #profileContainer .profile-photo img {
   border: 5px solid #ffffff;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
-.hero .hero-image img:hover {
+.hero .hero-image #profileContainer .profile-photo .pong-overlay {
+  background: rgba(52, 152, 219, 0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  pointer-events: auto;
+}
+.hero .hero-image #profileContainer .profile-photo .pong-overlay .play-text {
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.hero .hero-image #profileContainer .profile-photo .pong-overlay .play-text i {
+  animation: bounceController 2s infinite;
+}
+.hero .hero-image #profileContainer .profile-photo:hover .pong-overlay {
+  opacity: 1;
+}
+.hero .hero-image #profileContainer .profile-photo:hover .pong-overlay .play-text {
+  transform: translateY(0);
+}
+.hero .hero-image #profileContainer .profile-photo:hover img {
   transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+}
+.hero .hero-image #profileContainer .pong-game {
+  width: 400px;
+  height: 300px;
+  background: #000;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 3px solid #3498db;
+  overflow: hidden;
+}
+.hero .hero-image #profileContainer .pong-game #pongCanvas {
+  background: #000;
+  border-radius: 12px;
+}
+.hero .hero-image #profileContainer .pong-game .pong-ui {
+  pointer-events: none;
+}
+.hero .hero-image #profileContainer .pong-game .pong-ui .score-board {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+.hero .hero-image #profileContainer .pong-game .pong-ui .game-status {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+.hero .hero-image #profileContainer .pong-game .game-over-screen {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+.hero .hero-image #profileContainer .pong-game .game-over-screen .game-result {
+  border: 2px solid #3498db;
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
 }
 .hero .social-links a {
   transition: color 0.3s ease, transform 0.3s ease;
@@ -11660,6 +11723,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   transform: translateY(-2px);
 }
 
+@keyframes bounceController {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
 .btn {
   border-radius: 8px;
   font-weight: 500;
@@ -11761,6 +11835,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .project-card .project-media .project-image {
   height: 100%;
   overflow: hidden;
+  transition: opacity 0.3s ease;
 }
 .project-card .project-media .project-image img {
   width: 100%;
@@ -11803,6 +11878,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .project-card.playable-game:hover .card {
   border: 2px solid #28a745;
+}
+.project-card.video-project .project-overlay {
+  background: rgba(155, 89, 182, 0.9);
+  transition: opacity 0.3s ease;
+}
+.project-card.video-project .project-overlay .overlay-content i {
+  animation: pulse 2s infinite;
+}
+.project-card.video-project .video-container {
+  z-index: 10;
+}
+.project-card.video-project .video-container iframe {
+  border: none;
+}
+.project-card.video-project .video-container .video-close {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.project-card.video-project .video-container .video-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+.project-card.video-project .video-container .video-close i {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.project-card.video-project.video-playing .project-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+.project-card.video-project.video-playing .video-container {
+  display: block !important;
+}
+.project-card.video-project.video-playing .project-image {
+  opacity: 0;
+}
+.project-card.video-project:hover .card {
+  border: 2px solid #9b59b6;
 }
 .project-card[data-project=beeShowcase] .project-overlay, .project-card[data-project=eyeflow] .project-overlay, .project-card[data-project=renfeSimulator] .project-overlay {
   background: rgba(52, 152, 219, 0.9);
