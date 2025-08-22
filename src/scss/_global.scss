@@ -27,6 +27,11 @@ html {
   color: #5a6c7d;
 }
 
+// Override lead color in contact section to inherit white text
+#contact .lead {
+  color: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
