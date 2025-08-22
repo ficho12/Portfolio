@@ -26,57 +26,62 @@ html(lang='en')
             section.py-5
                 .container.px-5.mb-5
                     .text-center.mb-5
-                        h1.display-5.fw-bolder.mb-0
-                            span.text-gradient.d-inline Projects
-                    .row.gx-5.justify-content-center
+                        h1.display-4.fw-bold.mb-4 Projects
+                        p.lead.text-muted A collection of my work in VR, game development, and software engineering.
+                    .row.g-4.justify-content-center
 
-                        .col-lg-11.col-xl-9.col-xxl-8
+                        .col-lg-10
 
                             // Project Card 1
-                            a(href='https://ficho12.itch.io/o-candil',  style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
-                                    .card-body.p-0
-                                        .d-flex.align-items-center
-                                            .p-5 
-                                                h2.fw-bolder VRSurvival
-                                                p Development of a VR multiplayer videogame using Unreal Engine 5 within the VRExpansionPlugin framework.
-                                            img.img-fluid(src='assets/Shot300x400.png', alt='...' )
+                            a(href='https://ficho12.itch.io/o-candil',  style='text-decoration: none; color: inherit;')
+                                .card.border-0.mb-4
+                                    .card-body.p-4
+                                        .row.align-items-center
+                                            .col-md-8
+                                                h3.fw-bold.mb-3 VRSurvival
+                                                p.text-muted.mb-0 Development of a VR multiplayer videogame using Unreal Engine 5 within the VRExpansionPlugin framework.
+                                            .col-md-4.text-end
+                                                img.img-fluid.rounded(src='assets/Shot300x400.png', alt='VRSurvival', style='max-height: 120px; object-fit: cover;')
+                                                
                             // Project Card 2 
-                            a(href='https://ficho12.itch.io/la-noche',  style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
-                                    .card-body.p-0
-                                        .d-flex.align-items-center
-                                            .p-5
-                                                h2.fw-bolder Noche - Indie Spain Jam 2023
-                                                p Lead Programmer, Unreal Engine 5
-                                            img.img-fluid(src='assets/noche.jpg', alt='...')
+                            a(href='https://ficho12.itch.io/la-noche',  style='text-decoration: none; color: inherit;')
+                                .card.border-0.mb-4
+                                    .card-body.p-4
+                                        .row.align-items-center
+                                            .col-md-8
+                                                h3.fw-bold.mb-3 Noche - Indie Spain Jam 2023
+                                                p.text-muted.mb-0 Lead Programmer, Unreal Engine 5
+                                            .col-md-4.text-end
+                                                img.img-fluid.rounded(src='assets/noche.jpg', alt='Noche', style='max-height: 120px; object-fit: cover;')
+                                                
                             // Project Card 3
-                            a(href='https://ldjam.com/events/ludum-dare/55/yabs', style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
-                                    .card-body.p-0
-                                        .d-flex.align-items-center
-                                            .p-5.flex-grow-1
-                                                .d-flex.flex-column
-                                                    h2.fw-bolder YABS - Ludum Dare 55
-                                                    p.mb-4 Game made in a weekend with Unity for the Ludum Dare Jam.
-                                                    .d-flex.justify-content-center.mt-4
-                                                        a#playButton.btn.btn-outline-dark.btn-lg.px-5.py-3.fs-6.fw-bolder(data-bs-toggle='modal', data-bs-target='#playModal', style='text-decoration: none;') Play
-                                            img.img-fluid(src='assets/yabs.jpg', alt='...')
+                            .card.border-0.mb-4
+                                .card-body.p-4
+                                    .row.align-items-center
+                                        .col-md-8
+                                            h3.fw-bold.mb-3 YABS - Ludum Dare 55
+                                            p.text-muted.mb-3 Game made in a weekend with Unity for the Ludum Dare Jam.
+                                            .d-flex.gap-3
+                                                button#playButton.btn.btn-primary(data-bs-toggle='modal', data-bs-target='#playModal') Play Game
+                                                a.btn.btn-outline-dark(href='https://ldjam.com/events/ludum-dare/55/yabs', target='_blank') View on Ludum Dare
+                                        .col-md-4.text-end
+                                            img.img-fluid.rounded(src='assets/yabs.jpg', alt='YABS', style='max-height: 120px; object-fit: cover;')
 
                             // Modal
                             #playModal.modal.fade(tabindex='-1', aria-labelledby='playModalLabel', aria-hidden='true', role='dialog')
                                 .modal-dialog.modal-dialog-centered.modal-xl
-                                    .modal-content
-                                        .modal-header.d-flex.align-items-center.justify-content-between
-                                            h2.text-center YABS
-                                            button#fullscreenButton.btn.btn-outline-dark.btn-lg 
-                                                i.bi.bi-arrows-fullscreen
-                                            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
-                                        .modal-body
+                                    .modal-content.border-0
+                                        .modal-header.border-0.d-flex.align-items-center.justify-content-between.p-4
+                                            h3.fw-bold.mb-0 YABS
+                                            .d-flex.gap-2
+                                                button#fullscreenButton.btn.btn-outline-dark 
+                                                    i.bi.bi-arrows-fullscreen
+                                                button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                        .modal-body.p-4
                                             .embed-responsive.embed-responsive-16by9.custom-embed
                                                 iframe.embed-responsive-item(src='', id='iframe-yabs', frameborder="0" 
                                                 allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no"
-                                                style='width: 100%; height: 100%; border: none;')
+                                                style='width: 100%; height: 500px; border: none; border-radius: 0.5rem;')
                                         script.
                                             // Define the injectScript function in the global scope
                                             function injectScript(iframe, scriptContent) {
@@ -169,30 +174,34 @@ html(lang='en')
                                             });
 
                             // Project Card 4
-                            a(href='https://github.com/ficho12/UE5-Custom-Editor-Tools',  style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
-                                    .card-body.p-0
-                                        .d-flex.align-items-center
-                                            .p-5
-                                                h2.fw-bolder UE5 Custom Editor Tools Course
-                                                p Source code for the tools.
-                                            img.image-fluid(src='assets/CustomEditor.png', alt='...')
+                            a(href='https://github.com/ficho12/UE5-Custom-Editor-Tools',  style='text-decoration: none; color: inherit;')
+                                .card.border-0.mb-4
+                                    .card-body.p-4
+                                        .row.align-items-center
+                                            .col-md-8
+                                                h3.fw-bold.mb-3 UE5 Custom Editor Tools Course
+                                                p.text-muted.mb-0 Source code for the tools.
+                                            .col-md-4.text-end
+                                                img.img-fluid.rounded(src='assets/CustomEditor.png', alt='Custom Editor', style='max-height: 120px; object-fit: cover;')
+                                                
                             // Project Card 5
-                            a(href='https://github.com/ficho12/EndlessRunner',  style='text-decoration: none; color: black;')
-                                .card.overflow-hidden.shadow.rounded-4.border-0.mb-5
-                                    .card-body.p-0
-                                        .d-flex.align-items-center
-                                            .p-5
-                                                h2.fw-bolder Endless Runner
-                                                p Game made with Unity as an asigment for an interview
-                                            img.image-fluid(src='assets/EndlessRunner.png', alt='...')
+                            a(href='https://github.com/ficho12/EndlessRunner',  style='text-decoration: none; color: inherit;')
+                                .card.border-0.mb-4
+                                    .card-body.p-4
+                                        .row.align-items-center
+                                            .col-md-8
+                                                h3.fw-bold.mb-3 Endless Runner
+                                                p.text-muted.mb-0 Game made with Unity as an assignment for an interview
+                                            .col-md-4.text-end
+                                                img.img-fluid.rounded(src='assets/EndlessRunner.png', alt='Endless Runner', style='max-height: 120px; object-fit: cover;')
 
             // Call to action section
-            section.py-5.bg-gradient-primary-to-secondary.text-white
+            section.bg-dark.text-white.py-5
                 .container.px-5.my-5
                     .text-center
-                        h2.display-4.fw-bolder.mb-4 Let's build something together
-                        a.btn.btn-outline-light.btn-lg.px-5.py-3.fs-6.fw-bolder(href='mailto:fizreyarmesto@gmail.com') Contact me
+                        h2.display-5.fw-bold.mb-4 Let's build something together
+                        p.lead.mb-4 Interested in collaborating? Let's discuss your next project.
+                        a.btn.btn-light.btn-lg.px-4.py-3(href='mailto:fizreyarmesto@gmail.com') Contact me
 
         // Footer
         include includes/footer.pug

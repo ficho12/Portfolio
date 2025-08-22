@@ -1,0 +1,266 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='Fiz Rey Armesto - Ingeniero Informático y Desarrollador VR/AR. Especializado en Unity, Unreal Engine y experiencias inmersivas.')
+    meta(name='author', content='Fiz Rey Armesto')
+    title Fiz Rey Armesto - Ingeniero Informático y Desarrollador VR/AR
+    // Favicon
+    link(rel='icon', type='image/x-icon', href='assets/Ficon.ico')
+    include includes/css.pug
+
+  body
+    // Navigation
+    include includes/navbar_es.pug
+
+    // Hero Section
+    section.hero.min-vh-100.d-flex.align-items-center
+      .container
+        .row.align-items-center
+          .col-lg-6.order-lg-2
+            .hero-image.text-center
+              img.img-fluid.rounded-circle.shadow-lg(src='assets/profile.png', alt='Fiz Rey Armesto', style='max-width: 350px;')
+          .col-lg-6.order-lg-1
+            .hero-content
+              h1.display-4.fw-bold.mb-4
+                | Hola, soy 
+                span.text-primary Fiz Rey Armesto
+              h2.h4.text-muted.mb-4 Ingeniero Informático y Desarrollador VR/AR
+              p.lead.mb-4 Creo experiencias inmersivas usando Unity y Unreal Engine, especializándome en desarrollo VR y soluciones interactivas innovadoras.
+              .d-flex.gap-3.mb-4
+                a.btn.btn-primary.btn-lg(href='#projects') Ver Mi Trabajo
+                a.btn.btn-outline-primary.btn-lg(href='#contact') Contactar
+              .social-links.d-flex.gap-3
+                a.text-muted.fs-4(href='https://www.linkedin.com/in/fizrey/', target='_blank', title='LinkedIn')
+                  i.bi.bi-linkedin
+                a.text-muted.fs-4(href='https://github.com/ficho12', target='_blank', title='GitHub')
+                  i.bi.bi-github
+                a.text-muted.fs-4(href='https://twitter.com/fichodev', target='_blank', title='Twitter')
+                  i.bi.bi-twitter
+
+    // About Section
+    section#about.py-5.bg-light
+      .container
+        .row.justify-content-center
+          .col-lg-8.text-center
+            h2.h1.fw-bold.mb-4 Sobre Mí
+            p.lead.mb-4 
+              | Soy Ingeniero Informático con pasión por crear experiencias digitales inmersivas. 
+              | Mi experiencia se centra en el desarrollo VR/AR, programación de juegos y tecnologías interactivas de vanguardia.
+            .row.g-4.mt-4
+              .col-md-4
+                .feature-card.text-center.p-4
+                  .feature-icon.mb-3
+                    i.bi.bi-code-slash.fs-1.text-primary
+                  h4 Desarrollo
+                  p Unity, Unreal Engine, C#, C++, JavaScript
+              .col-md-4
+                .feature-card.text-center.p-4
+                  .feature-icon.mb-3
+                    i.bi.bi-headset-vr.fs-1.text-primary
+                  h4 VR/AR
+                  p Experiencias inmersivas, videojuegos VR, aplicaciones AR
+              .col-md-4
+                .feature-card.text-center.p-4
+                  .feature-icon.mb-3
+                    i.bi.bi-laptop.fs-1.text-primary
+                  h4 Ingeniería
+                  p Arquitectura de software, diseño de sistemas, optimización
+
+    // Experience Section
+    section#experience.py-5
+      .container
+        .row.justify-content-center
+          .col-lg-10
+            h2.h1.fw-bold.text-center.mb-5 Experiencia Profesional
+            .row.g-4
+              .col-lg-6
+                .experience-card.h-100
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      h4.fw-bold AR Soft
+                      p.text-primary.mb-2 Desarrollador VR/AR
+                      p.text-muted.small.mb-3 Posición Actual
+                      p Desarrollando aplicaciones VR y AR de vanguardia, trabajando en experiencias inmersivas y soluciones interactivas para diversas industrias.
+              .col-lg-6
+                .experience-card.h-100
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      h4.fw-bold Desarrollador Freelance
+                      p.text-primary.mb-2 Desarrollador de Videojuegos
+                      p.text-muted.small.mb-3 2020 - Presente
+                      p Creando videojuegos independientes y experiencias VR, participando en game jams y desarrollando soluciones personalizadas para clientes.
+
+    // Projects Section
+    section#projects.py-5.bg-light
+      .container
+        .row.justify-content-center
+          .col-lg-10
+            h2.h1.fw-bold.text-center.mb-5 Proyectos Destacados
+            .row.g-4
+              // Work Projects
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-primary.mb-2 Profesional
+                      h4.fw-bold.mb-3 Bee Showcase (Miel 79)
+                      p.text-muted.mb-3 Experiencia VR interactiva que muestra la conservación de abejas y procesos de producción de miel.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unity
+                        span.badge.bg-light.text-dark.me-2 VR
+                        span.badge.bg-light.text-dark C#
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-primary.mb-2 Profesional
+                      h4.fw-bold.mb-3 Eyeflow
+                      p.text-muted.mb-3 Aplicación VR avanzada de seguimiento ocular para aplicaciones médicas y de investigación.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unreal Engine
+                        span.badge.bg-light.text-dark.me-2 VR
+                        span.badge.bg-light.text-dark C++
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-primary.mb-2 Profesional
+                      h4.fw-bold.mb-3 Simulador VR Maquinista Renfe
+                      p.text-muted.mb-3 Simulador VR profesional de entrenamiento para operadores de trenes, proporcionando escenarios operacionales realistas.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unreal Engine
+                        span.badge.bg-light.text-dark.me-2 VR
+                        span.badge.bg-light.text-dark Simulación
+              // Personal Projects
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-success.mb-2 Personal
+                      h4.fw-bold.mb-3 VRSurvival
+                      p.text-muted.mb-3 Juego VR multijugador de supervivencia desarrollado con Unreal Engine 5 y VRExpansionPlugin.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unreal Engine 5
+                        span.badge.bg-light.text-dark.me-2 VR
+                        span.badge.bg-light.text-dark Multijugador
+                      a.btn.btn-outline-primary.btn-sm(href='https://ficho12.itch.io/o-candil', target='_blank') Ver Proyecto
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-warning.mb-2 Game Jam
+                      h4.fw-bold.mb-3 YABS - Ludum Dare 55
+                      p.text-muted.mb-3 Juego creado en 48 horas para la game jam Ludum Dare, mostrando habilidades de prototipado rápido.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unity
+                        span.badge.bg-light.text-dark.me-2 C#
+                        span.badge.bg-light.text-dark 48h
+                      .d-flex.gap-2
+                        button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#yabsModal') Jugar
+                        a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/55/yabs', target='_blank') Ludum Dare
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-warning.mb-2 Game Jam
+                      h4.fw-bold.mb-3 Noche - Indie Spain Jam 2023
+                      p.text-muted.mb-3 Rol de Programador Principal en la game jam española indie, creando experiencia de terror atmosférica.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unreal Engine 5
+                        span.badge.bg-light.text-dark.me-2 Programación Principal
+                        span.badge.bg-light.text-dark Terror
+                      a.btn.btn-outline-primary.btn-sm(href='https://ficho12.itch.io/la-noche', target='_blank') Ver Proyecto
+
+    // YABS Game Modal
+    #yabsModal.modal.fade(tabindex='-1', aria-hidden='true')
+      .modal-dialog.modal-xl
+        .modal-content
+          .modal-header
+            h5.modal-title YABS - Ludum Dare 55
+            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Cerrar')
+          .modal-body.p-0
+            iframe#yabsFrame(src='', style='width: 100%; height: 600px; border: none;')
+          script.
+            document.getElementById('yabsModal').addEventListener('show.bs.modal', function() {
+              document.getElementById('yabsFrame').src = 'assets/yabs/index.html';
+            });
+            document.getElementById('yabsModal').addEventListener('hide.bs.modal', function() {
+              document.getElementById('yabsFrame').src = '';
+            });
+
+    // Skills Section
+    section#skills.py-5
+      .container
+        .row.justify-content-center
+          .col-lg-10
+            h2.h1.fw-bold.text-center.mb-5 Habilidades Técnicas
+            .row.g-4
+              .col-lg-3.col-md-6
+                .skill-category.text-center
+                  h4.fw-bold.mb-3 Motores de Juego
+                  ul.list-unstyled
+                    li.mb-2 Unity 3D
+                    li.mb-2 Unreal Engine 4/5
+                    li.mb-2 VRExpansionPlugin
+              .col-lg-3.col-md-6
+                .skill-category.text-center
+                  h4.fw-bold.mb-3 Programación
+                  ul.list-unstyled
+                    li.mb-2 C# .NET
+                    li.mb-2 C++
+                    li.mb-2 JavaScript
+                    li.mb-2 Python
+              .col-lg-3.col-md-6
+                .skill-category.text-center
+                  h4.fw-bold.mb-3 VR/AR
+                  ul.list-unstyled
+                    li.mb-2 Oculus SDK
+                    li.mb-2 OpenXR
+                    li.mb-2 SteamVR
+                    li.mb-2 Seguimiento de Manos
+              .col-lg-3.col-md-6
+                .skill-category.text-center
+                  h4.fw-bold.mb-3 Herramientas y Tecnología
+                  ul.list-unstyled
+                    li.mb-2 Git / Control de Versiones
+                    li.mb-2 Blender
+                    li.mb-2 Photoshop
+                    li.mb-2 Desarrollo Ágil
+
+    // Contact Section
+    section#contact.py-5.bg-primary.text-white
+      .container
+        .row.justify-content-center
+          .col-lg-8.text-center
+            h2.h1.fw-bold.mb-4 Trabajemos Juntos
+            p.lead.mb-4 
+              | Siempre estoy interesado en nuevas oportunidades y proyectos emocionantes. 
+              | Ya sea que necesites desarrollo VR, programación de juegos o consultoría técnica, ¡conectemos!
+            .row.g-4.mt-4
+              .col-md-4
+                .contact-item
+                  i.bi.bi-envelope.fs-2.mb-3
+                  h5 Email
+                  a.text-white(href='mailto:fizreyarmesto@gmail.com') fizreyarmesto@gmail.com
+              .col-md-4
+                .contact-item
+                  i.bi.bi-linkedin.fs-2.mb-3
+                  h5 LinkedIn
+                  a.text-white(href='https://www.linkedin.com/in/fizrey/', target='_blank') /in/fizrey
+              .col-md-4
+                .contact-item
+                  i.bi.bi-github.fs-2.mb-3
+                  h5 GitHub
+                  a.text-white(href='https://github.com/ficho12', target='_blank') /ficho12
+
+    // Footer
+    include includes/footer_es.pug
+    include includes/scripts.pug

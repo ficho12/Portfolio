@@ -8,10 +8,10 @@
         <title>Projects - Fiz Rey Armesto</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/Ficon.ico" />
-        <!-- Custom Google font-->
+        <!-- Clean, minimalist Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -20,21 +20,38 @@
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Fiz Rey Armesto</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bold text-dark">Fiz Rey Armesto</span></a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="mailto:fizreyarmesto@gmail.com">Contact</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index_es.html"><img src="assets/Spanish-flag.png" alt="Spanish Flag" width="20" height="20" /></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index_gl.html"><img src="assets/GL-flag.png" alt="Galician Flag" width="18" height="18" /></a>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+                            <li class="nav-item"><a class="nav-link text-dark px-3" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark px-3" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark px-3" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark px-3" href="mailto:fizreyarmesto@gmail.com">Contact</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-globe"></i></a>
+                                <ul class="dropdown-menu border-0 shadow">
+                                    <li>
+                                        <a class="dropdown-item" href="index.html">
+                                            <img class="me-2" src="assets/UK-flag.png" alt="English" width="16" height="16" />
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="index_es.html">
+                                            <img class="me-2" src="assets/Spanish-flag.png" alt="Spanish" width="16" height="16" />
+                                            Español
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="index_gl.html">
+                                            <img class="me-2" src="assets/GL-flag.png" alt="Galician" width="16" height="16" />
+                                            Galego
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -44,66 +61,68 @@
             <section class="py-5">
                 <div class="container px-5 mb-5">
                     <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+                        <h1 class="display-4 fw-bold mb-4">Projects</h1>
+                        <p class="lead text-muted">A collection of my work in VR, game development, and software engineering.</p>
                     </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-10">
                             <!-- Project Card 1-->
-                            <a href="https://ficho12.itch.io/o-candil" style="text-decoration: none; color: black">
-                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
-                                                <h2 class="fw-bolder">VRSurvival</h2>
-                                                <p>Development of a VR multiplayer videogame using Unreal Engine 5 within the VRExpansionPlugin framework.</p>
+                            <a href="https://ficho12.itch.io/o-candil" style="text-decoration: none; color: inherit">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8">
+                                                <h3 class="fw-bold mb-3">VRSurvival</h3>
+                                                <p class="text-muted mb-0">Development of a VR multiplayer videogame using Unreal Engine 5 within the VRExpansionPlugin framework.</p>
                                             </div>
-                                            <img class="img-fluid" src="assets/Shot300x400.png" alt="..." />
+                                            <div class="col-md-4 text-end"><img class="img-fluid rounded" src="assets/Shot300x400.png" alt="VRSurvival" style="max-height: 120px; object-fit: cover" /></div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                             <!-- Project Card 2 -->
-                            <a href="https://ficho12.itch.io/la-noche" style="text-decoration: none; color: black">
-                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
-                                                <h2 class="fw-bolder">Noche - Indie Spain Jam 2023</h2>
-                                                <p>Lead Programmer, Unreal Engine 5</p>
+                            <a href="https://ficho12.itch.io/la-noche" style="text-decoration: none; color: inherit">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8">
+                                                <h3 class="fw-bold mb-3">Noche - Indie Spain Jam 2023</h3>
+                                                <p class="text-muted mb-0">Lead Programmer, Unreal Engine 5</p>
                                             </div>
-                                            <img class="img-fluid" src="assets/noche.jpg" alt="..." />
+                                            <div class="col-md-4 text-end"><img class="img-fluid rounded" src="assets/noche.jpg" alt="Noche" style="max-height: 120px; object-fit: cover" /></div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                             <!-- Project Card 3-->
-                            <a href="https://ldjam.com/events/ludum-dare/55/yabs" style="text-decoration: none; color: black">
-                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5 flex-grow-1">
-                                                <div class="d-flex flex-column">
-                                                    <h2 class="fw-bolder">YABS - Ludum Dare 55</h2>
-                                                    <p class="mb-4">Game made in a weekend with Unity for the Ludum Dare Jam.</p>
-                                                    <div class="d-flex justify-content-center mt-4"><a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" id="playButton" data-bs-toggle="modal" data-bs-target="#playModal" style="text-decoration: none">Play</a></div>
-                                                </div>
+                            <div class="card border-0 mb-4">
+                                <div class="card-body p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <h3 class="fw-bold mb-3">YABS - Ludum Dare 55</h3>
+                                            <p class="text-muted mb-3">Game made in a weekend with Unity for the Ludum Dare Jam.</p>
+                                            <div class="d-flex gap-3">
+                                                <button class="btn btn-primary" id="playButton" data-bs-toggle="modal" data-bs-target="#playModal">Play Game</button>
+                                                <a class="btn btn-outline-dark" href="https://ldjam.com/events/ludum-dare/55/yabs" target="_blank">View on Ludum Dare</a>
                                             </div>
-                                            <img class="img-fluid" src="assets/yabs.jpg" alt="..." />
                                         </div>
+                                        <div class="col-md-4 text-end"><img class="img-fluid rounded" src="assets/yabs.jpg" alt="YABS" style="max-height: 120px; object-fit: cover" /></div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                             <!-- Modal-->
                             <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalLabel" aria-hidden="true" role="dialog">
                                 <div class="modal-dialog modal-dialog-centered modal-xl">
-                                    <div class="modal-content">
-                                        <div class="modal-header d-flex align-items-center justify-content-between">
-                                            <h2 class="text-center">YABS</h2>
-                                            <button class="btn btn-outline-dark btn-lg" id="fullscreenButton"><i class="bi bi-arrows-fullscreen"></i></button>
-                                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-content border-0">
+                                        <div class="modal-header border-0 d-flex align-items-center justify-content-between p-4">
+                                            <h3 class="fw-bold mb-0">YABS</h3>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-outline-dark" id="fullscreenButton"><i class="bi bi-arrows-fullscreen"></i></button>
+                                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="embed-responsive embed-responsive-16by9 custom-embed"><iframe class="embed-responsive-item" src="" id="iframe-yabs" frameborder="0" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no" style="width: 100%; height: 100%; border: none"></iframe></div>
+                                        <div class="modal-body p-4">
+                                            <div class="embed-responsive embed-responsive-16by9 custom-embed"><iframe class="embed-responsive-item" src="" id="iframe-yabs" frameborder="0" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated" scrolling="no" style="width: 100%; height: 500px; border: none; border-radius: 0.5rem"></iframe></div>
                                         </div>
                                         <script>
                                             // Define the injectScript function in the global scope
@@ -200,29 +219,29 @@
                                 </div>
                             </div>
                             <!-- Project Card 4-->
-                            <a href="https://github.com/ficho12/UE5-Custom-Editor-Tools" style="text-decoration: none; color: black">
-                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
-                                                <h2 class="fw-bolder">UE5 Custom Editor Tools Course</h2>
-                                                <p>Source code for the tools.</p>
+                            <a href="https://github.com/ficho12/UE5-Custom-Editor-Tools" style="text-decoration: none; color: inherit">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8">
+                                                <h3 class="fw-bold mb-3">UE5 Custom Editor Tools Course</h3>
+                                                <p class="text-muted mb-0">Source code for the tools.</p>
                                             </div>
-                                            <img class="image-fluid" src="assets/CustomEditor.png" alt="..." />
+                                            <div class="col-md-4 text-end"><img class="img-fluid rounded" src="assets/CustomEditor.png" alt="Custom Editor" style="max-height: 120px; object-fit: cover" /></div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                             <!-- Project Card 5-->
-                            <a href="https://github.com/ficho12/EndlessRunner" style="text-decoration: none; color: black">
-                                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
-                                                <h2 class="fw-bolder">Endless Runner</h2>
-                                                <p>Game made with Unity as an asigment for an interview</p>
+                            <a href="https://github.com/ficho12/EndlessRunner" style="text-decoration: none; color: inherit">
+                                <div class="card border-0 mb-4">
+                                    <div class="card-body p-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8">
+                                                <h3 class="fw-bold mb-3">Endless Runner</h3>
+                                                <p class="text-muted mb-0">Game made with Unity as an assignment for an interview</p>
                                             </div>
-                                            <img class="image-fluid" src="assets/EndlessRunner.png" alt="..." />
+                                            <div class="col-md-4 text-end"><img class="img-fluid rounded" src="assets/EndlessRunner.png" alt="Endless Runner" style="max-height: 120px; object-fit: cover" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -232,11 +251,12 @@
                 </div>
             </section>
             <!-- Call to action section-->
-            <section class="py-5 bg-gradient-primary-to-secondary text-white">
+            <section class="bg-dark text-white py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="mailto:fizreyarmesto@gmail.com">Contact me</a>
+                        <h2 class="display-5 fw-bold mb-4">Let's build something together</h2>
+                        <p class="lead mb-4">Interested in collaborating? Let's discuss your next project.</p>
+                        <a class="btn btn-light btn-lg px-4 py-3" href="mailto:fizreyarmesto@gmail.com">Contact me</a>
                     </div>
                 </div>
             </section>
