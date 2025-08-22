@@ -25,10 +25,11 @@
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
-                        <li class="nav-item"><a class="nav-link text-dark px-3" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark px-3" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark px-3" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark px-3" href="mailto:fizreyarmesto@gmail.com">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark px-3" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark px-3" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark px-3" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark px-3" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark px-3" href="#contact">Contact</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-globe"></i></a>
                             <ul class="dropdown-menu border-0 shadow">
@@ -73,7 +74,7 @@
                             <p class="lead mb-4">I create immersive experiences using Unity and Unreal Engine, specializing in VR development and innovative interactive solutions.</p>
                             <div class="d-flex gap-3 mb-4">
                                 <a class="btn btn-primary btn-lg" href="#projects">View My Work</a>
-                                <a class="btn btn-outline-primary btn-lg" href="#contact">Get In Touch</a>
+                                <a class="btn btn-outline-primary btn-lg" href="assets/CV_FIZREYARMESTO_ENG.pdf" download>Download Resume</a>
                             </div>
                             <div class="social-links d-flex gap-3">
                                 <a class="text-muted fs-4" href="https://www.linkedin.com/in/fizrey/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -124,30 +125,114 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h2 class="h1 fw-bold text-center mb-5">Professional Experience</h2>
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="experience-card h-100">
-                                    <div class="card border-0 shadow-sm h-100">
-                                        <div class="card-body p-4">
-                                            <h4 class="fw-bold">AR Soft</h4>
-                                            <p class="text-primary mb-2">VR/AR Developer</p>
-                                            <p class="text-muted small mb-3">Current Position</p>
-                                            <p>Developing cutting-edge VR and AR applications, working on immersive experiences and interactive solutions for various industries.</p>
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <h2 class="h1 fw-bold">Professional Experience</h2>
+                            <!-- Download resume button-->
+                            <a class="btn btn-primary px-4 py-3" href="assets/CV_FIZREYARMESTO_ENG.pdf" download>
+                                <div class="d-inline-block bi bi-download me-2"></div>
+                                Download Resume
+                            </a>
+                        </div>
+                        <!-- Experience Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Oct 2023 - Present</div>
+                                            <div class="small fw-bolder">Junior Programmer</div>
+                                            <div class="small text-muted">ARSOFT</div>
+                                            <div class="small text-muted">Salamanca, Spain</div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-8"><div>Creation of a railway driving simulator in Unity.</div></div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="experience-card h-100">
-                                    <div class="card border-0 shadow-sm h-100">
-                                        <div class="card-body p-4">
-                                            <h4 class="fw-bold">Freelance Developer</h4>
-                                            <p class="text-primary mb-2">Game Developer</p>
-                                            <p class="text-muted small mb-3">2020 - Present</p>
-                                            <p>Creating independent games and VR experiences, participating in game jams, and developing custom solutions for clients.</p>
+                        </div>
+                        <!-- Experience Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Feb - Apr 2023</div>
+                                            <div class="small fw-bolder">Unity Developer (Internship)</div>
+                                            <div class="small text-muted">ARSOFT</div>
+                                            <div class="small text-muted">Salamanca, Spain</div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-8"><div>Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section-->
+        <section class="py-5 bg-light" id="education">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5">Education</h2>
+                        <!-- Education Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2017 - 2023</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">Computer Engineering</div>
+                                                <div class="small text-muted">Universidad de Salamanca</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div>Thesis: Development of a multiplayer VR video game using Unreal Engine 5.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certificates Section-->
+        <section class="py-5" id="certificates">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5">Certificates</h2>
+                        <!-- Certificate Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Aug 2020</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">C1 Advanced</div>
+                                                <div class="small text-muted">Score 187</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div>Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Certificate Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Sept 2017</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">C Programming</div>
+                                                <div class="small text-muted">Basic level</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div>Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca.</div></div>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +241,7 @@
             </div>
         </section>
         <!-- Projects Section-->
-        <section class="py-5 bg-light" id="projects">
+        <section class="py-5" id="projects">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -266,6 +351,40 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-info mb-2">Learning</span></div>
+                                            <h4 class="fw-bold mb-3">UE5 Custom Editor Tools Course</h4>
+                                            <p class="text-muted mb-3">Source code for advanced Unreal Engine 5 editor tools and custom development workflows.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light text-dark me-2">C++</span>
+                                                <span class="badge bg-light text-dark">Editor Tools</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://github.com/ficho12/UE5-Custom-Editor-Tools" target="_blank">View on GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-secondary mb-2">Interview</span></div>
+                                            <h4 class="fw-bold mb-3">Endless Runner</h4>
+                                            <p class="text-muted mb-3">Game made with Unity as an assignment for an interview, demonstrating core game development skills.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unity</span>
+                                                <span class="badge bg-light text-dark me-2">C#</span>
+                                                <span class="badge bg-light text-dark">Mobile</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://github.com/ficho12/EndlessRunner" target="_blank">View on GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,53 +411,57 @@
             </div>
         </div>
         <!-- Skills Section-->
-        <section class="py-5" id="skills">
+        <section class="py-5 bg-light" id="skills">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <h2 class="h1 fw-bold text-center mb-5">Technical Skills</h2>
-                        <div class="row g-4">
-                            <div class="col-lg-3 col-md-6">
-                                <div class="skill-category text-center">
-                                    <h4 class="fw-bold mb-3">Game Engines</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2">Unity 3D</li>
-                                        <li class="mb-2">Unreal Engine 4/5</li>
-                                        <li class="mb-2">VRExpansionPlugin</li>
-                                    </ul>
+                        <!-- Skillset Card-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <!-- Professional skills list-->
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Unreal Engine</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Unity</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Git</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SQL / NoSQL</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Linux (deb)</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Eclipse / Visual Studio</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Scrum / Jira</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Photoshop / Lightroom</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">RealityCapture</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Firebase</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">UE Blueprints</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">VR</div></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="skill-category text-center">
-                                    <h4 class="fw-bold mb-3">Programming</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2">C# .NET</li>
-                                        <li class="mb-2">C++</li>
-                                        <li class="mb-2">JavaScript</li>
-                                        <li class="mb-2">Python</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="skill-category text-center">
-                                    <h4 class="fw-bold mb-3">VR/AR</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2">Oculus SDK</li>
-                                        <li class="mb-2">OpenXR</li>
-                                        <li class="mb-2">SteamVR</li>
-                                        <li class="mb-2">Hand Tracking</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="skill-category text-center">
-                                    <h4 class="fw-bold mb-3">Tools & Tech</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2">Git / Version Control</li>
-                                        <li class="mb-2">Blender</li>
-                                        <li class="mb-2">Photoshop</li>
-                                        <li class="mb-2">Agile Development</li>
-                                    </ul>
+                                <!-- Languages list-->
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Programming Languages</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">C#</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">C</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">C++</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Java</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

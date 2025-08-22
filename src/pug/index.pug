@@ -30,7 +30,7 @@ html(lang='en')
               p.lead.mb-4 I create immersive experiences using Unity and Unreal Engine, specializing in VR development and innovative interactive solutions.
               .d-flex.gap-3.mb-4
                 a.btn.btn-primary.btn-lg(href='#projects') View My Work
-                a.btn.btn-outline-primary.btn-lg(href='#contact') Get In Touch
+                a.btn.btn-outline-primary.btn-lg(href='assets/CV_FIZREYARMESTO_ENG.pdf', download) Download Resume
               .social-links.d-flex.gap-3
                 a.text-muted.fs-4(href='https://www.linkedin.com/in/fizrey/', target='_blank', title='LinkedIn')
                   i.bi.bi-linkedin
@@ -73,27 +73,94 @@ html(lang='en')
       .container
         .row.justify-content-center
           .col-lg-10
-            h2.h1.fw-bold.text-center.mb-5 Professional Experience
-            .row.g-4
-              .col-lg-6
-                .experience-card.h-100
-                  .card.border-0.shadow-sm.h-100
-                    .card-body.p-4
-                      h4.fw-bold AR Soft
-                      p.text-primary.mb-2 VR/AR Developer
-                      p.text-muted.small.mb-3 Current Position
-                      p Developing cutting-edge VR and AR applications, working on immersive experiences and interactive solutions for various industries.
-              .col-lg-6
-                .experience-card.h-100
-                  .card.border-0.shadow-sm.h-100
-                    .card-body.p-4
-                      h4.fw-bold Freelance Developer
-                      p.text-primary.mb-2 Game Developer
-                      p.text-muted.small.mb-3 2020 - Present
-                      p Creating independent games and VR experiences, participating in game jams, and developing custom solutions for clients.
+            .d-flex.align-items-center.justify-content-between.mb-5
+              h2.h1.fw-bold Professional Experience
+              // Download resume button
+              a.btn.btn-primary.px-4.py-3(href='assets/CV_FIZREYARMESTO_ENG.pdf', download)
+                .d-inline-block.bi.bi-download.me-2
+                | Download Resume
+
+            // Experience Card 1
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                .row.align-items-center.gx-5
+                  .col.text-center.text-lg-start.mb-4.mb-lg-0
+                    .bg-light.p-4.rounded-4
+                      .text-primary.fw-bolder.mb-2 Oct 2023 - Present
+                      .small.fw-bolder Junior Programmer
+                      .small.text-muted ARSOFT
+                      .small.text-muted Salamanca, Spain
+                  .col-lg-8
+                    div Creation of a railway driving simulator in Unity.
+
+            // Experience Card 2
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                .row.align-items-center.gx-5
+                  .col.text-center.text-lg-start.mb-4.mb-lg-0
+                    .bg-light.p-4.rounded-4
+                      .text-primary.fw-bolder.mb-2 Feb - Apr 2023
+                      .small.fw-bolder Unity Developer (Internship)
+                      .small.text-muted ARSOFT
+                      .small.text-muted Salamanca, Spain
+                  .col-lg-8
+                    div Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.
+
+    // Education Section
+    section#education.py-5.bg-light
+      .container
+        .row.justify-content-center
+          .col-lg-10
+            h2.h1.fw-bold.text-center.mb-5 Education
+            
+            // Education Card 1
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                .row.align-items-center.gx-5
+                  .col.text-center.text-lg-start.mb-4.mb-lg-0
+                    .bg-light.p-4.rounded-4
+                      .text-secondary.fw-bolder.mb-2 2017 - 2023
+                      .mb-2
+                        .small.fw-bolder Computer Engineering
+                        .small.text-muted Universidad de Salamanca
+                  .col-lg-8
+                    div Thesis: Development of a multiplayer VR video game using Unreal Engine 5.
+
+    // Certificates Section
+    section#certificates.py-5
+      .container
+        .row.justify-content-center
+          .col-lg-10
+            h2.h1.fw-bold.text-center.mb-5 Certificates
+            
+            // Certificate Card 1
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                .row.align-items-center.gx-5
+                  .col.text-center.text-lg-start.mb-4.mb-lg-0
+                    .bg-light.p-4.rounded-4
+                      .text-primary.fw-bolder.mb-2 Aug 2020
+                      .mb-2
+                        .small.fw-bolder C1 Advanced 
+                        .small.text-muted Score 187
+                  .col-lg-8
+                    div Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge.
+
+            // Certificate Card 2
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                .row.align-items-center.gx-5
+                  .col.text-center.text-lg-start.mb-4.mb-lg-0
+                    .bg-light.p-4.rounded-4
+                      .text-primary.fw-bolder.mb-2 Sept 2017
+                      .mb-2
+                        .small.fw-bolder C Programming 
+                        .small.text-muted Basic level
+                  .col-lg-8
+                    div Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca.
 
     // Projects Section
-    section#projects.py-5.bg-light
+    section#projects.py-5
       .container
         .row.justify-content-center
           .col-lg-10
@@ -178,6 +245,32 @@ html(lang='en')
                         span.badge.bg-light.text-dark.me-2 Lead Programming
                         span.badge.bg-light.text-dark Horror
                       a.btn.btn-outline-primary.btn-sm(href='https://ficho12.itch.io/la-noche', target='_blank') View Project
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-info.mb-2 Learning
+                      h4.fw-bold.mb-3 UE5 Custom Editor Tools Course
+                      p.text-muted.mb-3 Source code for advanced Unreal Engine 5 editor tools and custom development workflows.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unreal Engine 5
+                        span.badge.bg-light.text-dark.me-2 C++
+                        span.badge.bg-light.text-dark Editor Tools
+                      a.btn.btn-outline-primary.btn-sm(href='https://github.com/ficho12/UE5-Custom-Editor-Tools', target='_blank') View on GitHub
+              .col-lg-4.col-md-6
+                .project-card
+                  .card.border-0.shadow-sm.h-100
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-secondary.mb-2 Interview
+                      h4.fw-bold.mb-3 Endless Runner
+                      p.text-muted.mb-3 Game made with Unity as an assignment for an interview, demonstrating core game development skills.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unity
+                        span.badge.bg-light.text-dark.me-2 C#
+                        span.badge.bg-light.text-dark Mobile
+                      a.btn.btn-outline-primary.btn-sm(href='https://github.com/ficho12/EndlessRunner', target='_blank') View on GitHub
 
     // YABS Game Modal
     #yabsModal.modal.fade(tabindex='-1', aria-hidden='true')
@@ -197,43 +290,72 @@ html(lang='en')
             });
 
     // Skills Section
-    section#skills.py-5
+    section#skills.py-5.bg-light
       .container
         .row.justify-content-center
           .col-lg-10
             h2.h1.fw-bold.text-center.mb-5 Technical Skills
-            .row.g-4
-              .col-lg-3.col-md-6
-                .skill-category.text-center
-                  h4.fw-bold.mb-3 Game Engines
-                  ul.list-unstyled
-                    li.mb-2 Unity 3D
-                    li.mb-2 Unreal Engine 4/5
-                    li.mb-2 VRExpansionPlugin
-              .col-lg-3.col-md-6
-                .skill-category.text-center
-                  h4.fw-bold.mb-3 Programming
-                  ul.list-unstyled
-                    li.mb-2 C# .NET
-                    li.mb-2 C++
-                    li.mb-2 JavaScript
-                    li.mb-2 Python
-              .col-lg-3.col-md-6
-                .skill-category.text-center
-                  h4.fw-bold.mb-3 VR/AR
-                  ul.list-unstyled
-                    li.mb-2 Oculus SDK
-                    li.mb-2 OpenXR
-                    li.mb-2 SteamVR
-                    li.mb-2 Hand Tracking
-              .col-lg-3.col-md-6
-                .skill-category.text-center
-                  h4.fw-bold.mb-3 Tools & Tech
-                  ul.list-unstyled
-                    li.mb-2 Git / Version Control
-                    li.mb-2 Blender
-                    li.mb-2 Photoshop
-                    li.mb-2 Agile Development
+            
+            // Skillset Card
+            .card.shadow.border-0.rounded-4.mb-5
+              .card-body.p-5
+                // Professional skills list
+                .mb-5
+                  .d-flex.align-items-center.mb-4
+                    .feature.bg-primary.bg-gradient-primary-to-secondary.text-white.rounded-3.me-3
+                      i.bi.bi-tools
+                    h3.fw-bolder.mb-0
+                      span.text-gradient.d-inline Professional Skills
+                  .row.row-cols-1.row-cols-md-3.mb-4
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Unreal Engine
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Unity
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Git
+                  .row.row-cols-1.row-cols-md-3.mb-4
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 SQL / NoSQL
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Linux (deb)
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Eclipse / Visual Studio
+                  .row.row-cols-1.row-cols-md-3.mb-4
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Scrum / Jira
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Photoshop / Lightroom
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 RealityCapture
+                  .row.row-cols-1.row-cols-md-3
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Firebase
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 UE Blueprints
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 VR
+
+                // Languages list
+                .mb-0
+                  .d-flex.align-items-center.mb-4
+                    .feature.bg-primary.bg-gradient-primary-to-secondary.text-white.rounded-3.me-3
+                      i.bi.bi-code-slash
+                    h3.fw-bolder.mb-0
+                      span.text-gradient.d-inline Programming Languages
+                  .row.row-cols-1.row-cols-md-3.mb-4
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 C#
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 C
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 C++
+                  .row.row-cols-1.row-cols-md-3
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Python
+                    .col.mb-4.mb-md-0
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 Java
+                    .col
+                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100 JavaScript
 
     // Contact Section
     section#contact.py-5.bg-primary.text-white
