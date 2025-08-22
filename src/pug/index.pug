@@ -167,8 +167,15 @@ html(lang='en')
             .row.g-4
               // Work Projects
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='beeShowcase')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/lamp.png', alt='Bee Showcase VR')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-eye.fs-1.mb-2
+                          p VR Experience
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-primary.mb-2(data-i18n='projects.categories.professional') Professional
@@ -179,8 +186,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark.me-2 VR
                         span.badge.bg-light.text-dark C#
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='eyeflow')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/Shot.png', alt='Eyeflow VR')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-eye-fill.fs-1.mb-2
+                          p Eye Tracking VR
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-primary.mb-2(data-i18n='projects.categories.professional') Professional
@@ -191,8 +205,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark.me-2 VR
                         span.badge.bg-light.text-dark C++
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='renfeSimulator')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/Shot300x400.png', alt='Renfe VR Simulator')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-train-front.fs-1.mb-2
+                          p VR Training Simulator
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-primary.mb-2(data-i18n='projects.categories.professional') Professional
@@ -204,8 +225,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark Simulation
               // Personal Projects
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='vrsurvival')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/sgd_jam.jpg', alt='VRSurvival Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-headset-vr.fs-1.mb-2
+                          p Multiplayer VR Game
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-success.mb-2(data-i18n='projects.categories.personal') Personal
@@ -217,8 +245,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark Multiplayer
                       a.btn.btn-outline-primary.btn-sm(href='https://ficho12.itch.io/o-candil', target='_blank', data-i18n='projects.vrsurvival.viewProject') View Project
               .col-lg-4.col-md-6
-                .project-card
+                .project-card.playable-game(data-project='yabs')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/YABS.png', alt='YABS Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-play-circle-fill.fs-1.mb-2
+                          p Click to Play!
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-warning.mb-2(data-i18n='projects.categories.gameJam') Game Jam
@@ -232,8 +267,15 @@ html(lang='en')
                         button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#yabsModal', data-i18n='projects.yabs.playGame') Play Game
                         a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/55/yabs', target='_blank', data-i18n='projects.yabs.ludumDare') Ludum Dare
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='noche')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/noche.jpg', alt='Noche Horror Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-moon-stars-fill.fs-1.mb-2
+                          p Horror Game Jam
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-warning.mb-2(data-i18n='projects.categories.gameJam') Game Jam
@@ -245,8 +287,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark Horror
                       a.btn.btn-outline-primary.btn-sm(href='https://ficho12.itch.io/la-noche', target='_blank', data-i18n='projects.vrsurvival.viewProject') View Project
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='customEditor')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/CustomEditor.png', alt='UE5 Custom Editor Tools')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-tools.fs-1.mb-2
+                          p Editor Tools
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-info.mb-2(data-i18n='projects.categories.learning') Learning
@@ -258,8 +307,15 @@ html(lang='en')
                         span.badge.bg-light.text-dark Editor Tools
                       a.btn.btn-outline-primary.btn-sm(href='https://github.com/ficho12/UE5-Custom-Editor-Tools', target='_blank', data-i18n='projects.customEditor.viewOnGithub') View on GitHub
               .col-lg-4.col-md-6
-                .project-card
+                .project-card(data-project='endlessRunner')
                   .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/EndlessRunner.png', alt='Endless Runner Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-phone.fs-1.mb-2
+                          p Mobile Game
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-secondary.mb-2(data-i18n='projects.categories.interview') Interview
