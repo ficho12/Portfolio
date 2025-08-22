@@ -6,13 +6,6 @@
  */
 
 /*!
- * accepts
- * Copyright(c) 2014 Jonathan Ong
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
  * bytes
  * Copyright(c) 2012-2014 TJ Holowaychuk
  * Copyright(c) 2015 Jed Watson
@@ -40,13 +33,6 @@
  * mime-db
  * Copyright(c) 2014 Jonathan Ong
  * Copyright(c) 2015-2022 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
- * mime-types
- * Copyright(c) 2014 Jonathan Ong
- * Copyright(c) 2015 Douglas Christopher Wilson
  * MIT Licensed
  */
 

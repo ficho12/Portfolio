@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "title": "Fiz Rey Armesto - Enxeñeiro Informático e Desenvolvedor VR/AR",
+    "description": "Fiz Rey Armesto - Enxeñeiro Informático e Desenvolvedor VR/AR. Especializado en Unity, Unreal Engine e experiencias inmersivas."
+  },
+  "nav": {
+    "about": "Acerca de",
+    "experience": "Experiencia", 
+    "projects": "Proxectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Ola, son",
+    "name": "Fiz Rey Armesto",
+    "title": "Enxeñeiro Informático e Desenvolvedor VR/AR",
+    "description": "Creo experiencias inmersivas usando Unity e Unreal Engine, especializándome en desenvolvemento VR e solucións interactivas innovadoras.",
+    "viewWork": "Ver o Meu Traballo",
+    "downloadResume": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre Min",
+    "description": "Son Enxeñeiro Informático con paixón por crear experiencias dixitais inmersivas. A miña experiencia céntrase no desenvolvemento VR/AR, programación de xogos e tecnoloxías interactivas de vangarda.",
+    "development": {
+      "title": "Desenvolvemento",
+      "description": "Unity, Unreal Engine, C#, C++, JavaScript"
+    },
+    "vrar": {
+      "title": "VR/AR",
+      "description": "Experiencias inmersivas, videoxogos VR, aplicacións AR"
+    },
+    "engineering": {
+      "title": "Enxeñería",
+      "description": "Arquitectura de software, deseño de sistemas, optimización"
+    }
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "downloadResume": "Descargar CV",
+    "current": "Posición Actual",
+    "present": "Presente",
+    "arsoft": {
+      "position": "Programador Junior",
+      "company": "ARSOFT",
+      "location": "Salamanca, España",
+      "description": "Creación dun simulador de condución ferroviaria en Unity.",
+      "internship": {
+        "position": "Desenvolvedor Unity (Prácticas)",
+        "description": "Construín simulacións cirúrxicas nativas para Meta Quest 2 desde cero co framework UltimateXR para Unity."
+      }
+    },
+    "freelance": {
+      "position": "Desenvolvedor de Videoxogos",
+      "company": "Desenvolvedor Freelance",
+      "description": "Creando videoxogos independentes e experiencias VR, participando en game jams e desenvolvendo solucións personalizadas para clientes."
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "degree": "Enxeñería Informática",
+    "university": "Universidad de Salamanca",
+    "thesis": "Tese: Desenvolvemento dun videoxogo VR multixogador usando Unreal Engine 5."
+  },
+  "certificates": {
+    "title": "Certificados",
+    "c1Advanced": {
+      "title": "C1 Advanced",
+      "score": "Puntuación 187",
+      "description": "Certificado de Inglés Avanzado (CAE) emitido por Cambridge English Language Assessment, parte da Universidade de Cambridge."
+    },
+    "cProgramming": {
+      "title": "Programación C",
+      "level": "Nivel básico",
+      "description": "Certificado pola finalización do curso de programación C (Nivel Básico) (6ª Edición) emitido pola Universidad de Salamanca."
+    }
+  },
+  "projects": {
+    "title": "Proxectos Destacados",
+    "categories": {
+      "professional": "Profesional",
+      "personal": "Persoal",
+      "gameJam": "Game Jam",
+      "learning": "Aprendizaxe",
+      "interview": "Entrevista"
+    },
+    "beeShowcase": {
+      "title": "Bee Showcase (Miel 79)",
+      "description": "Experiencia VR interactiva que mostra a conservación de abellas e procesos de produción de mel."
+    },
+    "eyeflow": {
+      "title": "Eyeflow",
+      "description": "Aplicación VR avanzada de seguimento ocular para aplicacións médicas e de investigación."
+    },
+    "renfeSimulator": {
+      "title": "Simulador VR Maquinista Renfe",
+      "description": "Simulador VR profesional de adestramento para operadores de trens, proporcionando escenarios operacionais realistas."
+    },
+    "vrsurvival": {
+      "title": "VRSurvival",
+      "description": "Xogo VR multixogador de supervivencia desenvolvido con Unreal Engine 5 e VRExpansionPlugin.",
+      "viewProject": "Ver Proxecto"
+    },
+    "yabs": {
+      "title": "YABS - Ludum Dare 55",
+      "description": "Xogo creado en 48 horas para a game jam Ludum Dare, mostrando habilidades de prototipado rápido.",
+      "playGame": "Xogar",
+      "ludumDare": "Ludum Dare"
+    },
+    "noche": {
+      "title": "Noche - Indie Spain Jam 2023",
+      "description": "Rol de Programador Principal na game jam española indie, creando experiencia de terror atmosférica."
+    },
+    "customEditor": {
+      "title": "Curso de Ferramentas de Editor UE5",
+      "description": "Código fonte para ferramentas avanzadas do editor de Unreal Engine 5 e fluxos de desenvolvemento personalizados.",
+      "viewOnGithub": "Ver en GitHub"
+    },
+    "endlessRunner": {
+      "title": "Endless Runner",
+      "description": "Xogo feito con Unity como tarefa para unha entrevista, demostrando habilidades básicas de desenvolvemento de xogos."
+    }
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "professionalSkills": "Habilidades Profesionais",
+    "programmingLanguages": "Linguaxes de Programación",
+    "gameEngines": "Motores de Xogo",
+    "programming": "Programación",
+    "vrar": "VR/AR",
+    "toolsTech": "Ferramentas e Tecnoloxía",
+    "items": {
+      "unrealEngine": "Unreal Engine",
+      "unity": "Unity",
+      "git": "Git",
+      "sqlNosql": "SQL / NoSQL",
+      "linux": "Linux (deb)",
+      "visualStudio": "Eclipse / Visual Studio",
+      "scrum": "Scrum / Jira",
+      "photoshop": "Photoshop / Lightroom",
+      "realityCapture": "RealityCapture",
+      "firebase": "Firebase",
+      "ueBlueprints": "UE Blueprints",
+      "vr": "VR",
+      "csharp": "C#",
+      "c": "C",
+      "cpp": "C++",
+      "python": "Python",
+      "java": "Java",
+      "javascript": "JavaScript",
+      "unity3d": "Unity 3D",
+      "unrealEngine45": "Unreal Engine 4/5",
+      "vrExpansion": "VRExpansionPlugin",
+      "csharpNet": "C# .NET",
+      "oculusSDK": "Oculus SDK",
+      "openXR": "OpenXR",
+      "steamVR": "SteamVR",
+      "handTracking": "Seguimento de Mans",
+      "gitVersionControl": "Git / Control de Versións",
+      "blender": "Blender",
+      "agileDevelopment": "Desenvolvemento Áxil"
+    }
+  },
+  "contact": {
+    "title": "Traballemos Xuntos",
+    "description": "Sempre estou interesado en novas oportunidades e proxectos emocionantes. Xa sexa que necesites desenvolvemento VR, programación de xogos ou consultoría técnica, ¡conectemos!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "modal": {
+    "close": "Pechar"
+  },
+  "footer": {
+    "copyright": "Copyright © Fiz Rey Armesto 2023"
+  }
+}

@@ -11791,8 +11791,7 @@ section.py-5 {
 }
 
 .navbar {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .navbar .nav-link {
   transition: all 0.3s ease;
