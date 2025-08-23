@@ -43,7 +43,7 @@
       "position": "Programador Junior",
       "company": "ARSOFT",
       "location": "Salamanca, España",
-      "description": "Creación dun simulador de condución ferroviaria en Unity.",
+      "description": "Desenvolvedor Líder de experiencias VR/AR incluíndo showcases inmersivos de apicultura con integración de vídeo 360°. Creación de simuladores de condución ferroviaria e contido educativo interactivo en Unity.",
       "internship": {
         "position": "Desenvolvedor Unity (Prácticas)",
         "description": "Construín simulacións cirúrxicas nativas para Meta Quest 2 desde cero co framework UltimateXR para Unity."
@@ -84,16 +84,16 @@
       "interview": "Entrevista"
     },
     "beeShowcase": {
-      "title": "Bee Showcase (Miel 79)",
-      "description": "Experiencia VR interactiva que mostra a conservación de abellas e procesos de produción de mel."
+      "title": "Experiencia VR/AR Apicultura Miel 79",
+      "description": "Experiencia VR inmersiva con vídeos 360° que mostra a conservación de abellas, exploración de colmeas e procesos de produción de mel. Inclúe visitas virtuais interactivas a colmeas reais."
     },
     "eyeflow": {
       "title": "Eyeflow",
       "description": "Aplicación VR avanzada de seguimento ocular para aplicacións médicas e de investigación."
     },
     "renfeSimulator": {
-      "title": "Simulador VR Maquinista Renfe",
-      "description": "Simulador VR profesional de adestramento para operadores de trens, proporcionando escenarios operacionais realistas."
+      "title": "Simulador de Realidade Virtual para formación de maquinistas",
+      "description": "Un simulador de Realidade Virtual para adestrar aos maquinistas de Renfe, permitíndolles familiarizarse con escenarios específicos antes de enfrontarse a situacións reais. Grazas a esta tecnoloxía melloran a súa preparación, habilidades de resposta e confianza nun contorno seguro e controlado."
     },
     "vrsurvival": {
       "title": "VRSurvival",
@@ -140,7 +140,7 @@
       "realityCapture": "RealityCapture",
       "firebase": "Firebase",
       "ueBlueprints": "UE Blueprints",
-      "vr": "VR",
+      "vr": "XR",
       "csharp": "C#",
       "c": "C",
       "cpp": "C++",

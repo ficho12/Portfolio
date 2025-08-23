@@ -23,7 +23,7 @@
     "description": "I'm a Computer Engineer with a passion for creating immersive digital experiences. My expertise lies in VR/AR development, game programming, and cutting-edge interactive technologies.",
     "development": {
       "title": "Development",
-      "description": "Unity, Unreal Engine, C#, C++, JavaScript"
+      "description": "Unity, Unreal Engine, C#, C++"
     },
     "vrar": {
       "title": "VR/AR",
@@ -43,7 +43,7 @@
       "position": "Junior Programmer",
       "company": "ARSOFT",
       "location": "Salamanca, Spain",
-      "description": "Creation of a railway driving simulator in Unity.",
+      "description": "Lead Developer for VR/AR experiences including immersive beekeeping showcases with 360° video integration. Creation of railway driving simulators and interactive educational content in Unity.",
       "internship": {
         "position": "Unity Developer (Internship)",
         "description": "Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity."
@@ -84,8 +84,8 @@
       "interview": "Interview"
     },
     "beeShowcase": {
-      "title": "Bee Showcase (Miel 79)",
-      "description": "Interactive VR experience showcasing bee conservation and honey production processes."
+      "title": "Miel 79 VR/AR Beekeeping Showcase",
+      "description": "Immersive VR experience with 360° videos showcasing bee conservation, hive exploration, and honey production processes. Features interactive virtual visits to real beehives."
     },
     "eyeflow": {
       "title": "Eyeflow",
@@ -93,7 +93,7 @@
     },
     "renfeSimulator": {
       "title": "Renfe VR Machinist Simulator",
-      "description": "Professional VR training simulator for train operators, providing realistic operational scenarios."
+      "description": "Virtual Reality training simulator for Renfe machinists, allowing them to familiarize with specific scenarios before facing real situations. This technology improves their preparation, response skills and confidence in a safe and controlled environment."
     },
     "vrsurvival": {
       "title": "VRSurvival",
@@ -140,13 +140,12 @@
       "realityCapture": "RealityCapture",
       "firebase": "Firebase",
       "ueBlueprints": "UE Blueprints",
-      "vr": "VR",
+      "vr": "XR",
       "csharp": "C#",
       "c": "C",
       "cpp": "C++",
       "python": "Python",
       "java": "Java",
-      "javascript": "JavaScript",
       "unity3d": "Unity 3D",
       "unrealEngine45": "Unreal Engine 4/5",
       "vrExpansion": "VRExpansionPlugin",

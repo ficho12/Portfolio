@@ -43,7 +43,7 @@
       "position": "Programador Junior",
       "company": "ARSOFT",
       "location": "Salamanca, España",
-      "description": "Creación de un simulador de conducción ferroviaria en Unity.",
+      "description": "Desarrollador Líder de experiencias VR/AR incluyendo showcases inmersivos de apicultura con integración de vídeo 360°. Creación de simuladores de conducción ferroviaria y contenido educativo interactivo en Unity.",
       "internship": {
         "position": "Desarrollador Unity (Prácticas)",
         "description": "Construí simulaciones quirúrgicas nativas para Meta Quest 2 desde cero con el framework UltimateXR para Unity."
@@ -84,16 +84,16 @@
       "interview": "Entrevista"
     },
     "beeShowcase": {
-      "title": "Bee Showcase (Miel 79)",
-      "description": "Experiencia VR interactiva que muestra la conservación de abejas y procesos de producción de miel."
+      "title": "Experiencia VR/AR Apicultura Miel 79",
+      "description": "Experiencia VR inmersiva con vídeos 360° que muestra la conservación de abejas, exploración de colmenas y procesos de producción de miel. Incluye visitas virtuales interactivas a colmenas reales."
     },
     "eyeflow": {
       "title": "Eyeflow",
       "description": "Aplicación VR avanzada de seguimiento ocular para aplicaciones médicas y de investigación."
     },
     "renfeSimulator": {
-      "title": "Simulador VR Maquinista Renfe",
-      "description": "Simulador VR profesional de entrenamiento para operadores de trenes, proporcionando escenarios operacionales realistas."
+      "title": "Simulador de Realidad Virtual para formación de maquinistas",
+      "description": "Un simulador de Realidad Virtual para entrenar a los maquinistas de Renfe, permitiéndoles familiarizarse con escenarios específicos antes de enfrentarse a situaciones reales. Gracias a esta tecnología mejoran su preparación, habilidades de respuesta y confianza en un entorno seguro y controlado."
     },
     "vrsurvival": {
       "title": "VRSurvival",
@@ -140,7 +140,7 @@
       "realityCapture": "RealityCapture",
       "firebase": "Firebase",
       "ueBlueprints": "UE Blueprints",
-      "vr": "VR",
+      "vr": "XR",
       "csharp": "C#",
       "c": "C",
       "cpp": "C++",

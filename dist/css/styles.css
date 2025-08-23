@@ -11650,37 +11650,64 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .hero .hero-image #profileContainer .profile-photo {
   transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 0;
 }
 .hero .hero-image #profileContainer .profile-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
   border: 5px solid #ffffff;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .hero .hero-image #profileContainer .profile-photo .pong-overlay {
-  background: rgba(52, 152, 219, 0.9);
-  opacity: 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  z-index: 10;
-  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(52, 152, 219, 0.9) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
 }
 .hero .hero-image #profileContainer .profile-photo .pong-overlay .play-text {
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.3s ease 0.1s !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
 }
 .hero .hero-image #profileContainer .profile-photo .pong-overlay .play-text i {
-  animation: bounceController 2s infinite;
+  animation: bounceController 2s infinite !important;
 }
 .hero .hero-image #profileContainer .profile-photo:hover .pong-overlay {
-  opacity: 1;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 .hero .hero-image #profileContainer .profile-photo:hover .pong-overlay .play-text {
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 .hero .hero-image #profileContainer .profile-photo:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+}
+.hero .hero-image #profileContainer .profile-photo.hovering .pong-overlay {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+.hero .hero-image #profileContainer .profile-photo.hovering .pong-overlay .play-text {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.hero .hero-image #profileContainer .profile-photo.hovering img {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
 }

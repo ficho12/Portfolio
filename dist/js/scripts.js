@@ -111,6 +111,14 @@ function initializeProjectInteractions() {
                 // Add video preview functionality
                 addVideoPreview(card);
                 break;
+            case 'beeShowcase':
+                // Add video preview functionality for Miel 79
+                addVideoPreview(card);
+                break;
+            case 'renfeSimulator':
+                // Add video preview functionality for railway simulator
+                addVideoPreview(card);
+                break;
             case 'vrsurvival':
                 // Could add video preview functionality here
                 addVideoPreview(card);
@@ -258,6 +266,56 @@ document.addEventListener('DOMContentLoaded', function() {
     projectCards.forEach(function(card) {
         projectObserver.observe(card);
     });
+
+    // Ensure profile overlay shows on hover across browsers by toggling a class
+    const profilePhotoEl = document.querySelector('#profileContainer .profile-photo');
+    if (profilePhotoEl) {
+        const overlayEl = profilePhotoEl.querySelector('.pong-overlay');
+        const playTextEl = profilePhotoEl.querySelector('.pong-overlay .play-text');
+
+        const showOverlay = () => {
+            profilePhotoEl.classList.add('hovering');
+            if (overlayEl) {
+                overlayEl.style.setProperty('opacity', '1', 'important');
+                overlayEl.style.setProperty('pointer-events', 'auto', 'important');
+            }
+            if (playTextEl) {
+                playTextEl.style.setProperty('opacity', '1', 'important');
+                playTextEl.style.setProperty('transform', 'translateY(0)', 'important');
+            }
+        };
+
+        const hideOverlay = () => {
+            profilePhotoEl.classList.remove('hovering');
+            if (overlayEl) {
+                overlayEl.style.setProperty('opacity', '0', 'important');
+                overlayEl.style.setProperty('pointer-events', 'none', 'important');
+            }
+            if (playTextEl) {
+                playTextEl.style.setProperty('opacity', '0', 'important');
+                playTextEl.style.setProperty('transform', 'translateY(20px)', 'important');
+            }
+        };
+
+        profilePhotoEl.addEventListener('mouseenter', showOverlay);
+        profilePhotoEl.addEventListener('mouseleave', hideOverlay);
+
+        // Touch support: first tap shows overlay, then auto-hide
+        let touchVisibleTimeout;
+        profilePhotoEl.addEventListener('touchstart', () => {
+            showOverlay();
+            clearTimeout(touchVisibleTimeout);
+            touchVisibleTimeout = setTimeout(() => hideOverlay(), 2500);
+        }, { passive: true });
+
+        // Also support focus/blur for accessibility (keyboard)
+        const imgEl = profilePhotoEl.querySelector('img');
+        if (imgEl) {
+            imgEl.setAttribute('tabindex', '0');
+            imgEl.addEventListener('focus', showOverlay);
+            imgEl.addEventListener('blur', hideOverlay);
+        }
+    }
 });
 
 // Pong Game Implementation
@@ -378,7 +436,6 @@ function initializePongGame() {
             console.log('Adding click event listener to profile photo');
             profilePhoto.addEventListener('click', function(e) {
                 console.log('Profile photo clicked!');
-                alert('Profile photo clicked! Pong should start...'); // Temporary alert for testing
                 e.preventDefault();
                 e.stopPropagation();
                 startPongGame();
@@ -391,7 +448,6 @@ function initializePongGame() {
             console.log('Adding click event listener to profile image');
             profileImage.addEventListener('click', function(e) {
                 console.log('Profile image clicked!');
-                alert('Profile image clicked! Pong should start...'); // Temporary alert for testing
                 e.preventDefault();
                 e.stopPropagation();
                 startPongGame();
@@ -696,7 +752,9 @@ function initializePongGame() {
                 profileContainer.style.opacity = '0';
                 profileContainer.style.transition = 'opacity 0.5s ease-in-out';
                 setTimeout(() => {
-                    profileContainer.style.opacity = '1';
+                    // Remove inline opacity to allow CSS hover effects
+                    profileContainer.style.removeProperty('opacity');
+                    profileContainer.style.removeProperty('transition');
                 }, 50);
             }, 300);
         }

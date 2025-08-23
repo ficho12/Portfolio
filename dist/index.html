@@ -65,10 +65,11 @@
                         <div class="hero-image text-center position-relative" id="profileContainer">
                             <div class="profile-photo position-relative">
                                 <img class="img-fluid rounded-circle shadow-lg" id="profileImage" src="assets/profile.png" alt="Fiz Rey Armesto" style="max-width: 350px" />
-                                <div class="pong-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center rounded-circle">
-                                    <div class="play-text text-white fw-bold fs-4">
+                                <!-- Initially hidden to avoid any flash before CSS loads; shown on hover via CSS-->
+                                <div class="pong-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center rounded-circle" style="opacity: 0; pointer-events: none">
+                                    <div class="play-text text-white fw-bold fs-4" style="opacity: 0">
                                         <i class="bi bi-controller me-2"></i>
-                                        <span>Play Pong!</span>
+                                        <span>Play?</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +143,7 @@
                                 <div class="feature-card text-center p-4">
                                     <div class="feature-icon mb-3"><i class="bi bi-code-slash fs-1 text-primary"></i></div>
                                     <h4 data-i18n="about.development.title">Development</h4>
-                                    <p data-i18n="about.development.description">Unity, Unreal Engine, C#, C++, JavaScript</p>
+                                    <p data-i18n="about.development.description">Unity, Unreal Engine, C#, C++</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -296,24 +297,32 @@
                         <div class="row g-4">
                             <!-- Work Projects-->
                             <div class="col-lg-4 col-md-6">
-                                <div class="project-card" data-project="beeShowcase">
+                                <div class="project-card video-project" data-project="beeShowcase" data-video="9pGObGbjM_Y">
                                     <div class="card border-0 shadow-sm h-100">
                                         <div class="project-media position-relative overflow-hidden">
-                                            <div class="project-image"><img class="img-fluid" src="assets/lamp.png" alt="Bee Showcase VR" /></div>
+                                            <div class="project-image"><img class="img-fluid" src="assets/miel79_hive.jpg" alt="Miel 79 VR/AR Beekeeping Experience" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
                                             <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                                 <div class="overlay-content text-center text-white">
-                                                    <i class="bi bi-eye fs-1 mb-2"></i>
-                                                    <p>VR Experience</p>
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Watch VR Experience</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-body p-4">
-                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
-                                            <h4 class="fw-bold mb-3" data-i18n="projects.beeShowcase.title">Bee Showcase (Miel 79)</h4>
-                                            <p class="text-muted mb-3" data-i18n="projects.beeShowcase.description">Interactive VR experience showcasing bee conservation and honey production processes.</p>
+                                            <div class="project-category mb-2">
+                                                <span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span>
+                                                <span class="badge bg-warning ms-2">Lead Developer</span>
+                                            </div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.beeShowcase.title">Miel 79 VR/AR Beekeeping Showcase</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.beeShowcase.description">Immersive VR experience with 360° videos showcasing bee conservation, hive exploration, and honey production processes. Features interactive virtual visits to real beehives.</p>
                                             <div class="tech-stack mb-3">
                                                 <span class="badge bg-light text-dark me-2">Unity</span>
-                                                <span class="badge bg-light text-dark me-2">VR</span>
+                                                <span class="badge bg-light text-dark me-2">VR/AR</span>
+                                                <span class="badge bg-light text-dark me-2">360° Video</span>
                                                 <span class="badge bg-light text-dark">C#</span>
                                             </div>
                                         </div>
@@ -346,25 +355,29 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="project-card" data-project="renfeSimulator">
+                                <div class="project-card video-project" data-project="renfeSimulator" data-video="GEjvINrO9ug">
                                     <div class="card border-0 shadow-sm h-100">
                                         <div class="project-media position-relative overflow-hidden">
-                                            <div class="project-image"><img class="img-fluid" src="assets/Shot300x400.png" alt="Renfe VR Simulator" /></div>
+                                            <div class="project-image"><img class="img-fluid" src="assets/railway_landscape.jpg" alt="Renfe VR Railway Simulator" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
                                             <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                                 <div class="overlay-content text-center text-white">
-                                                    <i class="bi bi-train-front fs-1 mb-2"></i>
-                                                    <p>VR Training Simulator</p>
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Watch VR Simulator</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-body p-4">
                                             <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
                                             <h4 class="fw-bold mb-3" data-i18n="projects.renfeSimulator.title">Renfe VR Machinist Simulator</h4>
-                                            <p class="text-muted mb-3" data-i18n="projects.renfeSimulator.description">Professional VR training simulator for train operators, providing realistic operational scenarios.</p>
+                                            <p class="text-muted mb-3" data-i18n="projects.renfeSimulator.description">Professional VR training simulator for train operators, providing realistic operational scenarios and controlled environment practice.</p>
                                             <div class="tech-stack mb-3">
-                                                <span class="badge bg-light text-dark me-2">Unreal Engine</span>
-                                                <span class="badge bg-light text-dark me-2">VR</span>
-                                                <span class="badge bg-light text-dark">Simulation</span>
+                                                <span class="badge bg-light text-dark me-2">Unity</span>
+                                                <span class="badge bg-light text-dark me-2">VR Training</span>
+                                                <span class="badge bg-light text-dark">C#</span>
                                             </div>
                                         </div>
                                     </div>
@@ -583,7 +596,7 @@
                                     <div class="row row-cols-1 row-cols-md-3">
                                         <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.python">Python</div></div>
                                         <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.java">Java</div></div>
-                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.javascript">JavaScript</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.unity3d">Unity 3D</div></div>
                                     </div>
                                 </div>
                             </div>
