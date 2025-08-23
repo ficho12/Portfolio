@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const overlayEl = profilePhotoEl.querySelector('.pong-overlay');
         const playTextEl = profilePhotoEl.querySelector('.pong-overlay .play-text');
 
-        const showOverlay = () => {
+    const showOverlay = () => {
             profilePhotoEl.classList.add('hovering');
             if (overlayEl) {
                 overlayEl.style.setProperty('opacity', '1', 'important');

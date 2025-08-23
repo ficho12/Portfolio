@@ -51,8 +51,9 @@ h1, h2, h3, h4, h5, h6 {
         transition: all 0.3s ease;
         position: relative;
         display: inline-block;
+        border-radius: 50%;
         overflow: hidden;
-  z-index: 0; // establish stacking context
+        z-index: 0; // establish stacking context
         
         img {
           position: relative;
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
           backdrop-filter: blur(10px) !important;
           z-index: 2 !important; // above image
           pointer-events: none !important;
+          border-radius: 50% !important; // Make overlay circular to match profile photo
           
           .play-text {
             opacity: 0 !important;
@@ -91,8 +93,8 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
         
-  &:hover {
-          .pong-overlay {
+    &:hover {
+      .pong-overlay {
             opacity: 1 !important; // override inline opacity from markup
             pointer-events: auto !important;
             
@@ -109,8 +111,8 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         // JS-assisted fallback for environments where :hover is unreliable
-        &.hovering {
-          .pong-overlay {
+    &.hovering {
+      .pong-overlay {
             opacity: 1 !important; // override inline opacity from markup
             pointer-events: auto !important;
 

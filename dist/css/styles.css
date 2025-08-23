@@ -11652,6 +11652,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  border-radius: 50%;
   overflow: hidden;
   z-index: 0;
 }
@@ -11677,6 +11678,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   backdrop-filter: blur(10px) !important;
   z-index: 2 !important;
   pointer-events: none !important;
+  border-radius: 50% !important;
 }
 .hero .hero-image #profileContainer .profile-photo .pong-overlay .play-text {
   opacity: 0 !important;

@@ -20,11 +20,11 @@ html(lang='en')
         .row.align-items-center
           .col-lg-6.order-lg-2
             .hero-image.text-center.position-relative#profileContainer
-              .profile-photo.position-relative
+              .profile-photo.position-relative.d-inline-block
                 img.img-fluid.rounded-circle.shadow-lg#profileImage(src='assets/profile.png', alt='Fiz Rey Armesto', style='max-width: 350px;')
                 // Initially hidden to avoid any flash before CSS loads; shown on hover via CSS
-                .pong-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center.rounded-circle(style='opacity: 0; pointer-events: none;')
-                  .play-text.text-white.fw-bold.fs-4(style='opacity: 0;')
+                .pong-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center(style='opacity: 0; pointer-events: none;')
+                  .play-text.text-white.fw-bold.fs-5(style='opacity: 0;')
                     i.bi.bi-controller.me-2
                     span Play?
               .pong-game.position-absolute.top-50.start-50.translate-middle(style='display: none;')
