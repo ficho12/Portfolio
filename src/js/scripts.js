@@ -1,5 +1,5 @@
 // Import i18n functionality
-import { changeLanguage, getCurrentLanguage } from './i18n.js';
+import { changeLanguage, getCurrentLanguage, t } from './i18n.js';
 
 console.log('Scripts.js loaded');
 
@@ -340,6 +340,14 @@ function initializePongGame() {
     document.addEventListener('keydown', function(e) {
         keys[e.key.toLowerCase()] = true;
         keys[e.code] = true;
+        
+        // Global ESC handler for hero section game
+        if (e.key === 'Escape' && window.heroSectionGameRunning) {
+            console.log('Global ESC pressed - exiting hero section game');
+            e.preventDefault();
+            e.stopPropagation();
+            exitHeroSectionGame();
+        }
     });
     
     document.addEventListener('keyup', function(e) {
@@ -415,13 +423,30 @@ function initializePongGame() {
     function startPongGame() {
         console.log('Starting hero section Pong game');
         
+        // Check if game is already running
+        if (window.heroSectionGameRunning) {
+            console.log('Game already running, preventing duplicate start');
+            return;
+        }
+        
+        // Set game running flag
+        window.heroSectionGameRunning = true;
+        
         const heroSection = document.querySelector('.hero');
         const profileContainer = document.getElementById('profileContainer');
         const heroContent = document.querySelector('.hero-content');
         
         if (!heroSection) {
             console.error('Hero section not found');
+            window.heroSectionGameRunning = false; // Reset flag on error
             return;
+        }
+        
+        // Remove any existing game overlay
+        const existingOverlay = document.getElementById('heroSectionPongGame');
+        if (existingOverlay) {
+            console.log('Removing existing game overlay');
+            existingOverlay.remove();
         }
         
         // Fade out hero elements
@@ -452,7 +477,7 @@ function initializePongGame() {
             width: 100%;
             height: 100%;
             background: transparent;
-            z-index: 100;
+            z-index: 10;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -471,18 +496,19 @@ function initializePongGame() {
         const heroWidth = heroSection.offsetWidth;
         const heroHeight = heroSection.offsetHeight;
         
-        // Create game canvas that fills the hero section
+        // Create game canvas that fills the entire hero section
         const canvas = document.createElement('canvas');
         canvas.id = 'heroSectionPongCanvas';
-        canvas.width = heroWidth - 40; // Leave some margin
-        canvas.height = heroHeight - 40;
+        canvas.width = heroWidth; // Full width
+        canvas.height = heroHeight; // Full height
         canvas.style.cssText = `
-            border: 3px solid rgba(52, 152, 219, 0.8);
-            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             cursor: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            background: rgba(26, 26, 46, 0.3);
-            backdrop-filter: blur(2px);
+            background: transparent;
         `;
         
         // Create UI overlay
@@ -495,7 +521,7 @@ function initializePongGame() {
             height: 100%;
             pointer-events: none;
             color: white;
-            z-index: 101;
+            z-index: 11;
         `;
         
         // Score display
@@ -529,7 +555,7 @@ function initializePongGame() {
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             max-width: 80%;
         `;
-        gameMessage.textContent = 'Use W/S or Arrow Keys to move. Click to start! ESC to exit.';
+        gameMessage.textContent = `${t('game.pong.moveKeys')} - ${t('game.pong.clickToStart')} - ${t('game.pong.escToExit')}`;
         
         // Controls hint
         const controlsHint = document.createElement('div');
@@ -544,8 +570,8 @@ function initializePongGame() {
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         `;
         controlsHint.innerHTML = `
-            <div>Player: W/S or ↑/↓ keys</div>
-            <div style="margin-top: 5px;">ESC to exit game • Click canvas to start</div>
+            <div>${t('game.pong.playerLabel')}: ${t('game.pong.moveKeys')}</div>
+            <div style="margin-top: 5px;">${t('game.pong.escToExit')} • ${t('game.pong.clickToStart')}</div>
         `;
         
         // Exit on click anywhere
@@ -616,12 +642,17 @@ function initializePongGame() {
     function exitHeroSectionGame() {
         console.log('Exiting hero section Pong game');
         
+        // Reset game running flag
+        window.heroSectionGameRunning = false;
+        window.heroSectionGameStarted = false;
+        
         // Stop the game
         if (window.heroSectionGameActive) {
             window.heroSectionGameActive = false;
         }
         if (window.heroSectionAnimationId) {
             cancelAnimationFrame(window.heroSectionAnimationId);
+            window.heroSectionAnimationId = null;
         }
         
         // Fade out game overlay
@@ -630,7 +661,16 @@ function initializePongGame() {
             gameOverlay.style.transition = 'opacity 0.3s ease-in-out';
             gameOverlay.style.opacity = '0';
             setTimeout(() => {
-                gameOverlay.remove();
+                if (gameOverlay.parentNode) {
+                    gameOverlay.remove();
+                }
+                // Ensure no residual overlays are left
+                const residualOverlays = document.querySelectorAll('[id*="heroSectionPongGame"]');
+                residualOverlays.forEach(overlay => {
+                    if (overlay.parentNode) {
+                        overlay.remove();
+                    }
+                });
             }, 300);
         }
         
@@ -657,8 +697,14 @@ function initializePongGame() {
         }
         
         // Remove event listeners
-        document.removeEventListener('keydown', window.heroSectionKeyHandler);
-        document.removeEventListener('keyup', window.heroSectionKeyUpHandler);
+        if (window.heroSectionKeyHandler) {
+            document.removeEventListener('keydown', window.heroSectionKeyHandler);
+        }
+        if (window.heroSectionKeyUpHandler) {
+            document.removeEventListener('keyup', window.heroSectionKeyUpHandler);
+        }
+        
+        console.log('Hero section game exited successfully');
     }
     
     function startGame() {
@@ -783,10 +829,10 @@ function initializePongGame() {
         const finalCpuScore = document.getElementById('finalCpuScore');
         
         if (playerScore >= maxScore) {
-            gameResult.textContent = '🎉 You Win!';
+            gameResult.textContent = `🎉 ${t('game.pong.youWon')}`;
             gameResult.style.color = '#28a745';
         } else {
-            gameResult.textContent = '💻 CPU Wins!';
+            gameResult.textContent = `💻 ${t('game.pong.fizWon')}`;
             gameResult.style.color = '#dc3545';
         }
         
@@ -922,34 +968,52 @@ function initializeHeroSectionPongGame(canvas) {
     
     // Key handlers
     window.heroSectionKeyHandler = function(e) {
+        // Only handle keys when the hero section game is active
+        if (!window.heroSectionGameRunning) {
+            return;
+        }
+        
+        console.log('Hero Section Key pressed:', e.key);
+        
         switch(e.key.toLowerCase()) {
             case 'w':
             case 'arrowup':
                 e.preventDefault();
+                e.stopPropagation();
                 game.keys.up = true;
                 break;
             case 's':
             case 'arrowdown':
                 e.preventDefault();
+                e.stopPropagation();
                 game.keys.down = true;
                 break;
             case 'escape':
+                console.log('ESC key pressed - exiting game');
                 e.preventDefault();
+                e.stopPropagation();
                 exitHeroSectionGame();
                 break;
         }
     };
     
     window.heroSectionKeyUpHandler = function(e) {
+        // Only handle keys when the hero section game is active
+        if (!window.heroSectionGameRunning) {
+            return;
+        }
+        
         switch(e.key.toLowerCase()) {
             case 'w':
             case 'arrowup':
                 e.preventDefault();
+                e.stopPropagation();
                 game.keys.up = false;
                 break;
             case 's':
             case 'arrowdown':
                 e.preventDefault();
+                e.stopPropagation();
                 game.keys.down = false;
                 break;
         }
@@ -959,12 +1023,25 @@ function initializeHeroSectionPongGame(canvas) {
     document.addEventListener('keydown', window.heroSectionKeyHandler);
     document.addEventListener('keyup', window.heroSectionKeyUpHandler);
     
-    // Click to start
+    // Click to start or restart
     canvas.addEventListener('click', function() {
         if (!window.heroSectionGameStarted) {
+            // First time starting the game
             window.heroSectionGameStarted = true;
-            updateHeroSectionMessage('Game Started!');
+            updateHeroSectionMessage(t('game.pong.gameStarted'));
             setTimeout(() => updateHeroSectionMessage(''), 1000);
+        } else if (window.heroSectionGameStarted && !window.heroSectionGameActive) {
+            // Game has ended, restart it
+            console.log('Restarting hero section game');
+            game.player.score = 0;
+            game.cpu.score = 0;
+            updateHeroSectionScore();
+            resetHeroSectionBall();
+            window.heroSectionGameActive = true;
+            updateHeroSectionMessage(t('game.pong.gameStarted'));
+            setTimeout(() => updateHeroSectionMessage(''), 1000);
+            // Restart the game loop
+            heroSectionGameLoop();
         }
     });
     
@@ -992,34 +1069,12 @@ function initializeHeroSectionPongGame(canvas) {
     
     function checkHeroSectionGameEnd() {
         if (game.player.score >= 5) {
-            updateHeroSectionMessage('You Win! 🎉 Click to play again or scroll to explore');
+            updateHeroSectionMessage(t('game.pong.youWin'));
             window.heroSectionGameActive = false;
-            setTimeout(() => {
-                if (!window.heroSectionGameActive) {
-                    // Reset scores for potential replay
-                    game.player.score = 0;
-                    game.cpu.score = 0;
-                    updateHeroSectionScore();
-                    window.heroSectionGameActive = true;
-                    window.heroSectionGameStarted = false;
-                    updateHeroSectionMessage('You Won! Click to play again');
-                }
-            }, 3000);
             return true;
         } else if (game.cpu.score >= 5) {
-            updateHeroSectionMessage('CPU Wins! 😢 Click to play again or scroll to explore');
+            updateHeroSectionMessage(t('game.pong.fizWins'));
             window.heroSectionGameActive = false;
-            setTimeout(() => {
-                if (!window.heroSectionGameActive) {
-                    // Reset scores for potential replay
-                    game.player.score = 0;
-                    game.cpu.score = 0;
-                    updateHeroSectionScore();
-                    window.heroSectionGameActive = true;
-                    window.heroSectionGameStarted = false;
-                    updateHeroSectionMessage('CPU Won! Click to play again');
-                }
-            }, 3000);
             return true;
         }
         return false;
@@ -1086,7 +1141,7 @@ function initializeHeroSectionPongGame(canvas) {
             updateHeroSectionScore();
             resetHeroSectionBall();
             if (!checkHeroSectionGameEnd()) {
-                updateHeroSectionMessage('CPU Scores!');
+                updateHeroSectionMessage(t('game.pong.fizScores'));
                 setTimeout(() => updateHeroSectionMessage(''), 1500);
             }
         } else if (game.ball.x > canvas.width) {
@@ -1094,7 +1149,7 @@ function initializeHeroSectionPongGame(canvas) {
             updateHeroSectionScore();
             resetHeroSectionBall();
             if (!checkHeroSectionGameEnd()) {
-                updateHeroSectionMessage('You Score!');
+                updateHeroSectionMessage(t('game.pong.youScore'));
                 setTimeout(() => updateHeroSectionMessage(''), 1500);
             }
         }
@@ -1105,16 +1160,12 @@ function initializeHeroSectionPongGame(canvas) {
     }
     
     function renderHeroSection() {
-        // Clear canvas
+        // Clear canvas (fully transparent)
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Add semi-transparent overlay for better visibility
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
         
         // Draw center line
         ctx.setLineDash([15, 10]);
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(canvas.width / 2, 0);
@@ -1130,7 +1181,7 @@ function initializeHeroSectionPongGame(canvas) {
         ctx.fillStyle = 'white';
         ctx.font = 'bold 14px Inter';
         ctx.textAlign = 'center';
-        ctx.fillText('YOU', game.player.x + game.player.width / 2, game.player.y - 8);
+        ctx.fillText(t('game.pong.playerLabel'), game.player.x + game.player.width / 2, game.player.y - 8);
         
         // Draw CPU paddle with user's image
         if (cpuImage.complete) {
@@ -1161,7 +1212,7 @@ function initializeHeroSectionPongGame(canvas) {
         ctx.fillStyle = 'white';
         ctx.font = 'bold 14px Inter';
         ctx.textAlign = 'center';
-        ctx.fillText('CPU', game.cpu.x + game.cpu.width / 2, game.cpu.y - 8);
+        ctx.fillText(t('game.pong.fizLabel'), game.cpu.x + game.cpu.width / 2, game.cpu.y - 8);
         
         // Draw ball
         ctx.fillStyle = 'white';

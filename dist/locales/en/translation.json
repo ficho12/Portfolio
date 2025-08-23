@@ -170,6 +170,26 @@
   "modal": {
     "close": "Close"
   },
+  "game": {
+    "pong": {
+      "clickToStart": "Click canvas to start",
+      "moveKeys": "W/S or ↑/↓ to move",
+      "escToExit": "ESC to exit",
+      "scrollToExplore": "Scroll to explore portfolio",
+      "firstToWin": "First to 5 points wins!",
+      "gameStarted": "Game Started!",
+      "youScore": "You Score!",
+      "fizScores": "FIZ Scores!",
+      "youWin": "You Win! 🎉 Click to play again or scroll to explore",
+      "fizWins": "FIZ Wins! 😢 Click to play again or scroll to explore",
+      "youWon": "You Won! Click to play again",
+      "fizWon": "FIZ Won! Click to play again",
+      "playerLabel": "YOU",
+      "fizLabel": "FIZ",
+      "vs": "VS",
+      "exitGame": "Exit Game"
+    }
+  },
   "footer": {
     "copyright": "Copyright © Fiz Rey Armesto 2025"
   }
