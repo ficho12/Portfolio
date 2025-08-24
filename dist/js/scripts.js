@@ -542,7 +542,7 @@ function initializePongGame() {
             width: 100%;
             height: 100%;
             background: transparent;
-            z-index: 10;
+            z-index: 5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -586,7 +586,7 @@ function initializePongGame() {
             height: 100%;
             pointer-events: none;
             color: white;
-            z-index: 11;
+            z-index: 6;
         `;
         
         // Score display

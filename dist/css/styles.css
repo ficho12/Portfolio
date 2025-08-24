@@ -11742,7 +11742,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .hero .hero-image #profileContainer .pong-game .game-over-screen {
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
-  z-index: 20;
+  z-index: 7;
 }
 .hero .hero-image #profileContainer .pong-game .game-over-screen .game-result {
   border: 2px solid #3498db;
@@ -12085,6 +12085,7 @@ section.py-5 {
 
 .navbar {
   backdrop-filter: blur(10px);
+  z-index: 1030;
 }
 .navbar .nav-link {
   transition: all 0.3s ease;
@@ -12096,6 +12097,7 @@ section.py-5 {
 .navbar .dropdown-menu {
   border-radius: 12px;
   padding: 0.5rem 0;
+  z-index: 1040;
 }
 .navbar .dropdown-menu .dropdown-item {
   padding: 0.5rem 1rem;

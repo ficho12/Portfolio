@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
         .game-over-screen {
           background: rgba(0, 0, 0, 0.9);
           backdrop-filter: blur(10px);
-          z-index: 20;
+          z-index: 7;
           
           .game-result {
             border: 2px solid #3498db;
@@ -584,6 +584,7 @@ section {
 // Navbar improvements
 .navbar {
   backdrop-filter: blur(10px);
+  z-index: 1030; // Ensure navbar is above all game elements
   
   .nav-link {
     transition: all 0.3s ease;
@@ -597,6 +598,7 @@ section {
   .dropdown-menu {
     border-radius: 12px;
     padding: 0.5rem 0;
+    z-index: 1040; // Ensure dropdown is above all game elements
     
     .dropdown-item {
       padding: 0.5rem 1rem;
