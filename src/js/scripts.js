@@ -102,6 +102,10 @@ function initializeProjectInteractions() {
             case 'yabs':
                 // Already has modal functionality
                 break;
+            case 'eyeflow':
+                // Add video preview functionality for Eyeflow
+                addVideoPreview(card);
+                break;
             case 'noche':
                 // Add video preview functionality
                 addVideoPreview(card);
@@ -205,7 +209,7 @@ function addVideoPreview(card) {
             card.addEventListener('mouseleave', function() {
                 const overlayContent = overlay.querySelector('.overlay-content p');
                 if (overlayContent && !card.classList.contains('video-playing')) {
-                    overlayContent.textContent = 'Watch Trailer';
+                    overlayContent.textContent = 'Click to Watch'; // Keep "Click to Watch" instead of reverting
                 }
             });
         }

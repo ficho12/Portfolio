@@ -106,6 +106,11 @@
       "playGame": "Xogar",
       "ludumDare": "Ludum Dare"
     },
+    "shinjukuEki": {
+      "title": "Shinjuku-eki - Ludum Dare 57",
+      "description": "Xogo creado para Ludum Dare 57, con gameplay atmosférico e mecánicas innovadoras.",
+      "playGame": "Xogar"
+    },
     "noche": {
       "title": "Noche - Indie Spain Jam 2023",
       "description": "Rol de Programador Principal na game jam española indie, creando experiencia de terror atmosférica."
@@ -147,7 +152,6 @@
       "python": "Python",
       "java": "Java",
       "javascript": "JavaScript",
-      "unity3d": "Unity 3D",
       "unrealEngine45": "Unreal Engine 4/5",
       "vrExpansion": "VRExpansionPlugin",
       "csharpNet": "C# .NET",

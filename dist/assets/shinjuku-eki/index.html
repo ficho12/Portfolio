@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Shinjuku-eki - Ludum Dare 57</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #222;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      
+      #gameContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      #unity-container {
+        background: #231F20;
+      }
+      
+      #unity-canvas {
+        background: #231F20;
+        display: block;
+        margin: auto;
+      }
+      
+      #unity-loading-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+      
+      #unity-logo {
+        width: 154px;
+        height: 130px;
+        background: url('unity-logo-dark.png') no-repeat center;
+      }
+      
+      #unity-progress-bar-empty {
+        width: 141px;
+        height: 18px;
+        margin-top: 10px;
+        background: url('progress-bar-empty-dark.png') no-repeat center;
+      }
+      
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 18px;
+        margin-top: 10px;
+        background: url('progress-bar-full-dark.png') no-repeat center;
+      }
+      
+      #unity-footer {
+        position: relative;
+      }
+      
+      .unity-mobile #unity-container {
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      .unity-mobile #unity-canvas {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .placeholder {
+        text-align: center;
+        padding: 50px;
+      }
+      
+      .placeholder h1 {
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      
+      .placeholder p {
+        color: #ccc;
+        margin-bottom: 30px;
+      }
+      
+      .placeholder a {
+        color: #4a9eff;
+        text-decoration: none;
+      }
+      
+      .placeholder a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gameContainer">
+      <!-- Placeholder content until actual WebGL build is provided -->
+      <div class="placeholder">
+        <h1>Shinjuku-eki</h1>
+        <h2>Ludum Dare 57</h2>
+        <p>WebGL build will be available here once the game files are uploaded.</p>
+        <p>To add your WebGL build:</p>
+        <ol style="text-align: left; max-width: 600px;">
+          <li>Export your game from Unity as WebGL</li>
+          <li>Copy the Build folder contents to this directory</li>
+          <li>Update this HTML file to load your game</li>
+        </ol>
+        <p>For reference, check the <a href="../yabs/">YABS game implementation</a></p>
+      </div>
+      
+      <!-- Uncomment and configure when WebGL build is available
+      <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width=960 height=600></canvas>
+        <div id="unity-loading-bar">
+          <div id="unity-logo"></div>
+          <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+          </div>
+        </div>
+        <div id="unity-footer">
+          <div id="unity-webgl-logo"></div>
+          <div id="unity-fullscreen-button"></div>
+          <div id="unity-build-title">Shinjuku-eki</div>
+        </div>
+      </div>
+      -->
+      
+      <!-- Unity loader script would go here when ready
+      <script src="Build/Uncompressed.loader.js"></script>
+      <script>
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/Uncompressed.data",
+          frameworkUrl: "Build/Uncompressed.framework.js",
+          codeUrl: "Build/Uncompressed.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "Shinjuku-eki",
+          productVersion: "1.0",
+        });
+      </script>
+      -->
+    </div>
+  </body>
+</html>

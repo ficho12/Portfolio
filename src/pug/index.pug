@@ -111,10 +111,11 @@ html(lang='en')
                 .row.align-items-center.gx-5
                   .col.text-center.text-lg-start.mb-4.mb-lg-0
                     .bg-light.p-4.rounded-4
-                      .text-primary.fw-bolder.mb-2 Oct 2023 - <span data-i18n='experience.present'>Present</span>
-                      .small.fw-bolder(data-i18n='experience.arsoft.position') Junior Programmer
-                      .small.text-muted(data-i18n='experience.arsoft.company') ARSOFT
-                      .small.text-muted(data-i18n='experience.arsoft.location') Salamanca, Spain
+                      .mb-2
+                        .fw-bolder.text-primary(data-i18n='experience.arsoft.position') Junior Programmer
+                        .small.text-muted(data-i18n='experience.arsoft.company') ARSOFT
+                        .small.text-muted(data-i18n='experience.arsoft.location') Salamanca, Spain
+                      .small.text-muted.fw-bolder.mb-2 Oct 2023 - <span data-i18n='experience.present'>Present</span>
                   .col-lg-8
                     div(data-i18n='experience.arsoft.description') Creation of a railway driving simulator in Unity.
 
@@ -124,10 +125,11 @@ html(lang='en')
                 .row.align-items-center.gx-5
                   .col.text-center.text-lg-start.mb-4.mb-lg-0
                     .bg-light.p-4.rounded-4
-                      .text-primary.fw-bolder.mb-2 Feb - Apr 2023
-                      .small.fw-bolder(data-i18n='experience.arsoft.internship.position') Unity Developer (Internship)
-                      .small.text-muted(data-i18n='experience.arsoft.company') ARSOFT
-                      .small.text-muted(data-i18n='experience.arsoft.location') Salamanca, Spain
+                      .mb-2
+                        .fw-bolder.text-primary(data-i18n='experience.arsoft.internship.position') Unity Developer (Internship)
+                        .small.text-muted(data-i18n='experience.arsoft.company') ARSOFT
+                        .small.text-muted(data-i18n='experience.arsoft.location') Salamanca, Spain
+                      .small.text-muted.fw-bolder.mb-2 Feb - Apr 2023
                   .col-lg-8
                     div(data-i18n='experience.arsoft.internship.description') Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.
 
@@ -144,10 +146,10 @@ html(lang='en')
                 .row.align-items-center.gx-5
                   .col.text-center.text-lg-start.mb-4.mb-lg-0
                     .bg-light.p-4.rounded-4
-                      .text-secondary.fw-bolder.mb-2 2017 - 2023
                       .mb-2
-                        .small.fw-bolder(data-i18n='education.degree') Computer Engineering
+                        .fw-bolder.text-primary(data-i18n='education.degree') Computer Engineering
                         .small.text-muted(data-i18n='education.university') Universidad de Salamanca
+                      .small.text-muted.fw-bolder.mb-2 2017 - 2023
                   .col-lg-8
                     div(data-i18n='education.thesis') Thesis: Development of a multiplayer VR video game using Unreal Engine 5.
 
@@ -164,10 +166,10 @@ html(lang='en')
                 .row.align-items-center.gx-5
                   .col.text-center.text-lg-start.mb-4.mb-lg-0
                     .bg-light.p-4.rounded-4
-                      .text-primary.fw-bolder.mb-2 Aug 2020
                       .mb-2
-                        .small.fw-bolder(data-i18n='certificates.c1Advanced.title') C1 Advanced 
+                        .fw-bolder.text-primary(data-i18n='certificates.c1Advanced.title') C1 Advanced 
                         .small.text-muted(data-i18n='certificates.c1Advanced.score') Score 187
+                      .small.text-muted.fw-bolder.mb-2 Aug 2020
                   .col-lg-8
                     div(data-i18n='certificates.c1Advanced.description') Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge.
 
@@ -177,10 +179,10 @@ html(lang='en')
                 .row.align-items-center.gx-5
                   .col.text-center.text-lg-start.mb-4.mb-lg-0
                     .bg-light.p-4.rounded-4
-                      .text-primary.fw-bolder.mb-2 Sept 2017
                       .mb-2
-                        .small.fw-bolder(data-i18n='certificates.cProgramming.title') C Programming 
+                        .fw-bolder.text-primary(data-i18n='certificates.cProgramming.title') C Programming 
                         .small.text-muted(data-i18n='certificates.cProgramming.level') Basic level
+                      .small.text-muted.fw-bolder.mb-2 Sept 2017
                   .col-lg-8
                     div(data-i18n='certificates.cProgramming.description') Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca.
 
@@ -218,15 +220,19 @@ html(lang='en')
                         span.badge.bg-light.text-dark.me-2 360° Video
                         span.badge.bg-light.text-dark C#
               .col-lg-4.col-md-6
-                .project-card(data-project='eyeflow')
+                .project-card.video-project(data-project='eyeflow', data-video='P5h-mYArm6Q')
                   .card.border-0.shadow-sm.h-100
                     .project-media.position-relative.overflow-hidden
                       .project-image
-                        img.img-fluid(src='assets/Shot.png', alt='Eyeflow VR')
+                        img.img-fluid(src='assets/eyeflow.jpeg', alt='Eyeflow VR')
+                      .video-container.position-absolute.top-0.start-0.w-100.h-100(style='display: none;')
+                        .video-close.position-absolute.top-0.end-0.p-2(style='z-index: 20; cursor: pointer;')
+                          i.bi.bi-x-circle-fill.text-white.fs-4
+                        iframe.w-100.h-100(frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
                       .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
                         .overlay-content.text-center.text-white
-                          i.bi.bi-eye-fill.fs-1.mb-2
-                          p Eye Tracking VR
+                          i.bi.bi-play-circle-fill.fs-1.mb-2
+                          p Click to Watch
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-primary.mb-2(data-i18n='projects.categories.professional') Professional
@@ -303,6 +309,28 @@ html(lang='en')
                         button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#yabsModal', data-i18n='projects.yabs.playGame') Play Game
                         a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/55/yabs', target='_blank', data-i18n='projects.yabs.ludumDare') Ludum Dare
               .col-lg-4.col-md-6
+                .project-card.playable-game(data-project='shinjukuEki')
+                  .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/shinjuku-eki.png', alt='Shinjuku-eki Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-play-circle-fill.fs-1.mb-2
+                          p Click to Play!
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-warning.mb-2(data-i18n='projects.categories.gameJam') Game Jam
+                      h4.fw-bold.mb-3(data-i18n='projects.shinjukuEki.title') Shinjuku-eki - Ludum Dare 57
+                      p.text-muted.mb-3(data-i18n='projects.shinjukuEki.description') Game created for Ludum Dare 57, featuring atmospheric gameplay and innovative mechanics.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.text-dark.me-2 Unity
+                        span.badge.bg-light.text-dark.me-2 C#
+                        span.badge.bg-light.text-dark WebGL
+                      .d-flex.gap-2
+                        button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#shinjukuEkiModal', data-i18n='projects.shinjukuEki.playGame') Play Game
+                        a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/57/shinjuku-eki', target='_blank', data-i18n='projects.yabs.ludumDare') Ludum Dare
+              .col-lg-4.col-md-6
                 .project-card.video-project(data-project='noche', data-video='LFEfY4HfkQ0')
                   .card.border-0.shadow-sm.h-100
                     .project-media.position-relative.overflow-hidden
@@ -315,7 +343,7 @@ html(lang='en')
                       .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
                         .overlay-content.text-center.text-white
                           i.bi.bi-play-circle-fill.fs-1.mb-2
-                          p Watch Trailer
+                          p Click to Watch
                     .card-body.p-4
                       .project-category.mb-2
                         span.badge.bg-warning.mb-2(data-i18n='projects.categories.gameJam') Game Jam
@@ -384,6 +412,23 @@ html(lang='en')
               document.getElementById('yabsFrame').src = '';
             });
 
+    // Shinjuku-eki Game Modal
+    #shinjukuEkiModal.modal.fade(tabindex='-1', aria-hidden='true')
+      .modal-dialog.modal-xl
+        .modal-content
+          .modal-header
+            h5.modal-title Shinjuku-eki - Ludum Dare 57
+            button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close', data-i18n='modal.close')
+          .modal-body.p-0
+            iframe#shinjukuEkiFrame(src='', style='width: 100%; height: 600px; border: none;')
+          script.
+            document.getElementById('shinjukuEkiModal').addEventListener('show.bs.modal', function() {
+              document.getElementById('shinjukuEkiFrame').src = 'assets/shinjuku-eki/index.html';
+            });
+            document.getElementById('shinjukuEkiModal').addEventListener('hide.bs.modal', function() {
+              document.getElementById('shinjukuEkiFrame').src = '';
+            });
+
     // Skills Section
     section#skills.py-5.bg-light
       .container
@@ -444,13 +489,11 @@ html(lang='en')
                       .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100(data-i18n='skills.items.c') C
                     .col
                       .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100(data-i18n='skills.items.cpp') C++
-                  .row.row-cols-1.row-cols-md-3
+                  .row.row-cols-1.row-cols-md-2
                     .col.mb-4.mb-md-0
                       .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100(data-i18n='skills.items.python') Python
                     .col.mb-4.mb-md-0
                       .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100(data-i18n='skills.items.java') Java
-                    .col
-                      .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100(data-i18n='skills.items.unity3d') Unity 3D
 
     // Contact Section
     section#contact.py-5.bg-primary.text-white
