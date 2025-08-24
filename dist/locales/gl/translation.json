@@ -5,10 +5,12 @@
   },
   "nav": {
     "about": "Acerca de",
-    "experience": "Experiencia", 
+    "experience": "Experiencia",
     "projects": "Proxectos",
     "skills": "Habilidades",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "darkMode": "Escuro",
+    "lightMode": "Claro"
   },
   "hero": {
     "greeting": "Ola, son",

@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('=== LANGUAGE SWITCHER INITIALIZED ===');
     
+    // Initialize theme switcher
+    initializeThemeSwitcher();
+    
+    console.log('=== THEME SWITCHER INITIALIZED ===');
+    
     // Initialize project interactions
     initializeProjectInteractions();
     
@@ -82,6 +87,62 @@ function updateActiveLanguage(lang) {
             link.classList.add('active');
         }
     });
+}
+
+function initializeThemeSwitcher() {
+    console.log('Initializing theme switcher');
+    
+    // Get theme toggle button
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    const themeText = document.querySelector('.theme-text');
+    
+    if (!themeToggle) {
+        console.warn('Theme toggle button not found');
+        return;
+    }
+    
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    console.log('Loaded saved theme:', savedTheme);
+    setTheme(savedTheme);
+    
+    // Add click event listener
+    themeToggle.addEventListener('click', function() {
+        console.log('Theme toggle clicked');
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        console.log('Switching from', currentTheme, 'to', newTheme);
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+function setTheme(theme) {
+    console.log('Setting theme to:', theme);
+    
+    const themeIcon = document.querySelector('.theme-icon');
+    const themeText = document.querySelector('.theme-text');
+    
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (themeIcon) {
+            themeIcon.className = 'theme-icon bi bi-sun-fill';
+        }
+        if (themeText) {
+            themeText.setAttribute('data-i18n', 'nav.lightMode');
+            themeText.textContent = t('nav.lightMode');
+        }
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        if (themeIcon) {
+            themeIcon.className = 'theme-icon bi bi-moon-fill';
+        }
+        if (themeText) {
+            themeText.setAttribute('data-i18n', 'nav.darkMode');
+            themeText.textContent = t('nav.darkMode');
+        }
+    }
 }
 
 function initializeProjectInteractions() {
