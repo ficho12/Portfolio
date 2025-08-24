@@ -11619,6 +11619,12 @@ textarea.form-control-lg {
   --shadow-hover: rgba(0, 0, 0, 0.15);
   --navbar-bg: rgba(255, 255, 255, 0.95);
   --hero-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --primary-gradient: linear-gradient(135deg, #3498db, #2980b9);
+  --primary-shadow: rgba(52, 152, 219, 0.3);
+  --primary-shadow-hover: rgba(52, 152, 219, 0.4);
+  --primary-overlay: rgba(52, 152, 219, 0.9);
 }
 
 [data-theme=dark] {
@@ -11634,6 +11640,12 @@ textarea.form-control-lg {
   --shadow-hover: rgba(0, 0, 0, 0.5);
   --navbar-bg: rgba(26, 26, 26, 0.95);
   --hero-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  --primary-color: #2c5aa0;
+  --primary-dark: #1e3a8a;
+  --primary-gradient: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+  --primary-shadow: rgba(44, 90, 160, 0.3);
+  --primary-shadow-hover: rgba(44, 90, 160, 0.4);
+  --primary-overlay: rgba(44, 90, 160, 0.9);
 }
 
 body {
@@ -11688,8 +11700,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .theme-toggle:hover {
   background-color: var(--bg-secondary);
-  border-color: #3498db;
-  color: #3498db;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   transform: translateY(-1px);
 }
 .theme-toggle .theme-icon {
@@ -11731,7 +11743,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(52, 152, 219, 0.9) !important;
+  background: var(--primary-overlay) !important;
   opacity: 0 !important;
   transition: opacity 0.3s ease !important;
   cursor: pointer !important;
@@ -11763,7 +11775,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .hero .hero-image #profileContainer .profile-photo:hover img {
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 20px 40px var(--primary-shadow);
 }
 .hero .hero-image #profileContainer .profile-photo.hovering .pong-overlay {
   opacity: 1 !important;
@@ -11775,7 +11787,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .hero .hero-image #profileContainer .profile-photo.hovering img {
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 20px 40px var(--primary-shadow);
 }
 .hero .hero-image #profileContainer .pong-game {
   width: 400px;
@@ -11783,7 +11795,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background: #000;
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  border: 3px solid #3498db;
+  border: 3px solid var(--primary-color);
   overflow: hidden;
 }
 .hero .hero-image #profileContainer .pong-game #pongCanvas {
@@ -11805,14 +11817,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   z-index: 7;
 }
 .hero .hero-image #profileContainer .pong-game .game-over-screen .game-result {
-  border: 2px solid #3498db;
-  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 10px 30px var(--primary-shadow);
 }
 .hero .social-links a {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .hero .social-links a:hover {
-  color: #3498db !important;
+  color: var(--primary-color) !important;
   transform: translateY(-2px);
 }
 
@@ -11835,21 +11847,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border: none;
 }
 .btn.btn-primary {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 15px var(--primary-shadow);
 }
 .btn.btn-primary:hover {
-  background: linear-gradient(135deg, #2980b9, #1e5f99);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 6px 20px var(--primary-shadow-hover);
 }
 .btn.btn-outline-primary {
-  border: 2px solid #3498db;
-  color: #3498db;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 .btn.btn-outline-primary:hover {
-  background-color: #3498db;
-  border-color: #3498db;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   transform: translateY(-2px);
 }
 .btn.btn-lg, .btn-group-lg > .btn {
@@ -11857,7 +11869,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-size: 1.1rem;
 }
 .btn:focus, .btn:focus-visible {
-  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+  box-shadow: 0 0 0 0.25rem var(--primary-overlay);
 }
 
 .card {
@@ -11891,7 +11903,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   transition: color 0.3s ease;
 }
 .feature-card:hover .feature-icon i {
-  color: #3498db !important;
+  color: var(--primary-color) !important;
 }
 
 .project-card {
@@ -12012,7 +12024,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border: 2px solid #9b59b6;
 }
 .project-card[data-project=beeShowcase] .project-overlay, .project-card[data-project=eyeflow] .project-overlay, .project-card[data-project=renfeSimulator] .project-overlay {
-  background: rgba(52, 152, 219, 0.9);
+  background: var(--primary-overlay);
 }
 .project-card[data-project=vrsurvival] .project-overlay {
   background: rgba(46, 204, 113, 0.9);
@@ -12098,10 +12110,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .experience-card .card {
-  border-left: 4px solid #3498db;
+  border-left: 4px solid var(--primary-color);
 }
 .experience-card .card:hover {
-  border-left-color: #2980b9;
+  border-left-color: var(--primary-dark);
 }
 
 .skill-category h4, .skill-category .h4 {
@@ -12115,7 +12127,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   transition: color 0.3s ease;
 }
 .skill-category li:hover {
-  color: #3498db;
+  color: var(--primary-color);
 }
 
 .contact-item i {
@@ -12135,7 +12147,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .bg-primary {
-  background: linear-gradient(135deg, #3498db, #2980b9) !important;
+  background: var(--primary-gradient) !important;
 }
 
 section {
@@ -12156,7 +12168,7 @@ section.py-5 {
   color: var(--text-color) !important;
 }
 .navbar .nav-link:hover {
-  color: #3498db !important;
+  color: var(--primary-color) !important;
   transform: translateY(-1px);
 }
 .navbar .navbar-brand {
@@ -12227,7 +12239,7 @@ section.py-5 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 [data-theme=dark] .bg-primary {
-  background: linear-gradient(135deg, #2c5aa0, #1e3a8a) !important;
+  background: var(--primary-gradient) !important;
 }
 [data-theme=dark] footer.bg-white {
   background-color: var(--bg-color) !important;
