@@ -773,10 +773,25 @@ section {
       padding: 0.5rem 1rem;
       transition: all 0.2s ease;
       color: var(--text-color);
+      border-radius: 8px;
+      margin: 0.125rem 0; // Only vertical margin, no horizontal
+      overflow: hidden; // Ensure content stays within bounds
       
       &:hover {
         background-color: var(--bg-secondary);
-        transform: translateX(5px);
+        color: var(--primary-color);
+        box-shadow: 0 2px 8px var(--shadow-color);
+        
+        // Move only the content (image and text) inside the item
+        img, span, text {
+          transform: translateX(5px);
+        }
+      }
+      
+      // Smooth transition for the content
+      img, span {
+        transition: transform 0.2s ease;
+        display: inline-block;
       }
     }
   }

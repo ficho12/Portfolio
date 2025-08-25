@@ -12247,10 +12247,21 @@ section.py-5 {
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
   color: var(--text-color);
+  border-radius: 8px;
+  margin: 0.125rem 0;
+  overflow: hidden;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+.navbar .dropdown-menu .dropdown-item:hover img, .navbar .dropdown-menu .dropdown-item:hover span, .navbar .dropdown-menu .dropdown-item:hover text {
   transform: translateX(5px);
+}
+.navbar .dropdown-menu .dropdown-item img, .navbar .dropdown-menu .dropdown-item span {
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .badge {
