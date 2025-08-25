@@ -12361,6 +12361,125 @@ section.py-5 {
     padding: 1.5rem !important;
   }
 }
+.spotify-widget, .lastfm-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.spotify-widget.visible, .lastfm-widget.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.spotify-widget:hover, .lastfm-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px var(--shadow-hover);
+}
+.spotify-widget .spotify-content, .lastfm-widget .spotify-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.spotify-widget .spotify-icon, .lastfm-widget .spotify-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+  color: #1ed760;
+}
+.spotify-widget .spotify-icon i, .lastfm-widget .spotify-icon i {
+  display: block;
+}
+
+#lastfm-widget .spotify-icon {
+  color: #d51007;
+}
+#lastfm-widget .spotify-info {
+  flex: 1;
+  min-width: 0;
+}
+#lastfm-widget .spotify-info .spotify-status {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+#lastfm-widget .spotify-info .spotify-track {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#lastfm-widget .spotify-info .spotify-artist {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#lastfm-widget .spotify-album-art {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+#lastfm-widget .spotify-album-art img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  #lastfm-widget {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+[data-bs-theme=dark] .spotify-widget, [data-bs-theme=dark] .lastfm-widget {
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme=dark] .spotify-widget .spotify-info .spotify-track, [data-bs-theme=dark] .lastfm-widget .spotify-info .spotify-track {
+  color: #ffffff;
+}
+[data-bs-theme=dark] .spotify-widget .spotify-info .spotify-status,
+[data-bs-theme=dark] .spotify-widget .spotify-info .spotify-artist, [data-bs-theme=dark] .lastfm-widget .spotify-info .spotify-status,
+[data-bs-theme=dark] .lastfm-widget .spotify-info .spotify-artist {
+  color: #b3b3b3;
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+.spotify-widget.visible .spotify-icon,
+.lastfm-widget.visible .spotify-icon {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
 .bg-gradient-primary-to-secondary {
   background: #3498db;
   background: linear-gradient(135deg, #3498db 0%, #5a6c7d 100%);

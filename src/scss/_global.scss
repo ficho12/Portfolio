@@ -921,3 +921,146 @@ section {
     padding: 1.5rem !important;
   }
 }
+
+// Music Widget (Spotify/Last.fm compatible)
+.spotify-widget, .lastfm-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--shadow-hover);
+  }
+  
+  .spotify-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .spotify-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+    
+    // Default Spotify green
+    color: #1ed760;
+    
+    i {
+      display: block;
+    }
+  }
+}
+
+// Last.fm specific styling
+#lastfm-widget {
+  .spotify-icon {
+    color: #d51007; // Last.fm red
+  }
+  
+  .spotify-info {
+    flex: 1;
+    min-width: 0; // Allow text truncation
+    
+    .spotify-status {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    
+    .spotify-track {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .spotify-artist {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  .spotify-album-art {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+// Dark mode specific styling for music widgets
+[data-bs-theme="dark"] {
+  .spotify-widget, .lastfm-widget {
+    background: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .spotify-info {
+      .spotify-track {
+        color: #ffffff;
+      }
+      
+      .spotify-status,
+      .spotify-artist {
+        color: #b3b3b3;
+      }
+    }
+  }
+}
+
+// Animation for music icons
+@keyframes musicPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.spotify-widget.visible .spotify-icon, 
+.lastfm-widget.visible .spotify-icon {
+  animation: musicPulse 2s ease-in-out infinite;
+}
