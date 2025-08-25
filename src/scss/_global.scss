@@ -356,6 +356,84 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Project Cards and Education Cards - Add dark mode enhancement
+.project-card .card,
+#experience .card,
+#education .card {
+  background: var(--card-bg) !important;
+  box-shadow: 0 8px 25px var(--shadow-color) !important;
+  border: 1px solid var(--card-border) !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-hover) !important;
+  }
+}
+
+// Contact Section - Enhanced styling for both modes
+#contact {
+  .contact-icon {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .contact-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
+}
+
+// Dark mode specific enhancements
+[data-bs-theme="dark"] {
+  section#contact.bg-primary.text-white {
+    .contact-icon {
+      color: #ffd700 !important; // Gold color for icons
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+      
+      &:hover {
+        color: #ffed4e !important; // Lighter gold on hover
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+      }
+    }
+    
+    .contact-label {
+      color: #e3f2fd !important; // Light blue for labels
+      font-weight: 500 !important;
+    }
+    
+    .contact-link {
+      color: #fff3e0 !important; // Warm white for links
+      
+      &:hover {
+        color: #ffd700 !important; // Gold on hover to match icons
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.3) !important;
+      }
+    }
+    
+    h2 {
+      background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.2)) !important;
+    }
+    
+    .lead {
+      color: #b3e5fc !important; // Light blue for description
+    }
+  }
+}
+
 // Project Cards
 .project-card {
   opacity: 0;
