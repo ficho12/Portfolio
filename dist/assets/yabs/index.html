@@ -4,27 +4,161 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | YABS</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 0;
+        border: 0;
+        margin: 0;
+        background: #231F20;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      #unity-container {
+        position: relative;
+        display: inline-block;
+      }
+      #unity-canvas {
+        background: #231F20;
+      }
+      #fullscreen-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid #fff;
+        color: white;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      #fullscreen-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+      #fullscreen-button.hidden {
+        display: none;
+      }
+      /* Fullscreen styles */
+      #unity-container:-webkit-full-screen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-container:-moz-full-screen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-container:fullscreen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-canvas:-webkit-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      #unity-canvas:-moz-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      #unity-canvas:fullscreen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    </style>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #231F20"></canvas>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #231F20"></canvas>
+      <button id="fullscreen-button" class="hidden">⛶ Fullscreen</button>
+    </div>
+    
     <script src="Build/Uncompressed.loader.js"></script>
     <script>
+      const canvas = document.querySelector("#unity-canvas");
+      const fullscreenButton = document.querySelector("#fullscreen-button");
+      const unityContainer = document.querySelector("#unity-container");
+      
+      let unityInstance = null;
+
+      // Fullscreen functionality
+      function toggleFullscreen() {
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+          // Enter fullscreen
+          if (unityContainer.requestFullscreen) {
+            unityContainer.requestFullscreen();
+          } else if (unityContainer.mozRequestFullScreen) {
+            unityContainer.mozRequestFullScreen();
+          } else if (unityContainer.webkitRequestFullscreen) {
+            unityContainer.webkitRequestFullscreen();
+          }
+        } else {
+          // Exit fullscreen
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+      }
+
+      // Update button text based on fullscreen state
+      function updateFullscreenButton() {
+        if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement) {
+          fullscreenButton.textContent = "⛶ Exit Fullscreen";
+          // Resize Unity canvas for fullscreen
+          if (unityInstance) {
+            canvas.style.width = "100vw";
+            canvas.style.height = "100vh";
+          }
+        } else {
+          fullscreenButton.textContent = "⛶ Fullscreen";
+          // Restore original canvas size
+          canvas.style.width = "960px";
+          canvas.style.height = "600px";
+        }
+      }
+
+      // Fullscreen event listeners
+      document.addEventListener('fullscreenchange', updateFullscreenButton);
+      document.addEventListener('mozfullscreenchange', updateFullscreenButton);
+      document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+
+      fullscreenButton.addEventListener('click', toggleFullscreen);
+
+      // Keyboard shortcut (F key for fullscreen)
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'f' || e.key === 'F') {
+          e.preventDefault();
+          toggleFullscreen();
+        }
+      });
+
+      // Mobile device detection and styling
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
 
-        var canvas = document.querySelector("#unity-canvas");
         canvas.style.width = "100%";
         canvas.style.height = "100%";
         canvas.style.position = "fixed";
-
         document.body.style.textAlign = "left";
       }
 
-      createUnityInstance(document.querySelector("#unity-canvas"), {
+      // Listen for messages from parent window (modal fullscreen button)
+      window.addEventListener('message', function(event) {
+        if (event.data === 'toggleFullscreen') {
+          toggleFullscreen();
+        }
+      });
+
+      createUnityInstance(canvas, {
         dataUrl: "Build/Uncompressed.data",
         frameworkUrl: "Build/Uncompressed.framework.js",
         codeUrl: "Build/Uncompressed.wasm",
@@ -32,8 +166,12 @@
         companyName: "3mil10",
         productName: "YABS",
         productVersion: "0.1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((instance) => {
+        unityInstance = instance;
+        fullscreenButton.classList.remove("hidden");
+        console.log("YABS game loaded successfully!");
+      }).catch((error) => {
+        console.error("Failed to load YABS game:", error);
       });
     </script>
   </body>

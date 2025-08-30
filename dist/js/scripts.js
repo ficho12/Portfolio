@@ -311,6 +311,64 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Initialize fullscreen functionality for Unity games
+document.addEventListener('DOMContentLoaded', function() {
+    // YABS fullscreen button
+    const yabsFullscreenBtn = document.getElementById('yabsFullscreenBtn');
+    if (yabsFullscreenBtn) {
+        yabsFullscreenBtn.addEventListener('click', function() {
+            const yabsFrame = document.getElementById('yabsFrame');
+            if (yabsFrame && yabsFrame.src) {
+                // Send message to iframe to trigger fullscreen
+                yabsFrame.contentWindow.postMessage('toggleFullscreen', '*');
+            }
+        });
+    }
+
+    // Shinjuku-eki fullscreen button
+    const shinjukuEkiFullscreenBtn = document.getElementById('shinjukuEkiFullscreenBtn');
+    if (shinjukuEkiFullscreenBtn) {
+        shinjukuEkiFullscreenBtn.addEventListener('click', function() {
+            const shinjukuEkiFrame = document.getElementById('shinjukuEkiFrame');
+            if (shinjukuEkiFrame && shinjukuEkiFrame.src) {
+                // Send message to iframe to trigger fullscreen
+                shinjukuEkiFrame.contentWindow.postMessage('toggleFullscreen', '*');
+            }
+        });
+    }
+
+    // Listen for messages from Unity iframes to update button icons
+    window.addEventListener('message', function(event) {
+        if (event.data === 'enteredFullscreen') {
+            // Update button icons to exit fullscreen
+            const yabsBtn = document.getElementById('yabsFullscreenBtn');
+            const shinjukuBtn = document.getElementById('shinjukuEkiFullscreenBtn');
+            
+            if (yabsBtn) {
+                yabsBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
+                yabsBtn.title = 'Exit Fullscreen';
+            }
+            if (shinjukuBtn) {
+                shinjukuBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
+                shinjukuBtn.title = 'Exit Fullscreen';
+            }
+        } else if (event.data === 'exitedFullscreen') {
+            // Update button icons to enter fullscreen
+            const yabsBtn = document.getElementById('yabsFullscreenBtn');
+            const shinjukuBtn = document.getElementById('shinjukuEkiFullscreenBtn');
+            
+            if (yabsBtn) {
+                yabsBtn.innerHTML = '<i class="bi bi-fullscreen"></i>';
+                yabsBtn.title = 'Fullscreen';
+            }
+            if (shinjukuBtn) {
+                shinjukuBtn.innerHTML = '<i class="bi bi-fullscreen"></i>';
+                shinjukuBtn.title = 'Fullscreen';
+            }
+        }
+    });
+});
+
 // Add scroll-triggered animations for project cards
 const observerOptions = {
     threshold: 0.1,
