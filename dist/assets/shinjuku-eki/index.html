@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Shinjuku Eki</title>
+    <title>Unity WebGL Player | Shinjuku-eki</title>
     <style>
       body {
         text-align: center;
@@ -20,70 +20,6 @@
       }
       #unity-canvas {
         background: #231F20;
-      }
-      #loading-bar {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      #loading-bar.hidden {
-        display: none;
-      }
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid #333;
-        border-top: 5px solid #fff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin-bottom: 15px;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      #loading-text {
-        color: white;
-        font-size: 16px;
-      }
-      #error-message {
-        color: #ff4444;
-        font-size: 14px;
-        margin-top: 20px;
-        padding: 10px;
-        background: rgba(255, 68, 68, 0.1);
-        border: 1px solid #ff4444;
-        border-radius: 5px;
-        max-width: 500px;
-        margin: 20px auto;
-      }
-      .hidden {
-        display: none !important;
-      }
-      #fullscreen-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid #fff;
-        color: white;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 14px;
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-      #fullscreen-button:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(1.05);
-      }
-      #fullscreen-button.hidden {
-        display: none;
       }
       /* Fullscreen styles */
       #unity-container:-webkit-full-screen {
@@ -114,35 +50,15 @@
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width="1440" height="1080" tabindex="-1" style="width: 1440px; height: 1080px;"></canvas>
-      <button id="fullscreen-button" class="hidden">⛶ Fullscreen</button>
-      <div id="loading-bar">
-        <div class="spinner"></div>
-        <div id="loading-text">Loading Shinjuku Eki...</div>
-      </div>
-      <div id="error-message" class="hidden"></div>
+      <canvas id="unity-canvas" width=1440 height=1080 tabindex="-1" style="width: 1440px; height: 1080px; background: #231F20"></canvas>
     </div>
     
-    <script src="Build/Build.loader.js"></script>
+    <script src="Build/Buildv1.0.1Uncompressed.loader.js"></script>
     <script>
-      const loadingBar = document.querySelector("#loading-bar");
-      const loadingText = document.querySelector("#loading-text");
-      const errorMessage = document.querySelector("#error-message");
       const canvas = document.querySelector("#unity-canvas");
-      const fullscreenButton = document.querySelector("#fullscreen-button");
       const unityContainer = document.querySelector("#unity-container");
       
       let unityInstance = null;
-
-      function showError(message) {
-        loadingBar.classList.add("hidden");
-        errorMessage.textContent = message;
-        errorMessage.classList.remove("hidden");
-      }
-
-      function updateLoadingText(text) {
-        loadingText.textContent = text;
-      }
 
       // Fullscreen functionality
       function toggleFullscreen() {
@@ -167,29 +83,32 @@
         }
       }
 
-      // Update button text based on fullscreen state
-      function updateFullscreenButton() {
+      // Fullscreen event listeners
+      document.addEventListener('fullscreenchange', function() {
         if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement) {
-          fullscreenButton.textContent = "⛶ Exit Fullscreen";
           // Resize Unity canvas for fullscreen
           if (unityInstance) {
             canvas.style.width = "100vw";
             canvas.style.height = "100vh";
           }
+          if (window.parent !== window) {
+            window.parent.postMessage('enteredFullscreen', '*');
+          }
         } else {
-          fullscreenButton.textContent = "⛶ Fullscreen";
           // Restore original canvas size
           canvas.style.width = "1440px";
           canvas.style.height = "1080px";
+          if (window.parent !== window) {
+            window.parent.postMessage('exitedFullscreen', '*');
+          }
         }
-      }
-
-      // Fullscreen event listeners
-      document.addEventListener('fullscreenchange', updateFullscreenButton);
-      document.addEventListener('mozfullscreenchange', updateFullscreenButton);
-      document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
-
-      fullscreenButton.addEventListener('click', toggleFullscreen);
+      });
+      document.addEventListener('mozfullscreenchange', function() {
+        // ...existing code...
+      });
+      document.addEventListener('webkitfullscreenchange', function() {
+        // ...existing code...
+      });
 
       // Keyboard shortcut (F key for fullscreen)
       document.addEventListener('keydown', function(e) {
@@ -219,42 +138,19 @@
         }
       });
 
-      // Unity instance configuration
-      const config = {
-        arguments: [],
-        dataUrl: "Build/Build.data.br",
-        frameworkUrl: "Build/Build.framework.js.br",
-        codeUrl: "Build/Build.wasm.br",
+      createUnityInstance(canvas, {
+        dataUrl: "Build/Buildv1.0.1Uncompressed.data",
+        frameworkUrl: "Build/Buildv1.0.1Uncompressed.framework.js",
+        codeUrl: "Build/Buildv1.0.1Uncompressed.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "LudumDare57",
         productVersion: "0.1.0",
-      };
-
-      // Check if createUnityInstance is available
-      if (typeof createUnityInstance === 'undefined') {
-        showError("Unity loader failed to load. Please check your internet connection and try refreshing the page.");
-      } else {
-        updateLoadingText("Initializing Unity...");
-        
-        createUnityInstance(canvas, config, (progress) => {
-          updateLoadingText(`Loading... ${Math.round(progress * 100)}%`);
-        }).then((instance) => {
-          unityInstance = instance;
-          loadingBar.classList.add("hidden");
-          fullscreenButton.classList.remove("hidden");
-          console.log("Unity game loaded successfully!");
-        }).catch((message) => {
-          showError(`Failed to load Unity game: ${message}`);
-          console.error("Unity loading error:", message);
-        });
-      }
-
-      // Additional error handling for network issues
-      window.addEventListener('error', function(e) {
-        if (e.filename && (e.filename.includes('Build.loader.js') || e.filename.includes('Build.'))) {
-          showError("Failed to load game files. Please check your internet connection and try again.");
-        }
+      }).then((instance) => {
+        unityInstance = instance;
+        console.log("Shinjuku-eki game loaded successfully!");
+      }).catch((error) => {
+        console.error("Failed to load Shinjuku-eki game:", error);
       });
     </script>
   </body>
