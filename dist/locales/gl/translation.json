@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Fiz Rey Armesto - Enxeñeiro Informático e Desenvolvedor VR/AR",
+    "description": "Fiz Rey Armesto - Enxeñeiro Informático e Desenvolvedor VR/AR. Especializado en Unity, Unreal Engine e experiencias inmersivas."
+  },
+  "nav": {
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "projects": "Proxectos",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "darkMode": "Escuro",
+    "lightMode": "Claro"
+  },
+  "hero": {
+    "greeting": "Ola, son",
+    "name": "Fiz Rey Armesto",
+    "title": "Enxeñeiro Informático e Desenvolvedor VR/AR",
+    "description": "Creo experiencias inmersivas usando Unity e Unreal Engine, especializándome en desenvolvemento VR e solucións interactivas innovadoras.",
+    "viewWork": "Ver o Meu Traballo",
+    "downloadResume": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre Min",
+    "description": "Son Enxeñeiro Informático con paixón por crear experiencias dixitais inmersivas. A miña experiencia céntrase no desenvolvemento VR/AR, programación de xogos e tecnoloxías interactivas de vangarda.",
+    "development": {
+      "title": "Desenvolvemento",
+      "description": "Unity, Unreal Engine, C#, C++, JavaScript"
+    },
+    "vrar": {
+      "title": "VR/AR",
+      "description": "Experiencias inmersivas, videoxogos VR, aplicacións AR"
+    },
+    "engineering": {
+      "title": "Enxeñería",
+      "description": "Arquitectura de software, deseño de sistemas, optimización"
+    }
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "downloadResume": "Descargar CV",
+    "current": "Posición Actual",
+    "present": "Presente",
+    "arsoft": {
+      "position": "Programador Junior",
+      "company": "ARSOFT",
+      "location": "Salamanca, España",
+      "description": "Desenvolvedor Líder de experiencias VR/AR incluíndo showcases inmersivos de apicultura con integración de vídeo 360°. Creación de simuladores de condución ferroviaria e contido educativo interactivo en Unity.",
+      "internship": {
+        "position": "Desenvolvedor Unity (Prácticas)",
+        "description": "Construín simulacións cirúrxicas nativas para Meta Quest 2 desde cero co framework UltimateXR para Unity."
+      }
+    },
+    "freelance": {
+      "position": "Desenvolvedor de Videoxogos",
+      "company": "Desenvolvedor Freelance",
+      "description": "Creando videoxogos independentes e experiencias VR, participando en game jams e desenvolvendo solucións personalizadas para clientes."
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "degree": "Enxeñería Informática",
+    "university": "Universidad de Salamanca",
+    "thesis": "Tese: Desenvolvemento dun videoxogo VR multixogador usando Unreal Engine 5."
+  },
+  "certificates": {
+    "title": "Certificados",
+    "c1Advanced": {
+      "title": "C1 Advanced",
+      "score": "Puntuación 187",
+      "description": "Certificado de Inglés Avanzado (CAE) emitido por Cambridge English Language Assessment, parte da Universidade de Cambridge."
+    },
+    "cProgramming": {
+      "title": "Programación C",
+      "level": "Nivel básico",
+      "description": "Certificado pola finalización do curso de programación C (Nivel Básico) (6ª Edición) emitido pola Universidad de Salamanca."
+    }
+  },
+  "projects": {
+    "title": "Proxectos Destacados",
+    "categories": {
+      "professional": "Profesional",
+      "personal": "Persoal",
+      "gameJam": "Game Jam",
+      "learning": "Aprendizaxe",
+      "interview": "Entrevista"
+    },
+    "beeShowcase": {
+      "title": "Experiencia VR/AR Apicultura Miel 79",
+      "description": "Experiencia VR inmersiva con vídeos 360° que mostra a conservación de abellas, exploración de colmeas e procesos de produción de mel. Inclúe visitas virtuais interactivas a colmeas reais."
+    },
+    "eyeflow": {
+      "title": "Eyeflow",
+      "description": "Aplicación VR avanzada de seguimento ocular para aplicacións médicas e de investigación."
+    },
+    "renfeSimulator": {
+      "title": "Simulador de Realidade Virtual para formación de maquinistas",
+      "description": "Un simulador de Realidade Virtual para adestrar aos maquinistas de Renfe, permitíndolles familiarizarse con escenarios específicos antes de enfrontarse a situacións reais. Grazas a esta tecnoloxía melloran a súa preparación, habilidades de resposta e confianza nun contorno seguro e controlado."
+    },
+    "vrsurvival": {
+      "title": "VRSurvival",
+      "description": "Xogo VR multixogador de supervivencia desenvolvido con Unreal Engine 5 e VRExpansionPlugin.",
+      "viewProject": "Ver Proxecto"
+    },
+    "yabs": {
+      "title": "YABS - Ludum Dare 55",
+      "description": "Xogo creado en 48 horas para a game jam Ludum Dare, mostrando habilidades de prototipado rápido.",
+      "playGame": "Xogar",
+      "ludumDare": "Ludum Dare"
+    },
+    "shinjukuEki": {
+      "title": "Shinjuku-eki - Ludum Dare 57",
+      "description": "Xogo creado para Ludum Dare 57, con gameplay atmosférico e mecánicas innovadoras.",
+      "playGame": "Xogar"
+    },
+    "noche": {
+      "title": "Noche - Indie Spain Jam 2023",
+      "description": "Rol de Programador Principal na game jam española indie, creando experiencia de terror atmosférica."
+    },
+    "customEditor": {
+      "title": "Curso de Ferramentas de Editor UE5",
+      "description": "Código fonte para ferramentas avanzadas do editor de Unreal Engine 5 e fluxos de desenvolvemento personalizados.",
+      "viewOnGithub": "Ver en GitHub"
+    },
+    "endlessRunner": {
+      "title": "Endless Runner",
+      "description": "Xogo feito con Unity como tarefa para unha entrevista, demostrando habilidades básicas de desenvolvemento de xogos."
+    }
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "professionalSkills": "Habilidades Profesionais",
+    "programmingLanguages": "Linguaxes de Programación",
+    "gameEngines": "Motores de Xogo",
+    "programming": "Programación",
+    "vrar": "VR/AR",
+    "toolsTech": "Ferramentas e Tecnoloxía",
+    "items": {
+      "unrealEngine": "Unreal Engine",
+      "unity": "Unity",
+      "git": "Git",
+      "sqlNosql": "SQL / NoSQL",
+      "linux": "Linux (deb)",
+      "visualStudio": "Eclipse / Visual Studio",
+      "scrum": "Scrum / Jira",
+      "photoshop": "Photoshop / Lightroom",
+      "realityCapture": "RealityCapture",
+      "firebase": "Firebase",
+      "ueBlueprints": "UE Blueprints",
+      "vr": "XR",
+      "csharp": "C#",
+      "c": "C",
+      "cpp": "C++",
+      "python": "Python",
+      "java": "Java",
+      "javascript": "JavaScript",
+      "unrealEngine45": "Unreal Engine 4/5",
+      "vrExpansion": "VRExpansionPlugin",
+      "csharpNet": "C# .NET",
+      "oculusSDK": "Oculus SDK",
+      "openXR": "OpenXR",
+      "steamVR": "SteamVR",
+      "handTracking": "Seguimento de Mans",
+      "gitVersionControl": "Git / Control de Versións",
+      "blender": "Blender",
+      "agileDevelopment": "Desenvolvemento Áxil"
+    }
+  },
+  "contact": {
+    "title": "Traballemos Xuntos",
+    "description": "Sempre estou interesado en novas oportunidades e proxectos emocionantes. Xa sexa que necesites desenvolvemento VR, programación de xogos ou consultoría técnica, ¡conectemos!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "modal": {
+    "close": "Pechar"
+  },
+  "game": {
+    "pong": {
+      "clickToStart": "Fai clic no canvas para comezar",
+      "moveKeys": "W/S ou ↑/↓ para mover",
+      "escToExit": "ESC para saír",
+      "scrollToExplore": "Desprázate para explorar o portafolio",
+      "firstToWin": "¡O primeiro en chegar a 5 puntos gaña!",
+      "gameStarted": "¡Xogo Iniciado!",
+      "youScore": "¡Ti Puntuaches!",
+      "fizScores": "¡FIZ Puntúa!",
+      "youWin": "¡Gañaches! 🎉 Fai clic para xogar de novo ou desprázate para explorar",
+      "fizWins": "¡FIZ Gaña! 😢 Fai clic para xogar de novo ou desprázate para explorar",
+      "youWon": "¡Gañaches! Fai clic para xogar de novo",
+      "fizWon": "¡FIZ Ganou! Fai clic para xogar de novo",
+      "playerLabel": "TI",
+      "fizLabel": "FIZ",
+      "vs": "VS",
+      "exitGame": "Saír do Xogo"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © Fiz Rey Armesto 2025"
+  }
+}

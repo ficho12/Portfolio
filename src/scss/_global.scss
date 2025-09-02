@@ -1,7 +1,1081 @@
-// Global styling for entire theme
+// Global styles
 
-// Resets for body and html height for sticky footer
-body,
+// CSS Custom Properties for Theme Switching
+:root {
+  // Light theme (default)
+  --bg-color: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-color: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #7f8c8d;
+  --border-color: #e9ecef;
+  --card-bg: #ffffff;
+  --card-border: #f1f3f4;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --hero-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --primary-gradient: linear-gradient(135deg, #3498db, #2980b9);
+  --primary-shadow: rgba(52, 152, 219, 0.3);
+  --primary-shadow-hover: rgba(52, 152, 219, 0.4);
+  --primary-overlay: rgba(52, 152, 219, 0.9);
+}
+
+[data-theme="dark"] {
+  // Dark theme
+  --bg-color: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888888;
+  --border-color: #404040;
+  --card-bg: #2d2d2d;
+  --card-border: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --navbar-bg: rgba(26, 26, 26, 0.95);
+  --hero-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  --primary-color: #2c5aa0;
+  --primary-dark: #1e3a8a;
+  --primary-gradient: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+  --primary-shadow: rgba(44, 90, 160, 0.3);
+  --primary-shadow-hover: rgba(44, 90, 160, 0.4);
+  --primary-overlay: rgba(44, 90, 160, 0.9);
+}
+
+// Base styles
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+// Typography
+.display-4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+
+.lead {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+// Override lead color in contact section to inherit white text
+#contact .lead {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  
+  &:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+  }
+  
+  .theme-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover .theme-icon {
+    transform: rotate(180deg);
+  }
+}
+
+// Hero Section
+.hero {
+  background: var(--hero-gradient);
+  transition: background 0.3s ease;
+  
+  .hero-image {
+    #profileContainer {
+      max-width: 350px;
+      margin: 0 auto;
+      
+      .profile-photo {
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 0; // establish stacking context
+        
+        img {
+          position: relative;
+          z-index: 1; // keep image below overlay
+          display: block;
+          border: 5px solid #ffffff;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        
+        .pong-overlay {
+          // Ensure overlay fully covers the image regardless of parent explicit height
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: var(--primary-overlay) !important;
+          opacity: 0 !important;
+          transition: opacity 0.3s ease !important;
+          cursor: pointer !important;
+          backdrop-filter: blur(10px) !important;
+          z-index: 2 !important; // above image
+          pointer-events: none !important;
+          border-radius: 50% !important; // Make overlay circular to match profile photo
+          
+          .play-text {
+            opacity: 0 !important;
+            transform: translateY(20px) !important;
+            transition: all 0.3s ease 0.1s !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+            color: white !important;
+            background: rgba(0, 0, 0, 0.7) !important; // Dark semi-transparent background
+            padding: 0.5rem 1rem !important; // Add padding for better appearance
+            border-radius: 25px !important; // Rounded pill shape
+            
+            i {
+              animation: bounceController 2s infinite !important;
+            }
+          }
+        }
+        
+    &:hover {
+      .pong-overlay {
+            opacity: 1 !important; // override inline opacity from markup
+            pointer-events: auto !important;
+            
+            .play-text {
+              opacity: 1 !important; // override inline opacity from markup
+              transform: translateY(0) !important;
+            }
+          }
+          
+          img {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px var(--primary-shadow);
+          }
+        }
+
+        // JS-assisted fallback for environments where :hover is unreliable
+    &.hovering {
+      .pong-overlay {
+            opacity: 1 !important; // override inline opacity from markup
+            pointer-events: auto !important;
+
+            .play-text {
+              opacity: 1 !important; // override inline opacity from markup
+              transform: translateY(0) !important;
+            }
+          }
+
+          img {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px var(--primary-shadow);
+          }
+        }
+      }
+      
+      .pong-game {
+        width: 400px;
+        height: 300px;
+        background: #000;
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        border: 3px solid var(--primary-color);
+        overflow: hidden;
+        
+        #pongCanvas {
+          background: #000;
+          border-radius: 12px;
+        }
+        
+        .pong-ui {
+          pointer-events: none;
+          
+          .score-board {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+          }
+          
+          .game-status {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+          }
+        }
+        
+        .game-over-screen {
+          background: rgba(0, 0, 0, 0.9);
+          backdrop-filter: blur(10px);
+          z-index: 7;
+          
+          .game-result {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 10px 30px var(--primary-shadow);
+          }
+        }
+      }
+    }
+  }
+  
+  .social-links a {
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+    &:hover {
+      color: var(--primary-color) !important;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@keyframes bounceController {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+// Buttons
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+  transition: all 0.3s ease;
+  border: none;
+  
+  &.btn-primary {
+    background: var(--primary-gradient);
+    box-shadow: 0 4px 15px var(--primary-shadow);
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--primary-shadow-hover);
+    }
+  }
+  
+  &.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-lg {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+  }
+  
+  &:focus,
+  &:focus-visible {
+    box-shadow: 0 0 0 0.25rem var(--primary-overlay);
+  }
+}
+
+// Cards
+.card {
+  border-radius: 16px;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  background-color: var(--card-bg);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-hover) !important;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+}
+
+// Feature Cards
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-hover);
+  }
+  
+  .feature-icon i {
+    transition: color 0.3s ease;
+  }
+  
+  &:hover .feature-icon i {
+    color: var(--primary-color) !important;
+  }
+}
+
+// Project Cards and Education Cards - Add dark mode enhancement
+.project-card .card,
+#experience .card,
+#education .card {
+  background: var(--card-bg) !important;
+  box-shadow: 0 8px 25px var(--shadow-color) !important;
+  border: 1px solid var(--card-border) !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-hover) !important;
+  }
+}
+
+// Contact Section - Enhanced styling for both modes
+#contact {
+  .contact-icon {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .contact-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
+}
+
+// Dark mode specific enhancements
+[data-bs-theme="dark"] {
+  section#contact.bg-primary.text-white {
+    .contact-icon {
+      color: #ffd700 !important; // Gold color for icons
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+      
+      &:hover {
+        color: #ffed4e !important; // Lighter gold on hover
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+      }
+    }
+    
+    .contact-label {
+      color: #e3f2fd !important; // Light blue for labels
+      font-weight: 500 !important;
+    }
+    
+    .contact-link {
+      color: #fff3e0 !important; // Warm white for links
+      
+      &:hover {
+        color: #ffd700 !important; // Gold on hover to match icons
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.3) !important;
+      }
+    }
+    
+    h2 {
+      background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.2)) !important;
+    }
+    
+    .lead {
+      color: #b3e5fc !important; // Light blue for description
+    }
+  }
+}
+
+// Project Cards
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+  
+  &.project-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card {
     height: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px var(--shadow-hover) !important;
+      
+      .project-category .badge {
+        transform: scale(1.05);
+      }
+      
+      .project-overlay {
+        opacity: 1;
+      }
+      
+      .project-image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .project-media {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    
+    .project-image {
+      height: 100%;
+      overflow: hidden;
+      transition: opacity 0.3s ease;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+    
+    .project-overlay {
+      background: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+      
+      .overlay-content {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease 0.1s;
+        
+        i {
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        p {
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+          margin: 0;
+        }
+      }
+    }
+    
+    &:hover .project-overlay .overlay-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Special styling for playable games
+  &.playable-game {
+    .project-overlay {
+      background: rgba(40, 167, 69, 0.9);
+      
+      .overlay-content i {
+        animation: pulse 2s infinite;
+      }
+    }
+    
+    &:hover .card {
+      border: 2px solid #28a745;
+    }
+  }
+  
+  // Video projects
+  &.video-project {
+    .project-overlay {
+      background: rgba(155, 89, 182, 0.9);
+      transition: opacity 0.3s ease;
+      
+      .overlay-content i {
+        animation: pulse 2s infinite;
+      }
+    }
+    
+    .video-container {
+      z-index: 10;
+      
+      iframe {
+        border: none;
+      }
+      
+      .video-close {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(0, 0, 0, 0.8);
+          transform: scale(1.1);
+        }
+        
+        i {
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    
+    &.video-playing {
+      .project-overlay {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .video-container {
+        display: block !important;
+      }
+      
+      .project-image {
+        opacity: 0;
+      }
+    }
+    
+    &:hover .card {
+      border: 2px solid #9b59b6;
+    }
+  }
+  
+  // Professional projects
+  &[data-project="beeShowcase"],
+  &[data-project="eyeflow"],
+  &[data-project="renfeSimulator"] {
+    .project-overlay {
+      background: var(--primary-overlay);
+    }
+  }
+  
+  // Personal projects
+  &[data-project="vrsurvival"] {
+    .project-overlay {
+      background: rgba(46, 204, 113, 0.9);
+    }
+  }
+  
+  // Game jam projects
+  &[data-project="noche"] {
+    .project-overlay {
+      background: rgba(155, 89, 182, 0.9);
+    }
+  }
+  
+  // Learning projects
+  &[data-project="customEditor"] {
+    .project-overlay {
+      background: rgba(26, 188, 156, 0.9);
+    }
+  }
+  
+  // Interview projects
+  &[data-project="endlessRunner"] {
+    .project-overlay {
+      background: rgba(149, 165, 166, 0.9);
+    }
+  }
+  
+  .tech-stack .badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: var(--border-color) !important;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .project-category .badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-body {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Staggered animation for project cards
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(4) { transition-delay: 0.4s; }
+.project-card:nth-child(5) { transition-delay: 0.5s; }
+.project-card:nth-child(6) { transition-delay: 0.6s; }
+.project-card:nth-child(7) { transition-delay: 0.7s; }
+.project-card:nth-child(8) { transition-delay: 0.8s; }
+.project-card:nth-child(9) { transition-delay: 0.9s; }
+
+// Experience Cards
+.experience-card {
+  .card {
+    border-left: 4px solid var(--primary-color);
+    
+    &:hover {
+      border-left-color: var(--primary-dark);
+    }
+  }
+}
+
+// Skills Section
+.skill-category {
+  h4 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  li {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+// Contact Section
+.contact-item {
+  i {
+    opacity: 0.9;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// Background variations
+.bg-light {
+  background-color: var(--bg-secondary) !important;
+  transition: background-color 0.3s ease;
+}
+
+.bg-primary {
+  background: var(--primary-gradient) !important;
+}
+
+// Sections
+section {
+  padding: 5rem 0;
+  
+  &.py-5 {
+    padding: 5rem 0;
+  }
+}
+
+// Navbar improvements
+.navbar {
+  backdrop-filter: blur(10px);
+  z-index: 1030; // Ensure navbar is above all game elements
+  background-color: var(--navbar-bg) !important;
+  transition: background-color 0.3s ease;
+  
+  .nav-link {
+    transition: all 0.3s ease;
+    color: var(--text-color) !important;
+    
+    &:hover {
+      color: var(--primary-color) !important;
+      transform: translateY(-1px);
+    }
+  }
+  
+  .navbar-brand {
+    color: var(--text-color) !important;
+  }
+  
+  .dropdown-menu {
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    z-index: 1040; // Ensure dropdown is above all game elements
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    
+    .dropdown-item {
+      padding: 0.5rem 1rem;
+      transition: all 0.2s ease;
+      color: var(--text-color);
+      border-radius: 8px;
+      margin: 0.125rem 0; // Only vertical margin, no horizontal
+      overflow: hidden; // Ensure content stays within bounds
+      
+      &:hover {
+        background-color: var(--bg-secondary);
+        color: var(--primary-color);
+        box-shadow: 0 2px 8px var(--shadow-color);
+        
+        // Move only the content (image and text) inside the item
+        img, span, text {
+          transform: translateX(5px);
+        }
+      }
+      
+      // Smooth transition for the content
+      img, span {
+        transition: transform 0.2s ease;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Badge enhancements
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  border-radius: 12px;
+}
+
+// Modal improvements
+.modal-content {
+  border-radius: 16px;
+  box-shadow: 0 20px 60px var(--shadow-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+// Dark mode specific improvements
+[data-theme="dark"] {
+  .text-dark {
+    color: var(--text-color) !important;
+  }
+  
+  .text-muted {
+    color: var(--text-muted) !important;
+  }
+  
+  .border-bottom {
+    border-color: var(--border-color) !important;
+  }
+  
+  .navbar-light .navbar-toggler {
+    border-color: var(--border-color);
+  }
+  
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  // Tech badges in projects
+  .badge.bg-light.text-dark,
+  .badge.bg-light {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+  }
+  
+  // Skills section cards - better visibility in dark mode
+  .bg-light.rounded-4.p-3 {
+    background-color: #3a3a3a !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  // Experience cards
+  .bg-light.p-4.rounded-4 {
+    background-color: #3a3a3a !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  // Contact section - uses CSS variables that automatically adapt
+  .bg-primary {
+    background: var(--primary-gradient) !important;
+  }
+  
+  // Footer - dark mode styling
+  footer.bg-white {
+    background-color: var(--bg-color) !important;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  footer .small {
+    color: var(--text-color) !important;
+  }
+  
+  footer a.small {
+    color: var(--text-color) !important;
+    
+    &:hover {
+      color: var(--text-secondary) !important;
+    }
+  }
+}
+
+// General text utility support for dark mode
+.text-muted {
+  color: var(--text-muted) !important;
+  transition: color 0.3s ease;
+}
+
+// Bootstrap Icon enhancements
+.bi {
+  transition: all 0.3s ease;
+}
+
+// Loading animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content,
+.hero-image {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-image {
+  animation-delay: 0.2s;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    
+    .hero-content {
+      margin-top: 2rem;
+    }
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+// Music Widget (Spotify/Last.fm compatible)
+.spotify-widget, .lastfm-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--shadow-hover);
+  }
+  
+  .spotify-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .spotify-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+    
+    // Default Spotify green
+    color: #1ed760;
+    
+    i {
+      display: block;
+    }
+  }
+}
+
+// Last.fm specific styling
+#lastfm-widget {
+  .spotify-icon {
+    color: #d51007; // Last.fm red
+  }
+  
+  .spotify-info {
+    flex: 1;
+    min-width: 0; // Allow text truncation
+    
+    .spotify-status {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    
+    .spotify-track {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .spotify-artist {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  .spotify-album-art {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+// Dark mode specific styling for music widgets
+[data-bs-theme="dark"] {
+  .spotify-widget, .lastfm-widget {
+    background: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .spotify-info {
+      .spotify-track {
+        color: #ffffff;
+      }
+      
+      .spotify-status,
+      .spotify-artist {
+        color: #b3b3b3;
+      }
+    }
+  }
+}
+
+// Animation for music icons
+@keyframes musicPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.spotify-widget.visible .spotify-icon, 
+.lastfm-widget.visible .spotify-icon {
+  animation: musicPulse 2s ease-in-out infinite;
 }

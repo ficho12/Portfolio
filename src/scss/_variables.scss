@@ -1,19 +1,56 @@
 // Variables
 
-// Override Bootstrap Colors
-$blue: #1e30f3;
-$pink: #e21e80;
+// Professional Color Palette
+$black: #2c3e50;
+$white: #ffffff;
+$gray-900: #1a252f;
+$gray-800: #2c3e50;
+$gray-700: #34495e;
+$gray-600: #5a6c7d;
+$gray-500: #7f8c8d;
+$gray-400: #95a5a6;
+$gray-300: #bdc3c7;
+$gray-200: #e9ecef;
+$gray-100: #f8f9fa;
 
-// Redefine Bootstrap State Colors
+// Dark Mode Color Palette
+$dark-bg-primary: #1a1a1a;
+$dark-bg-secondary: #2d2d2d;
+$dark-bg-tertiary: #3d3d3d;
+$dark-text-primary: #e0e0e0;
+$dark-text-secondary: #b0b0b0;
+$dark-text-muted: #888888;
+$dark-border: #404040;
+$dark-shadow: rgba(0, 0, 0, 0.5);
+
+// Professional Blue Palette
+$blue: #3498db;
+$blue-dark: #2980b9;
+$blue-light: #85c1e9;
+
+// Override Bootstrap Colors
 $primary: $blue;
-$secondary: $pink;
+$secondary: $gray-600;
+$success: #2ecc71;
+$info: #17a2b8;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: $gray-100;
+$dark: $gray-800;
 
 // Bootstrap Variable Functions
 $enable-negative-margins: true;
+$enable-gradients: true;
+$enable-shadows: true;
 
 // Override Bootstrap Typography Variables
-$font-family-sans-serif: 'Plus Jakarta Sans';
-$font-weight-light: 200;
+$font-family-sans-serif: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
 
 // Custom Border Variables
 $border-radius-xl: 1rem;
+$border-radius-lg: 0.75rem;

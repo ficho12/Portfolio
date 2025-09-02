@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Shinjuku-eki</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 0;
+        border: 0;
+        margin: 0;
+        background: #231F20;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      #unity-container {
+        position: relative;
+        display: inline-block;
+      }
+      #unity-canvas {
+        background: #231F20;
+      }
+      /* Fullscreen styles */
+      #unity-container:-webkit-full-screen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-container:-moz-full-screen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-container:fullscreen {
+        width: 100vw;
+        height: 100vh;
+      }
+      #unity-canvas:-webkit-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      #unity-canvas:-moz-full-screen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      #unity-canvas:fullscreen {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=1440 height=1080 tabindex="-1" style="width: 1440px; height: 1080px; background: #231F20"></canvas>
+    </div>
+    
+    <script src="Build/Buildv1.0.1Uncompressed.loader.js"></script>
+    <script>
+      const canvas = document.querySelector("#unity-canvas");
+      const unityContainer = document.querySelector("#unity-container");
+      
+      let unityInstance = null;
+
+      // Fullscreen functionality
+      function toggleFullscreen() {
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+          // Enter fullscreen
+          if (unityContainer.requestFullscreen) {
+            unityContainer.requestFullscreen();
+          } else if (unityContainer.mozRequestFullScreen) {
+            unityContainer.mozRequestFullScreen();
+          } else if (unityContainer.webkitRequestFullscreen) {
+            unityContainer.webkitRequestFullscreen();
+          }
+        } else {
+          // Exit fullscreen
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+      }
+
+      // Fullscreen event listeners
+      document.addEventListener('fullscreenchange', function() {
+        if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement) {
+          // Resize Unity canvas for fullscreen
+          if (unityInstance) {
+            canvas.style.width = "100vw";
+            canvas.style.height = "100vh";
+          }
+          if (window.parent !== window) {
+            window.parent.postMessage('enteredFullscreen', '*');
+          }
+        } else {
+          // Restore original canvas size
+          canvas.style.width = "1440px";
+          canvas.style.height = "1080px";
+          if (window.parent !== window) {
+            window.parent.postMessage('exitedFullscreen', '*');
+          }
+        }
+      });
+      document.addEventListener('mozfullscreenchange', function() {
+        // ...existing code...
+      });
+      document.addEventListener('webkitfullscreenchange', function() {
+        // ...existing code...
+      });
+
+      // Keyboard shortcut (F key for fullscreen)
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'f' || e.key === 'F') {
+          e.preventDefault();
+          toggleFullscreen();
+        }
+      });
+
+      // Mobile device detection and styling
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+        document.body.style.textAlign = "left";
+      }
+
+      // Listen for messages from parent window (modal fullscreen button)
+      window.addEventListener('message', function(event) {
+        if (event.data === 'toggleFullscreen') {
+          toggleFullscreen();
+        }
+      });
+
+      createUnityInstance(canvas, {
+        dataUrl: "Build/Buildv1.0.1Uncompressed.data",
+        frameworkUrl: "Build/Buildv1.0.1Uncompressed.framework.js",
+        codeUrl: "Build/Buildv1.0.1Uncompressed.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "LudumDare57",
+        productVersion: "0.1.0",
+      }).then((instance) => {
+        unityInstance = instance;
+        console.log("Shinjuku-eki game loaded successfully!");
+      }).catch((error) => {
+        console.error("Failed to load Shinjuku-eki game:", error);
+      });
+    </script>
+  </body>
+</html>

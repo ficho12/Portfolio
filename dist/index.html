@@ -1,199 +1,680 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<script src="https://kit.fontawesome.com/481f34b392.js" crossorigin="anonymous"></script>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="Fiz Rey Armesto" />
-    <title>Portfolio - Fiz Rey Armesto</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/Ficon.ico" />
-    <!-- Custom Google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
-<body class="d-flex flex-column h-100">
-    <main class="flex-shrink-0">
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Fiz Rey Armesto - Computer Engineer &amp; VR/AR Developer. Specialized in Unity, Unreal Engine, and immersive experiences." />
+        <meta name="author" content="Fiz Rey Armesto" />
+        <title>Fiz Rey Armesto - Computer Engineer & VR/AR Developer</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/Ficon.ico" />
+        <!-- Clean, minimalist Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Added cache-busting query string to ensure latest CSS loads-->
+        <link href="css/styles.css?v=4" rel="stylesheet" />
+    </head>
+    <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <nav class="navbar navbar-expand-lg navbar-light py-3 border-bottom">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Fiz Rey Armesto</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" href="#"><span class="fw-bold">Fiz Rey Armesto</span></a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="mailto:fizreyarmesto@gmail.com">Contact</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index_es.html"><img src="assets/Spanish-flag.png" alt="Spanish Flag" width="20" height="20" /></a>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+                        <li class="nav-item"><a class="nav-link px-3" href="#about" data-i18n="nav.about">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#experience" data-i18n="nav.experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-globe"></i></a>
+                            <ul class="dropdown-menu border-0 shadow">
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="en">
+                                        <img class="me-2" src="assets/UK-flag.png" alt="English" width="16" height="16" />
+                                        English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="es">
+                                        <img class="me-2" src="assets/Spanish-flag.png" alt="Spanish" width="16" height="16" />
+                                        Español
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="gl">
+                                        <img class="me-2" src="assets/GL-flag.png" alt="Galician" width="16" height="16" />
+                                        Galego
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index_gl.html"><img src="assets/GL-flag.png" alt="Galician Flag" width="18" height="18" /></a>
+                        <li class="nav-item ms-2">
+                            <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                                <i class="theme-icon bi bi-moon-fill"></i>
+                                <span class="theme-text" data-i18n="nav.darkMode">Dark</span>
+                            </button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header class="py-5">
-            <div class="container px-5 pb-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-5">
-                        <!-- Header text content-->
-                        <div class="text-center text-xxl-start">
-                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4">Computer Engineer &middot; Unity & Unreal Engine Developer</div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Fiz Rey Armesto</span></h1>
-                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
+        <!-- Hero Section-->
+        <section class="hero min-vh-100 d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="hero-image text-center position-relative" id="profileContainer">
+                            <div class="profile-photo position-relative d-inline-block">
+                                <img class="img-fluid rounded-circle shadow-lg" id="profileImage" src="assets/profile.png" alt="Fiz Rey Armesto" style="max-width: 350px" />
+                                <!-- Initially hidden to avoid any flash before CSS loads; shown on hover via CSS-->
+                                <div class="pong-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="opacity: 0; pointer-events: none">
+                                    <div class="play-text text-white fw-bold fs-5" style="opacity: 0">
+                                        <i class="bi bi-controller me-2"></i>
+                                        <span>Play?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pong-game position-absolute top-50 start-50 translate-middle" style="display: none">
+                                <canvas id="pongCanvas" width="400" height="300"></canvas>
+                                <div class="pong-ui position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between pointer-events-none">
+                                    <div class="score-board d-flex justify-content-between p-3">
+                                        <div class="player-score text-white fw-bold fs-3">
+                                            <span>You:</span>
+                                            <span id="playerScore">0</span>
+                                        </div>
+                                        <div class="cpu-score text-white fw-bold fs-3">
+                                            <span>CPU:</span>
+                                            <span id="cpuScore">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="game-status text-center p-3">
+                                        <div class="game-message text-white fw-bold fs-5" id="gameMessage">Click to Start!</div>
+                                        <div class="controls-hint text-white-50 small">Use W/S or Arrow Keys to move</div>
+                                    </div>
+                                </div>
+                                <div class="game-over-screen position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="display: none">
+                                    <div class="game-result text-center p-4 bg-dark bg-opacity-75 rounded text-white">
+                                        <h3 class="mb-3" id="gameResult"></h3>
+                                        <p class="mb-3">
+                                            Final Score:
+                                            <span id="finalPlayerScore"></span>
+                                            -
+                                            <span id="finalCpuScore"></span>
+                                        </p>
+                                        <div class="d-flex gap-3 justify-content-center">
+                                            <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+                                            <button class="btn btn-secondary" id="backToPhotoBtn">Back to Photo</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-7">
-                        <!-- Header profile picture-->
-                        <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                            <div class="profile bg-gradient-primary-to-secondary">
-                                <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                <img class="profile-img" src="assets/profile.png" alt="..." />
-                                <div class="dots-1">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="hero-content">
+                            <h1 class="display-4 fw-bold mb-4">
+                                <span data-i18n="hero.greeting">Hi, I'm</span>
+                                <span class="text-primary" data-i18n="hero.name">Fiz Rey Armesto</span>
+                            </h1>
+                            <h2 class="h4 text-muted mb-4" data-i18n="hero.title">Computer Engineer & VR/AR Developer</h2>
+                            <p class="lead mb-4" data-i18n="hero.description">I create immersive experiences using Unity and Unreal Engine, specializing in VR development and innovative interactive solutions.</p>
+                            <div class="d-flex gap-3 mb-4">
+                                <a class="btn btn-primary btn-lg" href="#projects" data-i18n="hero.viewWork">View My Work</a>
+                                <a class="btn btn-outline-primary btn-lg" href="assets/CV_FIZREYARMESTO_ENG.pdf" download data-i18n="hero.downloadResume">Download Resume</a>
+                            </div>
+                            <div class="social-links d-flex gap-3">
+                                <a class="text-muted fs-4" href="https://www.linkedin.com/in/fizrey/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a class="text-muted fs-4" href="https://github.com/ficho12" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="py-5 bg-light" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="h1 fw-bold mb-4" data-i18n="about.title">About Me</h2>
+                        <p class="lead mb-4" data-i18n="about.description">I'm a Computer Engineer with a passion for creating immersive digital experiences. My expertise lies in VR/AR development, game programming, and cutting-edge interactive technologies.</p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-code-slash fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.development.title">Development</h4>
+                                    <p data-i18n="about.development.description">Unity, Unreal Engine, C#, C++</p>
                                 </div>
-                                <div class="dots-2">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-headset-vr fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.vrar.title">VR/AR</h4>
+                                    <p data-i18n="about.vrar.description">Immersive experiences, VR gaming, AR applications</p>
                                 </div>
-                                <div class="dots-3">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
-                                </div>
-                                <div class="dots-4">
-                                    <!-- SVG Dots-->
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                            <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                            <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                            <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                            <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                            <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                            <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                            <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                            <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                            <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                            <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                            <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                            <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                            <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                            <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                            <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                            <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                            <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                            <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                            <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                            <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                        </g>
-                                    </svg>
-                                    <!-- END of SVG dots-->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-laptop fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.engineering.title">Engineering</h4>
+                                    <p data-i18n="about.engineering.description">Software architecture, system design, optimization</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- About Section-->
-        <section class="bg-light py-5">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xxl-8">
-                        <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                            <p class="lead fw-light mb-4">My name is Fiz and I'm a Computer Engineer graduate interested in VR and game development with Unreal Engine and Unity.</p>
-                            <p class="text-muted">Know more about me in Linkedin and Twitter. Don't forget to discover some of my projects on Github.</p>
-                            <div class="d-flex justify-content-center fs-2 gap-4">
-                                <a class="text-gradient" href="https://www.linkedin.com/in/fizrey/"><i class="bi bi-linkedin"></i></a>
-                                <a class="text-gradient" href="https://twitter.com/fichodev"><i class="bi bi-twitter"></i></a>
-                                <a class="text-gradient" href="https://github.com/ficho12"><i class="bi bi-github"></i></a>
+        </section>
+        <!-- Experience Section-->
+        <section class="py-5" id="experience">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <h2 class="h1 fw-bold" data-i18n="experience.title">Professional Experience</h2>
+                            <!-- Download resume button-->
+                            <a class="btn btn-primary px-4 py-3" href="assets/CV_FIZREYARMESTO_ENG.pdf" download>
+                                <div class="d-inline-block bi bi-download me-2"></div>
+                                <span data-i18n="experience.downloadResume">Download Resume</span>
+                            </a>
+                        </div>
+                        <!-- Experience Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="mb-2">
+                                                <div class="fw-bolder text-primary" data-i18n="experience.arsoft.position">Junior Programmer</div>
+                                                <div class="small text-muted" data-i18n="experience.arsoft.company">ARSOFT</div>
+                                                <div class="small text-muted" data-i18n="experience.arsoft.location">Salamanca, Spain</div>
+                                            </div>
+                                            <div class="small text-muted fw-bolder mb-2">
+                                                Oct 2023 -
+                                                <span data-i18n="experience.present">Present</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="experience.arsoft.description">Creation of a railway driving simulator in Unity.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="mb-2">
+                                                <div class="fw-bolder text-primary" data-i18n="experience.arsoft.internship.position">Unity Developer (Internship)</div>
+                                                <div class="small text-muted" data-i18n="experience.arsoft.company">ARSOFT</div>
+                                                <div class="small text-muted" data-i18n="experience.arsoft.location">Salamanca, Spain</div>
+                                            </div>
+                                            <div class="small text-muted fw-bolder mb-2">Feb - Apr 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="experience.arsoft.internship.description">Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section-->
+        <section class="py-5 bg-light" id="education">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="education.title">Education</h2>
+                        <!-- Education Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="mb-2">
+                                                <div class="fw-bolder text-primary" data-i18n="education.degree">Computer Engineering</div>
+                                                <div class="small text-muted" data-i18n="education.university">Universidad de Salamanca</div>
+                                            </div>
+                                            <div class="small text-muted fw-bolder mb-2">2017 - 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="education.thesis">Thesis: Development of a multiplayer VR video game using Unreal Engine 5.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certificates Section-->
+        <section class="py-5" id="certificates">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="certificates.title">Certificates</h2>
+                        <!-- Certificate Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="mb-2">
+                                                <div class="fw-bolder text-primary" data-i18n="certificates.c1Advanced.title">C1 Advanced</div>
+                                                <div class="small text-muted" data-i18n="certificates.c1Advanced.score">Score 187</div>
+                                            </div>
+                                            <div class="small text-muted fw-bolder mb-2">Aug 2020</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="certificates.c1Advanced.description">Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Certificate Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="mb-2">
+                                                <div class="fw-bolder text-primary" data-i18n="certificates.cProgramming.title">C Programming</div>
+                                                <div class="small text-muted" data-i18n="certificates.cProgramming.level">Basic level</div>
+                                            </div>
+                                            <div class="small text-muted fw-bolder mb-2">Sept 2017</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="certificates.cProgramming.description">Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section-->
+        <section class="py-5 bg-light" id="projects">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="projects.title">Featured Projects</h2>
+                        <div class="row g-4">
+                            <!-- Work Projects-->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card video-project" data-project="beeShowcase" data-video="9pGObGbjM_Y">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/miel79_hive.jpg" alt="Miel 79 VR/AR Beekeeping Experience" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Watch VR Experience</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2">
+                                                <span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span>
+                                                <span class="badge bg-warning ms-2">Lead Developer</span>
+                                            </div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.beeShowcase.title">Miel 79 VR/AR Beekeeping Showcase</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.beeShowcase.description">Immersive VR experience with 360° videos showcasing bee conservation, hive exploration, and honey production processes. Features interactive virtual visits to real beehives.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unity</span>
+                                                <span class="badge bg-light me-2">VR/AR</span>
+                                                <span class="badge bg-light me-2">360° Video</span>
+                                                <span class="badge bg-light">C#</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card video-project" data-project="eyeflow" data-video="P5h-mYArm6Q">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/eyeflow.jpeg" alt="Eyeflow VR" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Click to Watch</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.eyeflow.title">Eyeflow</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.eyeflow.description">Advanced eye-tracking VR application for medical and research applications.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unreal Engine</span>
+                                                <span class="badge bg-light me-2">VR</span>
+                                                <span class="badge bg-light">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card video-project" data-project="renfeSimulator" data-video="GEjvINrO9ug">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/railway_landscape.jpg" alt="Renfe VR Railway Simulator" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Watch VR Simulator</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.renfeSimulator.title">Renfe VR Machinist Simulator</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.renfeSimulator.description">Professional VR training simulator for train operators, providing realistic operational scenarios and controlled environment practice.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unity</span>
+                                                <span class="badge bg-light me-2">VR Training</span>
+                                                <span class="badge bg-light">C#</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Personal Projects-->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card" data-project="vrsurvival">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/sgd_jam.jpg" alt="VRSurvival Game" /></div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-headset-vr fs-1 mb-2"></i>
+                                                    <p>Multiplayer VR Game</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-success mb-2" data-i18n="projects.categories.personal">Personal</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.vrsurvival.title">VRSurvival</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.vrsurvival.description">Multiplayer VR survival game developed with Unreal Engine 5 and VRExpansionPlugin.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light me-2">VR</span>
+                                                <span class="badge bg-light">Multiplayer</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://ficho12.itch.io/o-candil" target="_blank" data-i18n="projects.vrsurvival.viewProject">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card playable-game" data-project="yabs">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/YABS.png" alt="YABS Game" /></div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Click to Play!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.yabs.title">YABS - Ludum Dare 55</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.yabs.description">Game created in 48 hours for Ludum Dare game jam, showcasing rapid prototyping skills.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unity</span>
+                                                <span class="badge bg-light me-2">C#</span>
+                                                <span class="badge bg-light">48h</span>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#yabsModal" data-i18n="projects.yabs.playGame">Play Game</button>
+                                                <a class="btn btn-outline-primary btn-sm" href="https://ldjam.com/events/ludum-dare/55/yabs" target="_blank" data-i18n="projects.yabs.ludumDare">Ludum Dare</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card playable-game" data-project="shinjukuEki">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/shinjuku-eki.png" alt="Shinjuku-eki Game" /></div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Click to Play!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.shinjukuEki.title">Shinjuku-eki - Ludum Dare 57</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.shinjukuEki.description">Game created for Ludum Dare 57, featuring atmospheric gameplay and innovative mechanics.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unity</span>
+                                                <span class="badge bg-light me-2">C#</span>
+                                                <span class="badge bg-light">WebGL</span>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#shinjukuEkiModal" data-i18n="projects.shinjukuEki.playGame">Play Game</button>
+                                                <a class="btn btn-outline-primary btn-sm" href="https://ldjam.com/events/ludum-dare/57/shinjuku-eki" target="_blank" data-i18n="projects.yabs.ludumDare">Ludum Dare</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card video-project" data-project="noche" data-video="LFEfY4HfkQ0">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/noche.jpg" alt="Noche Horror Game" /></div>
+                                            <div class="video-container position-absolute top-0 start-0 w-100 h-100" style="display: none">
+                                                <div class="video-close position-absolute top-0 end-0 p-2" style="z-index: 20; cursor: pointer"><i class="bi bi-x-circle-fill text-white fs-4"></i></div>
+                                                <iframe class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Click to Watch</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.noche.title">Noche - Indie Spain Jam 2023</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.noche.description">Lead Programmer role in Spanish indie game jam, creating atmospheric horror experience.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light me-2">Lead Programming</span>
+                                                <span class="badge bg-light">Horror</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://ficho12.itch.io/la-noche" target="_blank" data-i18n="projects.vrsurvival.viewProject">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card" data-project="customEditor">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/CustomEditor.png" alt="UE5 Custom Editor Tools" /></div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-tools fs-1 mb-2"></i>
+                                                    <p>Editor Tools</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-info mb-2" data-i18n="projects.categories.learning">Learning</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.customEditor.title">UE5 Custom Editor Tools Course</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.customEditor.description">Source code for advanced Unreal Engine 5 editor tools and custom development workflows.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light me-2">C++</span>
+                                                <span class="badge bg-light">Editor Tools</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://github.com/ficho12/UE5-Custom-Editor-Tools" target="_blank" data-i18n="projects.customEditor.viewOnGithub">View on GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- YABS Game Modal-->
+        <div class="modal fade" id="yabsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">YABS - Ludum Dare 55</h5>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-light btn-sm" id="yabsFullscreenBtn" type="button" title="Fullscreen"><i class="bi bi-fullscreen"></i></button>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-i18n="modal.close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body p-0"><iframe id="yabsFrame" src="" style="width: 100%; height: 600px; border: none"></iframe></div>
+                    <script>
+                        document.getElementById('yabsModal').addEventListener('show.bs.modal', function () {
+                            document.getElementById('yabsFrame').src = 'assets/yabs/index.html';
+                        });
+                        document.getElementById('yabsModal').addEventListener('hide.bs.modal', function () {
+                            document.getElementById('yabsFrame').src = '';
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Shinjuku-eki Game Modal-->
+        <div class="modal fade" id="shinjukuEkiModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Shinjuku-eki - Ludum Dare 57</h5>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-light btn-sm" id="shinjukuEkiFullscreenBtn" type="button" title="Fullscreen"><i class="bi bi-fullscreen"></i></button>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-i18n="modal.close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body p-0"><iframe id="shinjukuEkiFrame" src="" style="width: 100%; height: 600px; border: none"></iframe></div>
+                    <script>
+                        document.getElementById('shinjukuEkiModal').addEventListener('show.bs.modal', function () {
+                            document.getElementById('shinjukuEkiFrame').src = 'assets/shinjuku-eki/index.html';
+                        });
+                        document.getElementById('shinjukuEkiModal').addEventListener('hide.bs.modal', function () {
+                            document.getElementById('shinjukuEkiFrame').src = '';
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Skills Section-->
+        <section class="py-5" id="skills">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="skills.title">Technical Skills</h2>
+                        <!-- Skillset Card-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <!-- Professional skills list-->
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="skills.professionalSkills">Professional Skills</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.unrealEngine">Unreal Engine</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.unity">Unity</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.git">Git</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.sqlNosql">SQL / NoSQL</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.linux">Linux (deb)</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.visualStudio">Eclipse / Visual Studio</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.scrum">Scrum / Jira</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.photoshop">Photoshop / Lightroom</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.realityCapture">RealityCapture</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.firebase">Firebase</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.ueBlueprints">UE Blueprints</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.vr">VR</div></div>
+                                    </div>
+                                </div>
+                                <!-- Languages list-->
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="skills.programmingLanguages">Programming Languages</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.csharp">C#</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.c">C</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.cpp">C++</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.python">Python</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.java">Java</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="py-5 bg-primary text-white" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="h1 fw-bold mb-4" data-i18n="contact.title">Let's Work Together</h2>
+                        <p class="lead mb-4" data-i18n="contact.description">I'm always interested in new opportunities and exciting projects. Whether you need VR development, game programming, or technical consultation, let's connect!</p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-envelope fs-2 mb-3 contact-icon"></i>
+                                    <h5 class="contact-label" data-i18n="contact.email">Email</h5>
+                                    <a class="text-white contact-link" href="mailto:fizreyarmesto@gmail.com">fizreyarmesto@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-linkedin fs-2 mb-3 contact-icon"></i>
+                                    <h5 class="contact-label" data-i18n="contact.linkedin">LinkedIn</h5>
+                                    <a class="text-white contact-link" href="https://www.linkedin.com/in/fizrey/" target="_blank">/in/fizrey</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-github fs-2 mb-3 contact-icon"></i>
+                                    <h5 class="contact-label" data-i18n="contact.github">GitHub</h5>
+                                    <a class="text-white contact-link" href="https://github.com/ficho12" target="_blank">/ficho12</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,14 +685,17 @@
         <footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Fiz Rey Armesto 2023</div></div>
-                    <div class="col-auto"><a class="small" href="mailto:fizreyarmesto@gmail.com" style="text-decoration: none; color: black">Contact</a></div>
+                    <div class="col-auto"><div class="small m-0" data-i18n="footer.copyright">Copyright &copy; Fiz Rey Armesto 2025</div></div>
+                    <div class="col-auto"><a class="small" href="mailto:fizreyarmesto@gmail.com" style="text-decoration: none" data-i18n="nav.contact">Contact</a></div>
                 </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </main>
-</body>
+        <!-- Core theme JS (cache-busted)-->
+        <script src="js/client.bundle.js?v=4"></script>
+        <!-- Music Widgets (choose one)-->
+        <script src="js/spotify.js"></script>
+        <script src="js/lastfm.js"></script>
+    </body>
+</html>

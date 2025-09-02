@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Fiz Rey Armesto - Computer Engineer &amp; VR/AR Developer. Specialized in Unity, Unreal Engine, and immersive experiences." />
+        <meta name="author" content="Fiz Rey Armesto" />
+        <title>Fiz Rey Armesto - Computer Engineer & VR/AR Developer</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/Ficon.ico" />
+        <!-- Clean, minimalist Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Added cache-busting query string to ensure latest CSS loads-->
+        <link href="css/styles.css?v=4" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light py-3 border-bottom">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#"><span class="fw-bold">Fiz Rey Armesto</span></a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+                        <li class="nav-item"><a class="nav-link px-3" href="#about" data-i18n="nav.about">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#experience" data-i18n="nav.experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-globe"></i></a>
+                            <ul class="dropdown-menu border-0 shadow">
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="en">
+                                        <img class="me-2" src="assets/UK-flag.png" alt="English" width="16" height="16" />
+                                        English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="es">
+                                        <img class="me-2" src="assets/Spanish-flag.png" alt="Spanish" width="16" height="16" />
+                                        Español
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-lang="gl">
+                                        <img class="me-2" src="assets/GL-flag.png" alt="Galician" width="16" height="16" />
+                                        Galego
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                                <i class="theme-icon bi bi-moon-fill"></i>
+                                <span class="theme-text" data-i18n="nav.darkMode">Dark</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section-->
+        <section class="hero min-vh-100 d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="hero-image text-center"><img class="img-fluid rounded-circle shadow-lg" src="assets/profile.png" alt="Fiz Rey Armesto" style="max-width: 350px" /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="hero-content">
+                            <h1 class="display-4 fw-bold mb-4">
+                                <span data-i18n="hero.greeting">Hi, I'm</span>
+                                <span class="text-primary" data-i18n="hero.name">Fiz Rey Armesto</span>
+                            </h1>
+                            <h2 class="h4 text-muted mb-4" data-i18n="hero.title">Computer Engineer & VR/AR Developer</h2>
+                            <p class="lead mb-4" data-i18n="hero.description">I create immersive experiences using Unity and Unreal Engine, specializing in VR development and innovative interactive solutions.</p>
+                            <div class="d-flex gap-3 mb-4">
+                                <a class="btn btn-primary btn-lg" href="#projects" data-i18n="hero.viewWork">View My Work</a>
+                                <a class="btn btn-outline-primary btn-lg" href="assets/CV_FIZREYARMESTO_ENG.pdf" download data-i18n="hero.downloadResume">Download Resume</a>
+                            </div>
+                            <div class="social-links d-flex gap-3">
+                                <a class="text-muted fs-4" href="https://www.linkedin.com/in/fizrey/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a class="text-muted fs-4" href="https://github.com/ficho12" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="py-5 bg-light" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="h1 fw-bold mb-4" data-i18n="about.title">About Me</h2>
+                        <p class="lead mb-4" data-i18n="about.description">I'm a Computer Engineer with a passion for creating immersive digital experiences. My expertise lies in VR/AR development, game programming, and cutting-edge interactive technologies.</p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-code-slash fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.development.title">Development</h4>
+                                    <p data-i18n="about.development.description">Unity, Unreal Engine, C#, C++, JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-headset-vr fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.vrar.title">VR/AR</h4>
+                                    <p data-i18n="about.vrar.description">Immersive experiences, VR gaming, AR applications</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="feature-card text-center p-4">
+                                    <div class="feature-icon mb-3"><i class="bi bi-laptop fs-1 text-primary"></i></div>
+                                    <h4 data-i18n="about.engineering.title">Engineering</h4>
+                                    <p data-i18n="about.engineering.description">Software architecture, system design, optimization</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section-->
+        <section class="py-5" id="experience">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <h2 class="h1 fw-bold" data-i18n="experience.title">Professional Experience</h2>
+                            <!-- Download resume button-->
+                            <a class="btn btn-primary px-4 py-3" href="assets/CV_FIZREYARMESTO_ENG.pdf" download>
+                                <div class="d-inline-block bi bi-download me-2"></div>
+                                <span data-i18n="experience.downloadResume">Download Resume</span>
+                            </a>
+                        </div>
+                        <!-- Experience Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">
+                                                Oct 2023 -
+                                                <span data-i18n="experience.present">Present</span>
+                                            </div>
+                                            <div class="small fw-bolder" data-i18n="experience.arsoft.position">Junior Programmer</div>
+                                            <div class="small text-muted" data-i18n="experience.arsoft.company">ARSOFT</div>
+                                            <div class="small text-muted" data-i18n="experience.arsoft.location">Salamanca, Spain</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="experience.arsoft.description">Creation of a railway driving simulator in Unity.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Feb - Apr 2023</div>
+                                            <div class="small fw-bolder" data-i18n="experience.arsoft.internship.position">Unity Developer (Internship)</div>
+                                            <div class="small text-muted" data-i18n="experience.arsoft.company">ARSOFT</div>
+                                            <div class="small text-muted" data-i18n="experience.arsoft.location">Salamanca, Spain</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="experience.arsoft.internship.description">Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section-->
+        <section class="py-5 bg-light" id="education">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="education.title">Education</h2>
+                        <!-- Education Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2017 - 2023</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder" data-i18n="education.degree">Computer Engineering</div>
+                                                <div class="small text-muted" data-i18n="education.university">Universidad de Salamanca</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="education.thesis">Thesis: Development of a multiplayer VR video game using Unreal Engine 5.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certificates Section-->
+        <section class="py-5" id="certificates">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="certificates.title">Certificates</h2>
+                        <!-- Certificate Card 1-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Aug 2020</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder" data-i18n="certificates.c1Advanced.title">C1 Advanced</div>
+                                                <div class="small text-muted" data-i18n="certificates.c1Advanced.score">Score 187</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="certificates.c1Advanced.description">Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Certificate Card 2-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">Sept 2017</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder" data-i18n="certificates.cProgramming.title">C Programming</div>
+                                                <div class="small text-muted" data-i18n="certificates.cProgramming.level">Basic level</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div data-i18n="certificates.cProgramming.description">Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section-->
+        <section class="py-5" id="projects">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="projects.title">Featured Projects</h2>
+                        <div class="row g-4">
+                            <!-- Work Projects-->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.beeShowcase.title">Bee Showcase (Miel 79)</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.beeShowcase.description">Interactive VR experience showcasing bee conservation and honey production processes.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unity</span>
+                                                <span class="badge bg-light text-dark me-2">VR</span>
+                                                <span class="badge bg-light text-dark">C#</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.eyeflow.title">Eyeflow</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.eyeflow.description">Advanced eye-tracking VR application for medical and research applications.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine</span>
+                                                <span class="badge bg-light text-dark me-2">VR</span>
+                                                <span class="badge bg-light text-dark">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-primary mb-2" data-i18n="projects.categories.professional">Professional</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.renfeSimulator.title">Renfe VR Machinist Simulator</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.renfeSimulator.description">Professional VR training simulator for train operators, providing realistic operational scenarios.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine</span>
+                                                <span class="badge bg-light text-dark me-2">VR</span>
+                                                <span class="badge bg-light text-dark">Simulation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Personal Projects-->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-success mb-2" data-i18n="projects.categories.personal">Personal</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.vrsurvival.title">VRSurvival</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.vrsurvival.description">Multiplayer VR survival game developed with Unreal Engine 5 and VRExpansionPlugin.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light text-dark me-2">VR</span>
+                                                <span class="badge bg-light text-dark">Multiplayer</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://ficho12.itch.io/o-candil" target="_blank" data-i18n="projects.vrsurvival.viewProject">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.yabs.title">YABS - Ludum Dare 55</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.yabs.description">Game created in 48 hours for Ludum Dare game jam, showcasing rapid prototyping skills.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unity</span>
+                                                <span class="badge bg-light text-dark me-2">C#</span>
+                                                <span class="badge bg-light text-dark">48h</span>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#yabsModal" data-i18n="projects.yabs.playGame">Play Game</button>
+                                                <a class="btn btn-outline-primary btn-sm" href="https://ldjam.com/events/ludum-dare/55/yabs" target="_blank" data-i18n="projects.yabs.ludumDare">Ludum Dare</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.noche.title">Noche - Indie Spain Jam 2023</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.noche.description">Lead Programmer role in Spanish indie game jam, creating atmospheric horror experience.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light text-dark me-2">Lead Programming</span>
+                                                <span class="badge bg-light text-dark">Horror</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://ficho12.itch.io/la-noche" target="_blank" data-i18n="projects.vrsurvival.viewProject">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-info mb-2" data-i18n="projects.categories.learning">Learning</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.customEditor.title">UE5 Custom Editor Tools Course</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.customEditor.description">Source code for advanced Unreal Engine 5 editor tools and custom development workflows.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unreal Engine 5</span>
+                                                <span class="badge bg-light text-dark me-2">C++</span>
+                                                <span class="badge bg-light text-dark">Editor Tools</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://github.com/ficho12/UE5-Custom-Editor-Tools" target="_blank" data-i18n="projects.customEditor.viewOnGithub">View on GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-secondary mb-2" data-i18n="projects.categories.interview">Interview</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.endlessRunner.title">Endless Runner</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.endlessRunner.description">Game made with Unity as an assignment for an interview, demonstrating core game development skills.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light text-dark me-2">Unity</span>
+                                                <span class="badge bg-light text-dark me-2">C#</span>
+                                                <span class="badge bg-light text-dark">Mobile</span>
+                                            </div>
+                                            <a class="btn btn-outline-primary btn-sm" href="https://github.com/ficho12/EndlessRunner" target="_blank" data-i18n="projects.customEditor.viewOnGithub">View on GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- YABS Game Modal-->
+        <div class="modal fade" id="yabsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">YABS - Ludum Dare 55</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-i18n="modal.close"></button>
+                    </div>
+                    <div class="modal-body p-0"><iframe id="yabsFrame" src="" style="width: 100%; height: 600px; border: none"></iframe></div>
+                    <script>
+                        document.getElementById('yabsModal').addEventListener('show.bs.modal', function () {
+                            document.getElementById('yabsFrame').src = 'assets/yabs/index.html';
+                        });
+                        document.getElementById('yabsModal').addEventListener('hide.bs.modal', function () {
+                            document.getElementById('yabsFrame').src = '';
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Skills Section-->
+        <section class="py-5 bg-light" id="skills">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="h1 fw-bold text-center mb-5" data-i18n="skills.title">Technical Skills</h2>
+                        <!-- Skillset Card-->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <!-- Professional skills list-->
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="skills.professionalSkills">Professional Skills</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.unrealEngine">Unreal Engine</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.unity">Unity</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.git">Git</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.sqlNosql">SQL / NoSQL</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.linux">Linux (deb)</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.visualStudio">Eclipse / Visual Studio</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.scrum">Scrum / Jira</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.photoshop">Photoshop / Lightroom</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.realityCapture">RealityCapture</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.firebase">Firebase</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.ueBlueprints">UE Blueprints</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.vr">VR</div></div>
+                                    </div>
+                                </div>
+                                <!-- Languages list-->
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline" data-i18n="skills.programmingLanguages">Programming Languages</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.csharp">C#</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.c">C</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.cpp">C++</div></div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.python">Python</div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.java">Java</div></div>
+                                        <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100" data-i18n="skills.items.javascript">JavaScript</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="py-5 bg-primary text-white" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="h1 fw-bold mb-4" data-i18n="contact.title">Let's Work Together</h2>
+                        <p class="lead mb-4" data-i18n="contact.description">I'm always interested in new opportunities and exciting projects. Whether you need VR development, game programming, or technical consultation, let's connect!</p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-envelope fs-2 mb-3"></i>
+                                    <h5 data-i18n="contact.email">Email</h5>
+                                    <a class="text-white" href="mailto:fizreyarmesto@gmail.com">fizreyarmesto@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-linkedin fs-2 mb-3"></i>
+                                    <h5 data-i18n="contact.linkedin">LinkedIn</h5>
+                                    <a class="text-white" href="https://www.linkedin.com/in/fizrey/" target="_blank">/in/fizrey</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-item">
+                                    <i class="bi bi-github fs-2 mb-3"></i>
+                                    <h5 data-i18n="contact.github">GitHub</h5>
+                                    <a class="text-white" href="https://github.com/ficho12" target="_blank">/ficho12</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0" data-i18n="footer.copyright">Copyright &copy; Fiz Rey Armesto 2025</div></div>
+                    <div class="col-auto"><a class="small" href="mailto:fizreyarmesto@gmail.com" style="text-decoration: none" data-i18n="nav.contact">Contact</a></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS (cache-busted)-->
+        <script src="js/client.bundle.js?v=4"></script>
+        <!-- Music Widgets (choose one)-->
+        <script src="js/spotify.js"></script>
+        <script src="js/lastfm.js"></script>
+    </body>
+</html>

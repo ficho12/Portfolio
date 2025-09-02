@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Fiz Rey Armesto - Computer Engineer & VR/AR Developer",
+    "description": "Fiz Rey Armesto - Computer Engineer & VR/AR Developer. Specialized in Unity, Unreal Engine, and immersive experiences."
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience", 
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "darkMode": "Dark",
+    "lightMode": "Light"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Fiz Rey Armesto",
+    "title": "Computer Engineer & VR/AR Developer",
+    "description": "I create immersive experiences using Unity and Unreal Engine, specializing in VR development and innovative interactive solutions.",
+    "viewWork": "View My Work",
+    "downloadResume": "Download Resume"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a Computer Engineer with a passion for creating immersive digital experiences. My expertise lies in VR/AR development, game programming, and cutting-edge interactive technologies.",
+    "development": {
+      "title": "Development",
+      "description": "Unity, Unreal Engine, C#, C++"
+    },
+    "vrar": {
+      "title": "VR/AR",
+      "description": "Immersive experiences, VR gaming, AR applications"
+    },
+    "engineering": {
+      "title": "Engineering",
+      "description": "Software architecture, system design, optimization"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "downloadResume": "Download Resume",
+    "current": "Current Position",
+    "present": "Present",
+    "arsoft": {
+      "position": "Junior Programmer",
+      "company": "ARSOFT",
+      "location": "Salamanca, Spain",
+      "description": "Lead Developer for VR/AR experiences including immersive beekeeping showcases with 360° video integration. Creation of railway driving simulators and interactive educational content in Unity.",
+      "internship": {
+        "position": "Unity Developer (Internship)",
+        "description": "Built native Meta Quest 2 surgery simulations from scratch with the UltimateXR framework for Unity."
+      }
+    },
+    "freelance": {
+      "position": "Game Developer",
+      "company": "Freelance Developer",
+      "description": "Creating independent games and VR experiences, participating in game jams, and developing custom solutions for clients."
+    }
+  },
+  "education": {
+    "title": "Education",
+    "degree": "Computer Engineering",
+    "university": "Universidad de Salamanca",
+    "thesis": "Thesis: Development of a multiplayer VR video game using Unreal Engine 5."
+  },
+  "certificates": {
+    "title": "Certificates",
+    "c1Advanced": {
+      "title": "C1 Advanced",
+      "score": "Score 187",
+      "description": "Certificate of Advanced English (CAE) issued by Cambridge English Language Assessment, part of the University of Cambridge."
+    },
+    "cProgramming": {
+      "title": "C Programming",
+      "level": "Basic level",
+      "description": "Certificate for the completion of the C programming (Basic Level) (6th Edition) issued by the University of Salamanca."
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "categories": {
+      "professional": "Professional",
+      "personal": "Personal",
+      "gameJam": "Game Jam",
+      "learning": "Learning",
+      "interview": "Interview"
+    },
+    "beeShowcase": {
+      "title": "Miel 79 VR/AR Beekeeping Showcase",
+      "description": "Immersive VR experience with 360° videos showcasing bee conservation, hive exploration, and honey production processes. Features interactive virtual visits to real beehives."
+    },
+    "eyeflow": {
+      "title": "Eyeflow",
+      "description": "Advanced eye-tracking VR application for medical and research applications."
+    },
+    "renfeSimulator": {
+      "title": "Renfe VR Machinist Simulator",
+      "description": "Virtual Reality training simulator for Renfe machinists, allowing them to familiarize with specific scenarios before facing real situations. This technology improves their preparation, response skills and confidence in a safe and controlled environment."
+    },
+    "vrsurvival": {
+      "title": "VRSurvival",
+      "description": "Multiplayer VR survival game developed with Unreal Engine 5 and VRExpansionPlugin.",
+      "viewProject": "View Project"
+    },
+    "yabs": {
+      "title": "YABS - Ludum Dare 55",
+      "description": "Game created in 48 hours for Ludum Dare game jam, showcasing rapid prototyping skills.",
+      "playGame": "Play Game",
+      "ludumDare": "Ludum Dare"
+    },
+    "shinjukuEki": {
+      "title": "Shinjuku-eki - Ludum Dare 57",
+      "description": "Game created for Ludum Dare 57, featuring atmospheric gameplay and innovative mechanics.",
+      "playGame": "Play Game"
+    },
+    "noche": {
+      "title": "Noche - Indie Spain Jam 2023",
+      "description": "Lead Programmer role in Spanish indie game jam, creating atmospheric horror experience."
+    },
+    "customEditor": {
+      "title": "UE5 Custom Editor Tools Course",
+      "description": "Source code for advanced Unreal Engine 5 editor tools and custom development workflows.",
+      "viewOnGithub": "View on GitHub"
+    },
+    "endlessRunner": {
+      "title": "Endless Runner",
+      "description": "Game made with Unity as an assignment for an interview, demonstrating core game development skills."
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "professionalSkills": "Professional Skills",
+    "programmingLanguages": "Programming Languages",
+    "gameEngines": "Game Engines",
+    "programming": "Programming",
+    "vrar": "VR/AR",
+    "toolsTech": "Tools & Tech",
+    "items": {
+      "unrealEngine": "Unreal Engine",
+      "unity": "Unity",
+      "git": "Git",
+      "sqlNosql": "SQL / NoSQL",
+      "linux": "Linux (deb)",
+      "visualStudio": "Eclipse / Visual Studio",
+      "scrum": "Scrum / Jira",
+      "photoshop": "Photoshop / Lightroom",
+      "realityCapture": "RealityCapture",
+      "firebase": "Firebase",
+      "ueBlueprints": "UE Blueprints",
+      "vr": "XR",
+      "csharp": "C#",
+      "c": "C",
+      "cpp": "C++",
+      "python": "Python",
+      "java": "Java",
+      "unrealEngine45": "Unreal Engine 4/5",
+      "vrExpansion": "VRExpansionPlugin",
+      "csharpNet": "C# .NET",
+      "oculusSDK": "Oculus SDK",
+      "openXR": "OpenXR",
+      "steamVR": "SteamVR",
+      "handTracking": "Hand Tracking",
+      "gitVersionControl": "Git / Version Control",
+      "blender": "Blender",
+      "agileDevelopment": "Agile Development"
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "description": "I'm always interested in new opportunities and exciting projects. Whether you need VR development, game programming, or technical consultation, let's connect!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "game": {
+    "pong": {
+      "clickToStart": "Click canvas to start",
+      "moveKeys": "W/S or ↑/↓ to move",
+      "escToExit": "ESC to exit",
+      "scrollToExplore": "Scroll to explore portfolio",
+      "firstToWin": "First to 5 points wins!",
+      "gameStarted": "Game Started!",
+      "youScore": "You Score!",
+      "fizScores": "FIZ Scores!",
+      "youWin": "You Win! 🎉 Click to play again or scroll to explore",
+      "fizWins": "FIZ Wins! 😢 Click to play again or scroll to explore",
+      "youWon": "You Won! Click to play again",
+      "fizWon": "FIZ Won! Click to play again",
+      "playerLabel": "YOU",
+      "fizLabel": "FIZ",
+      "vs": "VS",
+      "exitGame": "Exit Game"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © Fiz Rey Armesto 2025"
+  }
+}
