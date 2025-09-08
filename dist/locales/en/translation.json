@@ -91,11 +91,11 @@
     },
     "eyeflow": {
       "title": "Eyeflow",
-      "description": "Advanced eye-tracking VR application for medical and research applications."
+      "description": "Packaging, refactoring and optimization of legacy code to support cross-platform development in Unity XR. Implementation of new interfaces and interactions for PC and VR."
     },
     "renfeSimulator": {
       "title": "Renfe VR Machinist Simulator",
-      "description": "Virtual Reality training simulator for Renfe machinists, allowing them to familiarize with specific scenarios before facing real situations. This technology improves their preparation, response skills and confidence in a safe and controlled environment."
+      "description": "Creation of a VR railway driving simulator, involving tools for generating train tracks and signals based on real data and the train safety system (ASFA and ERTMS)."
     },
     "vrsurvival": {
       "title": "VRSurvival",
@@ -141,7 +141,7 @@
       "git": "Git",
       "sqlNosql": "SQL / NoSQL",
       "linux": "Linux (deb)",
-      "visualStudio": "Eclipse / Visual Studio",
+      "visualStudio": "Visual Studio",
       "scrum": "Scrum / Jira",
       "photoshop": "Photoshop / Lightroom",
       "realityCapture": "RealityCapture",
