@@ -109,7 +109,7 @@ function updatePageContent() {
   const currentLang = getCurrentLanguage();
   const cvLinks = document.querySelectorAll('a[href*="CV_FIZREYARMESTO"]');
   cvLinks.forEach(link => {
-    let cvFile = 'assets/CV_FIZREYARMESTO_ENG.pdf';
+    let cvFile = 'assets/CV_FIZREYARMESTO_EN.pdf';
     if (currentLang === 'es') {
       cvFile = 'assets/CV_FIZREYARMESTO_ES.pdf';
     } else if (currentLang === 'gl') {
