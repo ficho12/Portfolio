@@ -9,8 +9,14 @@
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
+        "setup": "node scripts/setup.js",
         "start": "npm run build && node scripts/start.js",
-        "start:debug": "npm run build && node scripts/start-debug.js && npx webpack"
+        "start:debug": "npm run build && node scripts/start-debug.js && npx webpack",
+        "serve": "npx browser-sync dist -w --no-open"
+    },
+    "engines": {
+        "node": ">=18",
+        "npm": ">=9"
     },
     "description": "A personal website template built with Bootstrap",
     "keywords": [
@@ -48,6 +54,7 @@
         "i18next": "^25.4.0",
         "i18next-browser-languagedetector": "^8.2.0",
         "i18next-http-backend": "^3.0.2",
+        "lodash": "^4.17.21",
         "node-fetch": "^3.3.2",
         "npm": "^10.1.0",
         "path-browserify": "^1.0.1",
