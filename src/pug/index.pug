@@ -329,6 +329,28 @@ html(lang='en')
                         button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#shinjukuEkiModal', data-i18n='projects.shinjukuEki.playGame') Play Game
                         a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/57/shinjuku-eki', target='_blank', data-i18n='projects.yabs.ludumDare') Ludum Dare
               .col-lg-4.col-md-6
+                .project-card.playable-game(data-project='static')
+                  .card.border-0.shadow-sm.h-100
+                    .project-media.position-relative.overflow-hidden
+                      .project-image
+                        img.img-fluid(src='assets/static.png', alt='STATIC Game')
+                      .project-overlay.position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-center.justify-content-center
+                        .overlay-content.text-center.text-white
+                          i.bi.bi-play-circle-fill.fs-1.mb-2
+                          p Click to Play!
+                    .card-body.p-4
+                      .project-category.mb-2
+                        span.badge.bg-warning.mb-2(data-i18n='projects.categories.gameJam') Game Jam
+                      h4.fw-bold.mb-3(data-i18n='projects.static.title') STATIC - Ludum Dare 59
+                      p.text-muted.mb-3(data-i18n='projects.static.description') 1970s communication puzzle: scan radio frequencies, decode Morse and answer calls against the clock. Built in 72 hours with Unity for Ludum Dare 59.
+                      .tech-stack.mb-3
+                        span.badge.bg-light.me-2 Unity
+                        span.badge.bg-light.me-2 C#
+                        span.badge.bg-light WebGL
+                      .d-flex.gap-2
+                        button.btn.btn-primary.btn-sm(data-bs-toggle='modal', data-bs-target='#staticModal', data-i18n='projects.static.playGame') Play Game
+                        a.btn.btn-outline-primary.btn-sm(href='https://ldjam.com/events/ludum-dare/59/static-1', target='_blank', data-i18n='projects.yabs.ludumDare') Ludum Dare
+              .col-lg-4.col-md-6
                 .project-card.video-project(data-project='noche', data-video='LFEfY4HfkQ0')
                   .card.border-0.shadow-sm.h-100
                     .project-media.position-relative.overflow-hidden
@@ -411,6 +433,26 @@ html(lang='en')
             });
             document.getElementById('shinjukuEkiModal').addEventListener('hide.bs.modal', function() {
               document.getElementById('shinjukuEkiFrame').src = '';
+            });
+
+    // STATIC Game Modal
+    #staticModal.modal.fade(tabindex='-1', aria-hidden='true')
+      .modal-dialog.modal-xl
+        .modal-content
+          .modal-header
+            h5.modal-title STATIC - Ludum Dare 59
+            .d-flex.gap-2.align-items-center
+              button#staticFullscreenBtn.btn.btn-outline-secondary.btn-sm(type='button', title='Fullscreen')
+                i.bi.bi-fullscreen
+              button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close', data-i18n='modal.close')
+          .modal-body.p-0
+            iframe#staticFrame(src='', style='width: 100%; height: 600px; border: none;')
+          script.
+            document.getElementById('staticModal').addEventListener('show.bs.modal', function() {
+              document.getElementById('staticFrame').src = 'assets/static/index.html';
+            });
+            document.getElementById('staticModal').addEventListener('hide.bs.modal', function() {
+              document.getElementById('staticFrame').src = '';
             });
 
     // Skills Section

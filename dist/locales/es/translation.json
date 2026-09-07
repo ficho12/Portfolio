@@ -113,6 +113,11 @@
       "description": "Juego creado para Ludum Dare 57, con gameplay atmosférico y mecánicas innovadoras.",
       "playGame": "Jugar"
     },
+    "static": {
+      "title": "STATIC - Ludum Dare 59",
+      "description": "Puzle de comunicación ambientado en los 70: escanea frecuencias de radio, decodifica Morse y responde llamadas contrarreloj. Creado en 72 horas con Unity para Ludum Dare 59.",
+      "playGame": "Jugar"
+    },
     "noche": {
       "title": "Noche - Indie Spain Jam 2023",
       "description": "Rol de Programador Principal en la game jam española indie, creando experiencia de terror atmosférica."

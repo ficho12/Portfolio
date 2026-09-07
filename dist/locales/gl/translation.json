@@ -113,6 +113,11 @@
       "description": "Xogo creado para Ludum Dare 57, con gameplay atmosférico e mecánicas innovadoras.",
       "playGame": "Xogar"
     },
+    "static": {
+      "title": "STATIC - Ludum Dare 59",
+      "description": "Crebacabezas de comunicación ambientado nos 70: escanea frecuencias de radio, decodifica Morse e responde chamadas contrarreloxo. Creado en 72 horas con Unity para Ludum Dare 59.",
+      "playGame": "Xogar"
+    },
     "noche": {
       "title": "Noche - Indie Spain Jam 2023",
       "description": "Rol de Programador Principal na game jam española indie, creando experiencia de terror atmosférica."

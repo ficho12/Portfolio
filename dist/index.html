@@ -483,6 +483,35 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
+                                <div class="project-card playable-game" data-project="static">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="project-media position-relative overflow-hidden">
+                                            <div class="project-image"><img class="img-fluid" src="assets/static.png" alt="STATIC Game" /></div>
+                                            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                                <div class="overlay-content text-center text-white">
+                                                    <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+                                                    <p>Click to Play!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <div class="project-category mb-2"><span class="badge bg-warning mb-2" data-i18n="projects.categories.gameJam">Game Jam</span></div>
+                                            <h4 class="fw-bold mb-3" data-i18n="projects.static.title">STATIC - Ludum Dare 59</h4>
+                                            <p class="text-muted mb-3" data-i18n="projects.static.description">1970s communication puzzle: scan radio frequencies, decode Morse and answer calls against the clock. Built in 72 hours with Unity for Ludum Dare 59.</p>
+                                            <div class="tech-stack mb-3">
+                                                <span class="badge bg-light me-2">Unity</span>
+                                                <span class="badge bg-light me-2">C#</span>
+                                                <span class="badge bg-light">WebGL</span>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticModal" data-i18n="projects.static.playGame">Play Game</button>
+                                                <a class="btn btn-outline-primary btn-sm" href="https://ldjam.com/events/ludum-dare/59/static-1" target="_blank" data-i18n="projects.yabs.ludumDare">Ludum Dare</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
                                 <div class="project-card video-project" data-project="noche" data-video="LFEfY4HfkQ0">
                                     <div class="card border-0 shadow-sm h-100">
                                         <div class="project-media position-relative overflow-hidden">
@@ -584,6 +613,29 @@
                         });
                         document.getElementById('shinjukuEkiModal').addEventListener('hide.bs.modal', function () {
                             document.getElementById('shinjukuEkiFrame').src = '';
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- STATIC Game Modal-->
+        <div class="modal fade" id="staticModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">STATIC - Ludum Dare 59</h5>
+                        <div class="d-flex gap-2 align-items-center">
+                            <button class="btn btn-outline-secondary btn-sm" id="staticFullscreenBtn" type="button" title="Fullscreen"><i class="bi bi-fullscreen"></i></button>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-i18n="modal.close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body p-0"><iframe id="staticFrame" src="" style="width: 100%; height: 600px; border: none"></iframe></div>
+                    <script>
+                        document.getElementById('staticModal').addEventListener('show.bs.modal', function () {
+                            document.getElementById('staticFrame').src = 'assets/static/index.html';
+                        });
+                        document.getElementById('staticModal').addEventListener('hide.bs.modal', function () {
+                            document.getElementById('staticFrame').src = '';
                         });
                     </script>
                 </div>

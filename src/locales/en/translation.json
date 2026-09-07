@@ -113,6 +113,11 @@
       "description": "Game created for Ludum Dare 57, featuring atmospheric gameplay and innovative mechanics.",
       "playGame": "Play Game"
     },
+    "static": {
+      "title": "STATIC - Ludum Dare 59",
+      "description": "1970s communication puzzle: scan radio frequencies, decode Morse and answer calls against the clock. Built in 72 hours with Unity for Ludum Dare 59.",
+      "playGame": "Play Game"
+    },
     "noche": {
       "title": "Noche - Indie Spain Jam 2023",
       "description": "Lead Programmer role in Spanish indie game jam, creating atmospheric horror experience."

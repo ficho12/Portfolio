@@ -332,12 +332,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // STATIC fullscreen button
+    const staticFullscreenBtn = document.getElementById('staticFullscreenBtn');
+    if (staticFullscreenBtn) {
+        staticFullscreenBtn.addEventListener('click', function() {
+            const staticFrame = document.getElementById('staticFrame');
+            if (staticFrame && staticFrame.src) {
+                // Send message to iframe to trigger fullscreen
+                staticFrame.contentWindow.postMessage('toggleFullscreen', '*');
+            }
+        });
+    }
+
     // Listen for messages from Unity iframes to update button icons
     window.addEventListener('message', function(event) {
         if (event.data === 'enteredFullscreen') {
             // Update button icons to exit fullscreen
             const yabsBtn = document.getElementById('yabsFullscreenBtn');
             const shinjukuBtn = document.getElementById('shinjukuEkiFullscreenBtn');
+            const staticBtn = document.getElementById('staticFullscreenBtn');
             
             if (yabsBtn) {
                 yabsBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
@@ -347,10 +360,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 shinjukuBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
                 shinjukuBtn.title = 'Exit Fullscreen';
             }
+            if (staticBtn) {
+                staticBtn.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
+                staticBtn.title = 'Exit Fullscreen';
+            }
         } else if (event.data === 'exitedFullscreen') {
             // Update button icons to enter fullscreen
             const yabsBtn = document.getElementById('yabsFullscreenBtn');
             const shinjukuBtn = document.getElementById('shinjukuEkiFullscreenBtn');
+            const staticBtn = document.getElementById('staticFullscreenBtn');
             
             if (yabsBtn) {
                 yabsBtn.innerHTML = '<i class="bi bi-fullscreen"></i>';
@@ -359,6 +377,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (shinjukuBtn) {
                 shinjukuBtn.innerHTML = '<i class="bi bi-fullscreen"></i>';
                 shinjukuBtn.title = 'Fullscreen';
+            }
+            if (staticBtn) {
+                staticBtn.innerHTML = '<i class="bi bi-fullscreen"></i>';
+                staticBtn.title = 'Fullscreen';
             }
         }
     });
